@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conheça a Newstacktrace — consultoria e desenvolvimento de software com foco em resultados reais desde 2022." />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content="Sobre — Newstacktrace" />
+    <meta property="og:description" content="Conheça a Newstacktrace — consultoria e desenvolvimento de software com foco em resultados reais desde 2022." />
+    <meta property="og:type"        content="website" />
+
+    <title>Sobre — Newstacktrace</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Lucide Icons (lightweight SVG icon library) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ──────────────────────────────────────────────
+     TOPBAR  (email · phone · social)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   TOPBAR — inspired by Clinic-1.0.0
+   Data keys: site.email, site.phone, site.social.*
+   ============================================================ -->
+<div id="topbar" class="bg-[#0a0a0a] border-b border-slate-800/60 text-slate-400 text-sm">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-10">
+
+      <!-- Contact info -->
+      <div class="flex items-center gap-6">
+        <a href="mailto:contato@newstacktrace.com"
+           class="flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>contato@newstacktrace.com</span>
+        </a>
+        <a href="tel:+55 (41) 99890-0704"
+           class="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>+55 (41) 99890-0704</span>
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="GitHub">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Instagram">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Twitter / X">
+          <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     HEADER  (logo · nav · CTA)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+   Transparent on hero, dark on scroll (JS: #header.scrolled)
+   Data keys: site.logo_dark, nav.items, nav.cta
+   ============================================================ -->
+<header id="header"
+        class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <nav class="flex items-center justify-between h-20 lg:h-18">
+
+      <!-- Logo -->
+
+      <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+          <!-- class h-9 -->
+        <img id="logo-light"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo"
+             loading="eager" />
+        <img id="logo-dark"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo hidden"
+             loading="eager" />
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        <li>
+          <a href="index.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+          Fale Conosco
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn"
+              class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+        <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu"
+       class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-4">
+      <ul class="space-y-1 mb-4">
+        <li>
+          <a href="index.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    text-green-400">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+      <a href="contact.html"
+         class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+        Fale Conosco
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<!-- ──────────────────────────────────────────────
+     MAIN CONTENT
+     ────────────────────────────────────────────── -->
+<main id="main">
+
+    <!-- PAGE HERO (dark) — breadcrumb + title -->
+    <section class="pt-32 pb-16 bg-[#0a0a0a] relative overflow-hidden">
+        <!-- Background grid decoration -->
+        <div class="absolute inset-0 opacity-5"
+             style="background-image: linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm font-mono mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">
+                    Início
+                </a>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+                <span class="text-green-400">Sobre</span>
+            </nav>
+
+            <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Sobre a Newstacktrace</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                Tecnologia séria.<br/>Entrega real.<br/>Parceria de longo prazo.
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                Nascemos da combinação entre experiência técnica profunda e visão estratégica de produto.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT FULL CONTENT -->
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         ABOUT FULL PAGE CONTENT
+         ══════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- STATS SECTION -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="calendar" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2">3+</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-1">Anos de Experiência</div>
+                        <div class="text-xs text-slate-500">Desde julho de 2022</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2">9+</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-1">Áreas de Atuação</div>
+                        <div class="text-xs text-slate-500">Serviços especializados</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2">15+</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-1">Clientes Atendidos</div>
+                        <div class="text-xs text-slate-500">Empresas de diversos portes</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2">10+</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-1">Projetos Entregues</div>
+                        <div class="text-xs text-slate-500">Soluções em produção</div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY & MISSION/VISION -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Story -->
+                <div class="mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        Nossa História
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-slate-700">
+                        <p class='mb-4'>A Newstacktrace nasceu da convicção de que tecnologia deve ser acessível, escalável e transformadora. Fundada em julho de 2022, a empresa foi criada a partir da experiência acumulada de seu fundador, que possui mais de 20 anos de atuação em engenharia de software, unindo conhecimento técnico profundo com uma visão clara de negócio.</p><p class='mb-4'>Desde o início, a Newstacktrace surgiu com o propósito de oferecer ao mercado uma consultoria tecnológica que vai além do código. Entendemos que tecnologia é meio, não fim, e que toda solução técnica precisa servir a um objetivo de negócio claro.</p><p class='mb-4'>Nossa missão é ser parceiros de longo prazo das empresas com as quais trabalhamos. Não buscamos apenas entregar projetos, mas compreender profundamente cada negócio, seus desafios e suas ambições, para propor soluções que realmente façam diferença.</p><p class='mb-4'>Atuamos apoiando empresas em diferentes níveis de maturidade tecnológica. Desenvolvemos projetos sob medida conforme as necessidades de cada cliente, realizamos consultorias especializadas e oferecemos treinamentos para capacitação de equipes.</p><p class='mb-4'>Além disso, apoiamos organizações que precisam de times técnicos, mas não possuem estrutura ou know-how para formar e gerenciar essas equipes internamente. Nesse contexto, podemos montar e operar times dedicados, que atuam em parceria com o cliente ou diretamente em seus projetos, permitindo que a empresa foque no seu negócio enquanto garantimos a excelência técnica da entrega.</p><p class='mb-4'>Com uma equipe formada por engenheiros experientes e especializados em diferentes áreas da tecnologia, atuamos em projetos de alta complexidade, sempre com foco em qualidade, escalabilidade e geração de resultados mensuráveis.</p>
+                    </div>
+                </div>
+
+                <!-- Mission & Vision Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="compass" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Missão</h3>
+                        <p class="text-slate-600 leading-relaxed">Transformar desafios de negócio em soluções tecnológicas robustas, escaláveis e sustentáveis, desenvolvendo software com qualidade, agilidade e visão estratégica, impactando positivamente a operação e o crescimento de nossos clientes como parceiros estratégicos.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="eye" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Visão</h3>
+                        <p class="text-slate-600 leading-relaxed">Ser referência em consultoria e engenharia de software, reconhecida pela excelência técnica e pela capacidade de transformar negócios através da tecnologia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Nossas Áreas de Atuação</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    9+ serviços especializados
+                </h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                    Atuamos em diferentes frentes da tecnologia, oferecendo soluções completas para empresas de todos os portes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="cloud" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Cloud &amp; Infraestrutura</h4>
+                                <span class="text-xs font-mono text-slate-400">AWS · GCP</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Migração, arquitetura e otimização de ambientes em nuvem. Estratégias multi-cloud, IaC com Terraform e redução de custos operacionais.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="settings-2" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">DevOps &amp; Automação</h4>
+                                <span class="text-xs font-mono text-slate-400">CI&#x2F;CD · Docker · Kubernetes</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Pipelines de CI&#x2F;CD, containerização, observabilidade e cultura DevOps para times que precisam entregar mais com mais confiança.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="layers" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Arquitetura de Software</h4>
+                                <span class="text-xs font-mono text-slate-400">Microserviços · DDD · Clean Arch</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Design de sistemas escaláveis, revisão de arquitetura existente e modernização de sistemas legados com foco em manutenibilidade.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="bot" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Inteligência Artificial</h4>
+                                <span class="text-xs font-mono text-slate-400">LLM · RAG · OpenAI · Bedrock</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Integração de LLMs, sistemas RAG, chatbots e automação inteligente para extrair valor real do conhecimento do negócio.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="refresh-cw" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Modernização de Sistemas</h4>
+                                <span class="text-xs font-mono text-slate-400">Refatoração · Migração · Legacy</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Transformação de sistemas legados em plataformas modernas, sem interromper a operação. Migração incremental, segura e documentada.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="plug" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">APIs &amp; Integração de Sistemas</h4>
+                                <span class="text-xs font-mono text-slate-400">REST · GraphQL · gRPC</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Design, desenvolvimento e gestão do ciclo de vida de APIs. Integração entre sistemas distintos, legados e plataformas de terceiros.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="code-2" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Desenvolvimento Web</h4>
+                                <span class="text-xs font-mono text-slate-400">Python · Node.js · Go · React</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Aplicações web de alta performance, do backend ao frontend. SPAs, APIs, sistemas full-stack e provas de conceito.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Segurança &amp; Conformidade</h4>
+                                <span class="text-xs font-mono text-slate-400">OWASP · LGPD · Pentest</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Security assessment, práticas de desenvolvimento seguro e adequação a normas como LGPD, SOC 2 e PCI DSS.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Capacitação &amp; Consultoria</h4>
+                                <span class="text-xs font-mono text-slate-400">Workshops · Mentoria · Advisory</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Treinamentos técnicos, workshops e consultoria estratégica para elevar o nível do time e embasar decisões de tecnologia.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Nossos Valores</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    O que nos move
+                </h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                    Princípios que guiam cada decisão técnica e cada interação com nossos clientes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="target" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Foco em Resultado</h4>
+                        <p class="text-slate-600">Trabalhamos orientados a entregáveis claros e métricas de impacto real no seu negócio, não em horas trabalhadas.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="layers" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Visão Estratégica</h4>
+                        <p class="text-slate-600">Unimos profundidade de engenharia com entendimento de produto e mercado para soluções que servem ao negócio.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Qualidade sem Atalhos</h4>
+                        <p class="text-slate-600">Código testado, documentado e revisado. Sem gambiarras que viram dívida técnica.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="handshake" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Parceria Duradoura</h4>
+                        <p class="text-slate-600">Preferimos relações de longo prazo a projetos pontuais. Crescemos junto com você.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="zap" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Agilidade &amp; Adaptação</h4>
+                        <p class="text-slate-600">Metodologias ágeis aplicadas com inteligência para entregar valor continuamente.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Inovação Constante</h4>
+                        <p class="text-slate-600">Buscamos constantemente novas tecnologias e metodologias para oferecer as melhores soluções.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                    <!-- Photo -->
+                    <div class="order-2 md:order-1">
+                        <div class="aspect-square rounded-lg overflow-hidden bg-slate-800">
+                            <img src="assets&#x2F;images&#x2F;profile.jpg"
+                                 alt="Anderson Contreira"
+                                 class="w-full h-full object-cover"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="w-full h-full hidden items-center justify-center text-slate-600">
+                                <i data-lucide="user" class="w-24 h-24"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="order-1 md:order-2">
+                        <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                            <span class="text-green-500">>://</span>
+                            <span>Fundador</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                            Anderson Contreira
+                        </h3>
+                        <p class="text-green-400 font-mono text-sm mb-6">
+                            Founder &amp; CTO
+                        </p>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Arquiteto de Software e Soluções com background em TI desde 2008 e mais de 6 anos de liderança técnica em ambientes ágeis. Especializado em arquiteturas distribuídas, cloud nativa (AWS 8+ anos, GCP 2+ anos) e sistemas baseados em IA, incluindo pipelines RAG, sistemas baseados em LLMs e workflows de automação inteligente. Liderou desenvolvimento de soluções end-to-end com times de produto, modernizou plataformas legadas para microsserviços e implementou práticas DevOps para melhorar confiabilidade e velocidade de entrega.
+                        </p>
+
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">
+                                Cloud Architecture
+                            </span>
+                            <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">
+                                Microservices
+                            </span>
+                            <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">
+                                AI &#x2F; RAG
+                            </span>
+                            <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">
+                                AWS · GCP
+                            </span>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;andersoncontreira"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                <span class="text-sm font-mono">LinkedIn</span>
+                            </a>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;andersoncontreira"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                    <span class="text-sm font-mono">GitHub</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-green-600">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Vamos construir algo juntos?
+                </h2>
+                <p class="text-green-50 text-lg mb-8 max-w-2xl mx-auto">
+                    Se você busca um parceiro tecnológico que entende de negócio tanto quanto de código, vamos conversar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                       class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                        Agendar conversa
+                    </a>
+                    <a href="index.html#portfolio"
+                       class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                        Ver nossos projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ──────────────────────────────────────────────
+     FOOTER  (links + bottom bar)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   FOOTER — Multi-column footer + bottom bar (dark)
+   Inspired by Presento + charityhope bottom bar
+   Data keys: site.*, footer.description, .quick_links[],
+              .service_links[], .bottom_bar{}
+   ============================================================ -->
+<!-- Footer main -->
+<footer class="bg-[#0a0a0a] border-t border-slate-800/60">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Col 1: Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#hero" class="inline-block mb-4">
+          <img src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png" alt="Newstacktrace" class="h-10 w-auto" loading="lazy" />
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+          Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.
+        </p>
+        <div class="font-mono text-xs text-green-700 opacity-60">
+          <span>new Stacktrace();</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Navegação</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="index.html#portfolio"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="index.html#products"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Contato
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Serviços</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Cloud &amp; Infraestrutura
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Desenvolvimento de Software
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Arquitetura de Soluções
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              IA Aplicada ao Negócio
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              DevOps &amp; Eficiência
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact summary -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Contato</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="mail" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="mailto:contato@newstacktrace.com" class="hover:text-green-400 transition-colors duration-200 break-all">contato@newstacktrace.com</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="phone" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="tel:+55 (41) 99890-0704" class="hover:text-green-400 transition-colors duration-200">+55 (41) 99890-0704</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <span>Pinhais, PR - Brasil</span>
+          </li>
+        </ul>
+        <!-- Social mini row -->
+        <div class="flex items-center gap-2 mt-5">
+          <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar — inspired by charityhope -->
+  <div class="border-t border-slate-800/60">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
+        <p class="text-slate-600 text-xs">
+          © 2025 Newstacktrace. Todos os direitos reservados.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Política de Privacidade
+          </a>
+          <a href="terms.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Termos de Uso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- ──────────────────────────────────────────────
+     SCRIPTS
+     ────────────────────────────────────────────── -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

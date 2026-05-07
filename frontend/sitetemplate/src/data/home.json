@@ -1,0 +1,102 @@
+{
+  "site": {
+    "company_name": "NutriEscola",
+    "tagline": "Cardapio escolar com controle nutricional",
+    "description": "Sistema para montagem, validacao e controle de cardapios escolares com calculo calorico e producao.",
+    "email": "nutricao@nutriescola.local",
+    "phone": "+55 (41) 0000-0000",
+    "address": "Ambiente escolar - Brasil",
+    "social": [
+      { "label": "LinkedIn", "url": "#", "icon": "fa-brands fa-linkedin-in" },
+      { "label": "Instagram", "url": "#", "icon": "fa-brands fa-instagram" },
+      { "label": "Email", "url": "mailto:nutricao@nutriescola.local", "icon": "fa-solid fa-envelope" }
+    ]
+  },
+  "nav": {
+    "items": [
+      { "label": "Inicio", "url": "index.html", "active": true },
+      { "label": "Cardapio", "url": "cardapio.html", "active": false },
+      { "label": "Producao", "url": "producao.html", "active": false },
+      { "label": "Relatorio", "url": "relatorio.html", "active": false }
+    ],
+    "cta": { "label": "Montar hoje", "url": "cardapio.html" }
+  },
+  "footer": {
+    "description": "Planejamento alimentar escolar com regras claras, calculos automatizados e relatorios prontos para producao.",
+    "operation": {
+      "title": "Uso operacional",
+      "items": ["Cardapio diario", "Producao com ate 40% de acrescimo", "Relatorio para impressao"]
+    },
+    "copyright": "Todos os direitos reservados."
+  },
+  "hero": {
+    "eyebrow": "Sistema de Gestao de Cardapio Escolar",
+    "title": "Cardapios escolares mais seguros e faceis de produzir.",
+    "subtitle": "Monte refeicoes com carboidrato, salada e proteina, acompanhe o limite de 2.000 kcal e gere a lista de ingredientes para a cozinha.",
+    "cta_primary": { "label": "Montar cardapio", "url": "cardapio.html" },
+    "cta_secondary": { "label": "Ver relatorio", "url": "relatorio.html" },
+    "stats": [
+      { "label": "Limite por refeicao", "value": "2.000 kcal" },
+      { "label": "Acrescimo maximo", "value": "40%" },
+      { "label": "Grupos obrigatorios", "value": "3" }
+    ]
+  },
+  "dashboard": {
+    "eyebrow": "Painel do dia",
+    "title": "Resumo do cardapio ativo",
+    "subtitle": "Indicadores principais para acompanhar calorias, pratos e conformidade antes da producao.",
+    "cards": [
+      { "icon": "fa-utensils", "value": "180", "label": "Pratos base" },
+      { "icon": "fa-chart-simple", "value": "1.385", "label": "kcal por refeicao" },
+      { "icon": "fa-shield-heart", "value": "20%", "label": "Acrescimo de seguranca" },
+      { "icon": "fa-circle-check", "value": "Valido", "label": "3 grupos selecionados" }
+    ]
+  },
+  "menu_preview": {
+    "eyebrow": "Cardapio sugerido",
+    "title": "Refeicao balanceada",
+    "subtitle": "Modelo inicial com porcoes controladas e total calorico dentro do limite.",
+    "items": [
+      {
+        "name": "Arroz integral",
+        "category_label": "Carboidrato",
+        "portion": "120g",
+        "calories": "148",
+        "calories_per_100g": "123",
+        "status": "Selecionado",
+        "image": "assets/images/food-carboidrato.png"
+      },
+      {
+        "name": "Salada colorida",
+        "category_label": "Salada",
+        "portion": "80g",
+        "calories": "32",
+        "calories_per_100g": "40",
+        "status": "Selecionado",
+        "image": "assets/images/food-salada.png"
+      },
+      {
+        "name": "Frango grelhado",
+        "category_label": "Proteina",
+        "portion": "110g",
+        "calories": "181",
+        "calories_per_100g": "165",
+        "status": "Selecionado",
+        "image": "assets/images/food-proteina.png"
+      }
+    ]
+  },
+  "production_preview": {
+    "eyebrow": "Producao",
+    "title": "Da porcao ao total da cozinha",
+    "subtitle": "O total de pratos e ingredientes considera a quantidade base e o acrescimo configurado para seguranca operacional.",
+    "metrics": [
+      { "value": "180", "label": "Pratos base" },
+      { "value": "216", "label": "Pratos totais" },
+      { "value": "20%", "label": "Acrescimo" }
+    ]
+  },
+  "calorie_summary": {
+    "limit": 2000
+  }
+}

@@ -1,0 +1,366 @@
+# 📋 NutriEscola — Definição do Projeto
+
+> **Versão:** 1.0.0  
+> **Data:** Maio de 2026  
+> **Status:** Em planejamento  
+> **Classificação:** Documento de Definição de Projeto (PDD)
+
+---
+
+## 1. Visão Geral
+
+### 1.1 Nome do Projeto
+**NutriEscola** — Sistema de Gestão de Cardápio Escolar
+
+### 1.2 Descrição Resumida
+Sistema digital multiplataforma (desktop e mobile) para planejamento, montagem e controle de cardápios nutricionais em ambiente escolar, com cálculo automático de calorias por porção, validação de limites nutricionais e gestão da produção de refeições com acréscimo de segurança configurável.
+
+### 1.3 Problema que Resolve
+Escolas que gerenciam alimentação escolar enfrentam dificuldade em:
+- Controlar o valor calórico total das refeições servidas
+- Calcular a quantidade de ingredientes necessários para um determinado número de pratos
+- Garantir que os cardápios atendam às exigências nutricionais mínimas (carboidrato + salada + proteína)
+- Prever a demanda real com margem de segurança
+
+### 1.4 Solução Proposta
+Uma aplicação web responsiva (SPA) que permite ao nutricionista ou gestor escolar montar cardápios validados, configurar a produção diária e gerar relatórios de ingredientes, tudo dentro das regras nutricionais e operacionais definidas.
+
+---
+
+## 2. Objetivos
+
+### 2.1 Objetivo Principal
+Digitalizar e automatizar o processo de montagem e gestão de cardápios nutricionais escolares, garantindo conformidade com limites calóricos e nutricionais.
+
+### 2.2 Objetivos Específicos
+- Permitir a seleção de alimentos por categoria (carboidrato, salada, proteína) com respectivas calorias
+- Validar que o total calórico do cardápio não ultrapasse **2.000 kcal por refeição**
+- Calcular automaticamente a quantidade de ingredientes com base no número de pratos e acréscimo de até **40%**
+- Emitir relatórios e listas de produção
+- Funcionar em dispositivos desktop e mobile (PWA)
+
+---
+
+## 3. Escopo do Projeto
+
+### 3.1 Dentro do Escopo (In Scope)
+| # | Funcionalidade |
+|---|----------------|
+| 1 | Cadastro de alimentos por categoria com valor calórico |
+| 2 | Montagem de cardápio com seleção de porções |
+| 3 | Validação em tempo real do limite de 2.000 kcal |
+| 4 | Configuração do número de pratos a produzir |
+| 5 | Configuração de acréscimo de 0% a 40% |
+| 6 | Cálculo automático do total de ingredientes |
+| 7 | Dashboard com resumo do cardápio ativo |
+| 8 | Relatório de produção com totais por ingrediente |
+| 9 | Impressão e exportação do relatório |
+| 10 | Interface responsiva para mobile (Fase 2) |
+| 11 | Suporte PWA com uso offline (Fase 2) |
+
+### 3.2 Fora do Escopo (Out of Scope)
+- Integração com sistemas de ERP ou financeiro
+- Controle de estoque de insumos
+- Módulo de pedidos ou compras
+- Gestão de múltiplas escolas (multitenancy)
+- App nativo iOS/Android (apenas PWA)
+- Autenticação de múltiplos usuários / controle de acesso (versão inicial)
+
+---
+
+## 4. Regras de Negócio
+
+### 4.1 Regras do Cardápio
+
+| Código | Regra | Comportamento |
+|--------|-------|---------------|
+| RN-01 | O cardápio deve conter ao menos 1 carboidrato | Bloqueio de salvamento |
+| RN-02 | O cardápio deve conter ao menos 1 salada | Bloqueio de salvamento |
+| RN-03 | O cardápio deve conter ao menos 1 proteína | Bloqueio de salvamento |
+| RN-04 | A soma calórica total não pode ultrapassar 2.000 kcal | Bloqueio de adição + alerta visual |
+| RN-05 | A porção mínima por item é de 10g | Validação de campo |
+
+### 4.2 Regras de Produção
+
+| Código | Regra | Comportamento |
+|--------|-------|---------------|
+| RN-06 | O número de pratos base deve ser ≥ 1 | Validação de campo |
+| RN-07 | O acréscimo de segurança deve estar entre 0% e 40% | Slider limitado + erro se manual |
+| RN-08 | Total de pratos = base × (1 + acréscimo%) | Calculado automaticamente |
+| RN-09 | Total de ingredientes = porção × total de pratos | Calculado por alimento |
+
+### 4.3 Fórmulas de Cálculo
+
+```
+Calorias da porção  = (caloriesPer100g / 100) × portionGrams
+Total calórico      = Σ calorias de todas as porções selecionadas
+Total de pratos     = platesToProduce × (1 + surplusPercent)
+Total por ingrediente = portionGrams × totalPlates
+```
+
+### 4.4 Semáforo Calórico (Barra de Progresso)
+
+| Faixa (%) | Cor | Significado |
+|-----------|-----|-------------|
+| 0% – 60% | 🟢 Verde | Saudável |
+| 61% – 85% | 🟡 Amarelo | Atenção |
+| 86% – 100% | 🟠 Laranja | Próximo do limite |
+| > 100% | 🔴 Vermelho | Bloqueado |
+
+---
+
+## 5. Arquitetura do Sistema
+
+### 5.1 Tipo de Aplicação
+- **Single Page Application (SPA)**
+- **Progressive Web App (PWA)** — Fase 2
+- **Frontend-only** com dados mock locais (v1), preparada para integração com API REST (v2)
+
+### 5.2 Stack Tecnológica
+
+| Camada | Tecnologia | Justificativa |
+|--------|-----------|---------------|
+| Framework UI | React 18 + Vite | Ecossistema maduro, alta performance, HMR rápido |
+| Linguagem | TypeScript | Segurança de tipos, manutenibilidade |
+| Estilização | Tailwind CSS | Utility-first, responsividade nativa |
+| Estado Global | Zustand | Leve, sem boilerplate, API simples |
+| Roteamento | React Router v6 | Padrão de mercado para SPA |
+| Ícones | Lucide React | Leve, consistente, tree-shakeable |
+| PDF/Impressão | CSS @media print | Nativo, sem dependência extra |
+| Dados | JSON local (mock) | Funciona offline, fácil de substituir por API |
+
+### 5.3 Template de Referencia
+
+- O template visual e estrutural de referencia para o frontend e: `references\feane-1.0.0`
+- A pasta do template final em Mustache sera: `fontend\sitetemplate`
+- A implementacao React deve usar esse template como inspiracao para layout, composicao visual, espacamentos, navegacao e organizacao das telas.
+- O template deve ser adaptado ao contexto do NutriEscola, mantendo a prioridade em usabilidade, responsividade e clareza operacional para nutricionistas e gestores escolares.
+
+### 5.4 Estrutura de Pastas
+
+```
+nutriescola/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── assets/                  # Imagens, logos, ícones estáticos
+│   ├── components/
+│   │   ├── layout/              # Header, Sidebar, Footer, PageWrapper
+│   │   ├── ui/                  # Button, Input, Select, Card, Badge, Modal
+│   │   ├── cardapio/            # FoodCard, FoodSelector, PortionInput,
+│   │   │                        # CalorieBar, CardapioSummary
+│   │   └── relatorio/           # ReportTable, ReportHeader, PrintView
+│   ├── pages/
+│   │   ├── Dashboard/           # index.tsx, components/
+│   │   ├── Cardapio/            # index.tsx, components/
+│   │   ├── Producao/            # index.tsx, components/
+│   │   └── Relatorio/           # index.tsx, components/
+│   ├── hooks/
+│   │   ├── useCardapio.ts       # Lógica de montagem e validação
+│   │   ├── useProducao.ts       # Lógica de cálculo de produção
+│   │   └── useCalculo.ts        # Helpers de cálculo calórico
+│   ├── services/
+│   │   ├── cardapioService.ts   # CRUD de cardápios (mock)
+│   │   └── producaoService.ts   # Geração de lista de produção
+│   ├── store/
+│   │   ├── cardapioStore.ts     # Estado do cardápio ativo
+│   │   ├── producaoStore.ts     # Estado da configuração de produção
+│   │   └── uiStore.ts           # Notificações, tema, tab ativa
+│   ├── types/
+│   │   └── index.ts             # Interfaces e tipos TypeScript
+│   ├── utils/
+│   │   ├── cardapioUtils.ts     # Validações e cálculos
+│   │   └── formatters.ts        # Formatação de números, datas
+│   ├── constants/
+│   │   └── index.ts             # CALORIE_LIMIT, MAX_SURPLUS, etc.
+│   ├── data/
+│   │   └── alimentos.json       # Mock: lista de alimentos por categoria
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── tailwind.config.ts
+```
+
+---
+
+## 6. Modelagem de Dados
+
+### 6.1 Tipos Principais (TypeScript)
+
+```typescript
+type FoodCategory = 'carboidrato' | 'salada' | 'proteina';
+
+interface FoodItem {
+  id: string;
+  name: string;
+  category: FoodCategory;
+  caloriesPer100g: number;
+  defaultPortionGrams: number;
+  unit: 'g' | 'ml' | 'unidade';
+}
+
+interface SelectedPortion {
+  food: FoodItem;
+  portionGrams: number;
+  totalCalories: number;
+}
+
+interface Cardapio {
+  id: string;
+  date: string;
+  portions: SelectedPortion[];
+  totalCalories: number;
+  isValid: boolean;
+}
+
+interface ProducaoConfig {
+  platesToProduce: number;
+  surplusPercent: number;       // 0.00 a 0.40
+  totalPlates: number;          // calculado
+  ingredientsList: IngredientRequirement[];
+}
+
+interface IngredientRequirement {
+  food: FoodItem;
+  totalGrams: number;
+  totalCalories: number;
+}
+```
+
+### 6.2 Dados Mock — Alimentos
+
+| Categoria | Alimentos |
+|-----------|-----------|
+| 🍚 Carboidratos | Arroz branco, Arroz integral, Macarrão, Batata cozida, Mandioca cozida |
+| 🥗 Saladas | Alface, Tomate, Cenoura ralada, Beterraba, Repolho |
+| 🍗 Proteínas | Frango grelhado, Carne bovina, Ovo cozido, Feijão carioca, Lentilha |
+
+---
+
+## 7. Páginas e Funcionalidades
+
+### 7.1 Dashboard (`/`)
+- Cards de resumo: total de pratos, calorias do cardápio atual, % de acréscimo
+- Alerta se nenhum cardápio válido estiver configurado
+- Histórico dos últimos cardápios criados
+
+### 7.2 Montagem do Cardápio (`/cardapio`)
+- Layout em 3 colunas: Carboidratos | Saladas | Proteínas
+- Cards clicáveis com nome, kcal/100g e campo de porção (gramas)
+- Painel lateral com resumo e barra calórica em tempo real
+- Botão "Salvar Cardápio" ativo somente se todas as regras forem atendidas
+
+### 7.3 Configuração de Produção (`/producao`)
+- Campo: Número base de pratos
+- Slider: Acréscimo de segurança (0% a 40%)
+- Tabela: alimento | porção/prato | total de gramas | total kcal
+- Destaque visual para total de pratos calculado
+
+### 7.4 Relatório (`/relatorio`)
+- Tabela completa do cardápio selecionado
+- Totais por categoria e geral
+- Botão de impressão (`window.print()`)
+- CSS otimizado para `@media print`
+
+---
+
+## 8. Plano de Fases
+
+### Fase 1 — Configuração e Arquitetura
+- Setup do projeto (Vite + React + TypeScript + Tailwind)
+- Estrutura de pastas
+- Definição de tipos e constantes
+- Dados mock dos alimentos
+
+### Fase 2 — Core de Negócio
+- Implementação dos hooks `useCardapio` e `useProducao`
+- Utilitários de cálculo calórico
+- Stores Zustand
+- Validações das regras de negócio
+
+### Fase 3 — Interface Desktop
+- Componentes UI base (Button, Input, Card, Badge)
+- Página de Cardápio com seletor de alimentos
+- Barra calórica em tempo real
+- Página de Produção com tabela de ingredientes
+
+### Fase 4 — Dashboard e Relatório
+- Dashboard com cards e histórico
+- Página de Relatório
+- Funcionalidade de impressão
+
+### Fase 5 — Mobile e PWA
+- Conversão do layout para mobile (breakpoints Tailwind)
+- Bottom navigation bar
+- PWA manifest + service worker
+- Testes em viewport 375px e 390px
+
+### Fase 6 — Qualidade e Entrega
+- Revisão de tipagem TypeScript (sem `any`)
+- Extração de magic numbers para constantes
+- Testes de usabilidade
+- Build de produção e otimização
+
+---
+
+## 9. Checklist de Qualidade
+
+Aplicar ao final de cada fase:
+
+```
+[ ] Tipos TypeScript sem uso de 'any'
+[ ] Componentes com menos de 150 linhas cada
+[ ] Lógica de negócio separada dos componentes de UI
+[ ] Constantes centralizadas — sem magic numbers no código
+[ ] Mensagens de validação amigáveis em português (pt-BR)
+[ ] Responsividade preparada (classes md: e lg: no Tailwind)
+[ ] Sem console.log em ambiente de produção
+[ ] Barra calórica com feedback visual por faixa (semáforo)
+[ ] Slider de acréscimo limitado entre 0% e 40%
+[ ] Cardápio bloqueado sem os 3 grupos alimentares
+```
+
+---
+
+## 10. Restrições e Premissas
+
+### Restrições
+- A versão inicial não requer autenticação
+- Os dados de alimentos são locais (sem backend externo na v1)
+- O limite máximo de acréscimo de produção é fixo em 40%
+- O limite calórico máximo por refeição é fixo em 2.000 kcal
+
+### Premissas
+- O sistema será utilizado por nutricionistas ou gestores escolares
+- O idioma da interface é português (pt-BR)
+- A impressão de relatórios é feita pelo navegador do usuário
+- Dispositivos móveis são smartphones comuns (375px–430px de largura)
+
+---
+
+## 11. Glossário
+
+| Termo | Definição |
+|-------|-----------|
+| Cardápio | Conjunto de alimentos (carboidrato + salada + proteína) que forma uma refeição |
+| Porção | Quantidade em gramas de um alimento no cardápio |
+| Acréscimo | Percentual adicional sobre o número base de pratos (máx. 40%) |
+| kcal | Quilocaloria — unidade de medida de energia alimentar |
+| SPA | Single Page Application — aplicação web de página única |
+| PWA | Progressive Web App — app web instalável com suporte offline |
+| Mock | Dados simulados usados no lugar de uma API real |
+
+---
+
+## 12. Histórico de Versões
+
+| Versão | Data | Autor | Descrição |
+|--------|------|-------|-----------|
+| 1.0.0 | Mai/2026 | Equipe NutriEscola | Definição inicial do projeto |
+
+---
+
+*Este documento serve como referência para todas as fases de desenvolvimento do sistema NutriEscola. Deve ser atualizado a cada mudança significativa de escopo ou arquitetura.*

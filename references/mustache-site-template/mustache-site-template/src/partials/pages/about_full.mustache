@@ -1,0 +1,216 @@
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOUT FULL PAGE CONTENT
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- STATS SECTION -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {{#about.stats}}
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="{{icon}}" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-900 mb-2">{{value}}</div>
+                    <div class="text-sm font-semibold text-slate-700 mb-1">{{label}}</div>
+                    <div class="text-xs text-slate-500">{{description}}</div>
+                </div>
+            {{/about.stats}}
+        </div>
+    </div>
+</section>
+
+<!-- STORY & MISSION/VISION -->
+<section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Story -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                    {{about.story.title}}
+                </h2>
+                <div class="prose prose-lg max-w-none text-slate-700">
+                    {{{about.story.content}}}
+                </div>
+            </div>
+
+            <!-- Mission & Vision Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="compass" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">{{about.mission.title}}</h3>
+                    <p class="text-slate-600 leading-relaxed">{{about.mission.content}}</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="eye" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">{{about.vision.title}}</h3>
+                    <p class="text-slate-600 leading-relaxed">{{about.vision.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Nossas Áreas de Atuação</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                {{about.servicesCount}}+ serviços especializados
+            </h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                Atuamos em diferentes frentes da tecnologia, oferecendo soluções completas para empresas de todos os portes.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{#about.services}}
+                <div class="bg-slate-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="{{icon}}" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-semibold text-slate-900 mb-1">{{title}}</h4>
+                            <span class="text-xs font-mono text-slate-400">{{tags}}</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">{{description}}</p>
+                </div>
+            {{/about.services}}
+        </div>
+    </div>
+</section>
+
+<!-- VALUES -->
+<section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Nossos Valores</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                O que nos move
+            </h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                Princípios que guiam cada decisão técnica e cada interação com nossos clientes.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {{#about.values}}
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="{{icon}}" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-slate-900 mb-2">{{title}}</h4>
+                    <p class="text-slate-600">{{description}}</p>
+                </div>
+            {{/about.values}}
+        </div>
+    </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="py-20 bg-[#0a0a0a]">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Photo -->
+                <div class="order-2 md:order-1">
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-800">
+                        <img src="{{about.founder.photo}}"
+                             alt="{{about.founder.name}}"
+                             class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="w-full h-full hidden items-center justify-center text-slate-600">
+                            <i data-lucide="user" class="w-24 h-24"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="order-1 md:order-2">
+                    <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Fundador</span>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                        {{about.founder.name}}
+                    </h3>
+                    <p class="text-green-400 font-mono text-sm mb-6">
+                        {{about.founder.role}}
+                    </p>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        {{about.founder.bio}}
+                    </p>
+
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        {{#about.founder.tags}}
+                        <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">
+                            {{.}}
+                        </span>
+                        {{/about.founder.tags}}
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="{{about.founder.linkedin}}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            <span class="text-sm font-mono">LinkedIn</span>
+                        </a>
+                        {{#about.founder.github}}
+                            <a href="{{about.founder.github}}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                                <span class="text-sm font-mono">GitHub</span>
+                            </a>
+                        {{/about.founder.github}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-20 bg-green-600">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                {{about.cta.title}}
+            </h2>
+            <p class="text-green-50 text-lg mb-8 max-w-2xl mx-auto">
+                {{about.cta.description}}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{about.cta.primary.url}}"
+                   class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                    {{about.cta.primary.label}}
+                </a>
+                <a href="{{about.cta.secondary.url}}"
+                   class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                    {{about.cta.secondary.label}}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

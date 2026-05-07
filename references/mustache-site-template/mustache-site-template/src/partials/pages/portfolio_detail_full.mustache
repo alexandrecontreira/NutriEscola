@@ -1,0 +1,208 @@
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PORTFOLIO DETAIL FULL PAGE CONTENT
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- PROJECT META BAR -->
+<section class="bg-white border-b border-slate-100 py-6">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+            <!-- Back link -->
+            <a href="portfolio.html"
+               class="inline-flex items-center gap-2 text-slate-500 hover:text-green-600 text-sm font-mono transition-colors group">
+                <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                Voltar para o Portfólio
+            </a>
+
+            <!-- Tags + featured -->
+            <div class="flex flex-wrap items-center gap-2">
+                {{#portfolio_item.tags}}
+                    <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                        {{.}}
+                    </span>
+                {{/portfolio_item.tags}}
+                {{#portfolio_item.featured}}
+                    <span class="inline-flex items-center gap-1 bg-slate-900 text-white text-xs font-mono font-semibold px-3 py-1 rounded-full">
+                        <i data-lucide="star" class="w-3 h-3 text-yellow-400"></i>
+                        Destaque
+                    </span>
+                {{/portfolio_item.featured}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT INFO + SUMMARY -->
+<section class="bg-white py-14">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+
+            <!-- Summary (2/3) -->
+            <div class="lg:col-span-2">
+                <p class="text-xl text-slate-700 leading-relaxed mb-8">
+                    {{portfolio_item.summary}}
+                </p>
+
+                <!-- Challenge / Solution -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="target" class="w-4 h-4 text-green-600"></i>
+                            <h3 class="text-sm font-semibold text-slate-800 font-mono uppercase tracking-wide">Desafio</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">{{portfolio_item.challenge}}</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="lightbulb" class="w-4 h-4 text-green-600"></i>
+                            <h3 class="text-sm font-semibold text-slate-800 font-mono uppercase tracking-wide">Solução</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">{{portfolio_item.solution}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project metadata sidebar (1/3) -->
+            <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 space-y-5">
+                <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-1">Cliente</p>
+                    <p class="text-base font-semibold text-slate-900">{{portfolio_item.client}}</p>
+                </div>
+                <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-1">Categoria</p>
+                    <p class="text-base font-semibold text-slate-900">{{portfolio_item.category}}</p>
+                </div>
+                <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-1">Ano</p>
+                    <p class="text-base font-semibold text-slate-900">{{portfolio_item.year}}</p>
+                </div>
+                <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">Entregáveis</p>
+                    <ul class="space-y-1.5">
+                        {{#portfolio_item.deliverables}}
+                            <li class="flex items-start gap-2 text-sm text-slate-600">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                {{.}}
+                            </li>
+                        {{/portfolio_item.deliverables}}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-[#0a0a0a] py-10 border-y border-slate-800">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {{#portfolio_item.stats}}
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-white mb-1">{{value}}</p>
+                    <p class="text-xs font-mono text-slate-500 uppercase tracking-wider">{{label}}</p>
+                </div>
+            {{/portfolio_item.stats}}
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="bg-slate-950 py-16 lg:py-20">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-3 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Galeria do projeto</span>
+            </div>
+            <h2 class="text-3xl font-bold text-white">Peças desenvolvidas</h2>
+        </div>
+
+        <!-- Gallery grid — wide items span 2 cols -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {{#portfolio_item.cover_gallery}}
+                <div class="group overflow-hidden rounded-xl bg-slate-800 border border-slate-700
+                            {{#wide}}sm:col-span-2 lg:col-span-2{{/wide}}
+                            hover:border-green-700/50 transition-colors duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="{{src}}"
+                             alt="{{alt}}"
+                             class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy"
+                             onerror="this.closest('.aspect-video').classList.add('flex','items-center','justify-center'); this.style.display='none';" />
+                    </div>
+                    {{#caption}}
+                        <div class="px-4 py-3">
+                            <p class="text-xs font-mono text-slate-500">{{caption}}</p>
+                        </div>
+                    {{/caption}}
+                </div>
+            {{/portfolio_item.cover_gallery}}
+        </div>
+
+    </div>
+</section>
+
+<!-- RELATED PROJECTS -->
+<section class="bg-white py-14">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+        <div class="mb-10">
+            <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Outros projetos</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Você também pode gostar de</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {{#portfolio_item.related_items}}
+                <a href="{{url}}"
+                   class="group overflow-hidden rounded-xl border border-slate-200 hover:border-green-300 hover:shadow-md transition-all duration-200">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+                        <img src="{{cover}}"
+                             alt="{{client}} — {{title}}"
+                             class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy"
+                             onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none';" />
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs font-mono text-slate-400 mb-0.5">{{client}}</p>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 group-hover:text-green-600 transition-colors">
+                            {{title}}
+                        </h3>
+                        <span class="text-xs font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                            {{category_label}}
+                        </span>
+                    </div>
+                </a>
+            {{/portfolio_item.related_items}}
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="bg-green-600 py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Quer um projeto assim?
+            </h2>
+            <p class="text-green-50 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                Conta pra gente o que você precisa. Vamos entender seu contexto e propor a abordagem certa para o seu negócio.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                   class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                    Falar com a gente
+                </a>
+                <a href="portfolio.html"
+                   class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                    Ver mais projetos
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

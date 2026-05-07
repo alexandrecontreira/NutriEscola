@@ -1,0 +1,37 @@
+<!-- ============================================================
+   NEWSLETTER — Email subscription (conditional)
+   CONDITIONALLY RENDERED: only when config.show_newsletter = true
+   Data keys: newsletter.title, .subtitle, .placeholder, .cta
+   ============================================================ -->
+<section id="newsletter" class="py-16 bg-green-600">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 reveal">
+
+      <!-- Text -->
+      <div class="text-center lg:text-left">
+        <h2 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+          {{newsletter.title}}
+        </h2>
+        <p class="text-green-100/80 text-base">
+          {{newsletter.subtitle}}
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-[440px]"
+            onsubmit="return false;">
+        <input type="email"
+               name="newsletter_email"
+               placeholder="{{newsletter.placeholder}}"
+               required
+               autocomplete="email"
+               class="flex-1 px-4 py-3 bg-white/15 hover:bg-white/20 focus:bg-white/25 border border-white/20 hover:border-white/40 focus:border-white/60 text-white placeholder:text-green-100/60 rounded-lg outline-none transition-all duration-200 text-sm" />
+        <button type="submit"
+                class="px-5 py-3 bg-white text-green-700 hover:bg-green-50 font-semibold text-sm rounded-lg transition-colors duration-200 whitespace-nowrap flex-shrink-0">
+          {{newsletter.cta}}
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>

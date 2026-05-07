@@ -1,0 +1,264 @@
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PRODUCT DETAIL FULL PAGE CONTENT
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- PRODUCT HEADER INFO -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Back link -->
+            <a href="products.html"
+               class="inline-flex items-center gap-2 text-slate-500 hover:text-green-600 text-sm font-mono transition-colors mb-8 group">
+                <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                Voltar para Produtos
+            </a>
+
+            <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+
+                <!-- Left: summary + tags -->
+                <div class="flex-1">
+                    <!-- Tags + status -->
+                    <div class="flex flex-wrap items-center gap-2 mb-5">
+                        {{#product.tags}}
+                            <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                                {{.}}
+                            </span>
+                        {{/product.tags}}
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-full border {{product.status_class}}">
+                            {{product.status_label}}
+                        </span>
+                    </div>
+
+                    <!-- Summary -->
+                    <p class="text-xl text-slate-700 leading-relaxed">
+                        {{product.summary}}
+                    </p>
+                </div>
+
+                <!-- Right: for who -->
+                <div class="lg:w-64 flex-shrink-0">
+                    <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-3">Para quem é</h3>
+                    <ul class="space-y-2">
+                        {{#product.for_who}}
+                            <li class="flex items-center gap-3">
+                                <div class="w-7 h-7 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="{{icon}}" class="w-4 h-4 text-green-600"></i>
+                                </div>
+                                <span class="text-sm text-slate-700">{{label}}</span>
+                            </li>
+                        {{/product.for_who}}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LIVE DEMO LINKS -->
+<section class="bg-slate-950 py-10 border-y border-slate-800">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+                <div class="flex-shrink-0">
+                    <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Demo ao vivo</span>
+                    </div>
+                    <p class="text-slate-500 text-xs font-mono mt-0.5">Acesse as diferentes áreas do produto</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    {{#product.demo_areas}}
+                        <a href="{{url}}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="group inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700
+                                  border border-slate-700 hover:border-green-600/50
+                                  text-slate-300 hover:text-white text-sm font-mono
+                                  px-4 py-2.5 rounded-lg transition-all duration-200">
+                            <i data-lucide="{{icon}}" class="w-4 h-4 text-green-400"></i>
+                            <span>{{label}}</span>
+                            <i data-lucide="external-link" class="w-3 h-3 text-slate-600 group-hover:text-green-400 transition-colors"></i>
+                        </a>
+                    {{/product.demo_areas}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODULES -->
+<section class="bg-slate-50 py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Eyebrow + heading -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Funcionalidades</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                    Módulos do produto
+                </h2>
+                <p class="text-slate-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
+                    Cada módulo resolve um desafio específico da gestão — todos integrados em uma única plataforma.
+                </p>
+            </div>
+
+            <!-- Modules grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {{#product.modules}}
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-sm transition-shadow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="{{icon}}" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <h3 class="text-base font-semibold text-slate-900">{{title}}</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            {{#items}}
+                                <li class="flex items-start gap-2 text-sm text-slate-600">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                    <span>{{.}}</span>
+                                </li>
+                            {{/items}}
+                        </ul>
+                    </div>
+                {{/product.modules}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="bg-white py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Eyebrow + heading -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Tecnologia</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                    Stack tecnológico
+                </h2>
+            </div>
+
+            <!-- Tech layers -->
+            <div class="grid md:grid-cols-3 gap-6">
+                {{#product.tech_stack}}
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-6">
+                        <h3 class="text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-4">
+                            {{layer}}
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            {{#items}}
+                                <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                    {{.}}
+                                </span>
+                            {{/items}}
+                        </div>
+                    </div>
+                {{/product.tech_stack}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="bg-[#0a0a0a] py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Eyebrow + heading -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-3 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Impacto real</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    O que muda na sua organização
+                </h2>
+            </div>
+
+            <!-- Benefits grid -->
+            <div class="grid md:grid-cols-2 gap-4">
+                {{#product.benefits}}
+                    <div class="flex items-start gap-3 bg-slate-900 rounded-xl border border-slate-800 p-5">
+                        <div class="w-8 h-8 bg-green-900/40 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-sm">{{.}}</p>
+                    </div>
+                {{/product.benefits}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Eyebrow + heading -->
+            <div class="mb-10">
+                <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Outros produtos</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                    Conheça também
+                </h2>
+            </div>
+
+            <!-- Related cards -->
+            <div class="grid md:grid-cols-2 gap-6">
+                {{#product.related_products}}
+                    <a href="{{url}}"
+                       class="group flex items-start gap-4 bg-slate-50 rounded-xl border border-slate-200 p-6 hover:shadow-md hover:border-green-200 transition-all duration-200">
+                        <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+                            <i data-lucide="{{icon}}" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base font-semibold text-slate-900 mb-1 group-hover:text-green-600 transition-colors">
+                                {{name}}
+                            </h3>
+                            <p class="text-sm text-slate-500 mb-2 leading-relaxed">{{tagline}}</p>
+                            <span class="text-xs font-mono text-slate-400">{{status_label}}</span>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-5 h-5 text-slate-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5"></i>
+                    </a>
+                {{/product.related_products}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="bg-green-600 py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Quer usar o {{product.name}} na sua organização?
+            </h2>
+            <p class="text-green-50 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                Entre em contato para saber mais sobre planos, onboarding e como o {{product.name}} pode ser adaptado ao seu contexto.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                   class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                    Falar com a gente
+                </a>
+                <a href="products.html"
+                   class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                    Ver todos os produtos
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

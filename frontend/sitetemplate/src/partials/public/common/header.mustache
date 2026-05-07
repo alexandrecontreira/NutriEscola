@@ -1,0 +1,35 @@
+<!-- ============================================================
+   HEADER - navegacao principal inspirada no Feane
+   Data keys: site.company_name, nav.items[], nav.cta
+   ============================================================ -->
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <a class="navbar-brand" href="index.html" aria-label="{{site.company_name}}">
+        <span>{{site.company_name}}</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          {{#nav.items}}
+          <li class="nav-item {{#active}}active{{/active}}">
+            <a class="nav-link" href="{{url}}">{{label}}</a>
+          </li>
+          {{/nav.items}}
+        </ul>
+        <div class="user_option">
+          <a class="order_online" href="{{nav.cta.url}}">
+            {{nav.cta.label}}
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

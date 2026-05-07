@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio da Newstacktrace — identidades visuais, logomarcas, materiais gráficos e projetos digitais." />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content="Portfólio — Newstacktrace" />
+    <meta property="og:description" content="Portfólio da Newstacktrace — identidades visuais, logomarcas, materiais gráficos e projetos digitais." />
+    <meta property="og:type"        content="website" />
+
+    <title>Portfólio — Newstacktrace</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ──────────────────────────────────────────────
+     TOPBAR  (email · phone · social)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   TOPBAR — inspired by Clinic-1.0.0
+   Data keys: site.email, site.phone, site.social.*
+   ============================================================ -->
+<div id="topbar" class="bg-[#0a0a0a] border-b border-slate-800/60 text-slate-400 text-sm">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-10">
+
+      <!-- Contact info -->
+      <div class="flex items-center gap-6">
+        <a href="mailto:contato@newstacktrace.com"
+           class="flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>contato@newstacktrace.com</span>
+        </a>
+        <a href="tel:+55 (41) 99890-0704"
+           class="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>+55 (41) 99890-0704</span>
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="GitHub">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Instagram">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Twitter / X">
+          <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     HEADER  (logo · nav · CTA)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+   Transparent on hero, dark on scroll (JS: #header.scrolled)
+   Data keys: site.logo_dark, nav.items, nav.cta
+   ============================================================ -->
+<header id="header"
+        class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <nav class="flex items-center justify-between h-20 lg:h-18">
+
+      <!-- Logo -->
+
+      <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+          <!-- class h-9 -->
+        <img id="logo-light"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo"
+             loading="eager" />
+        <img id="logo-dark"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo hidden"
+             loading="eager" />
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        <li>
+          <a href="index.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+          Fale Conosco
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn"
+              class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+        <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu"
+       class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-4">
+      <ul class="space-y-1 mb-4">
+        <li>
+          <a href="index.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    text-green-400">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+      <a href="contact.html"
+         class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+        Fale Conosco
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<!-- ──────────────────────────────────────────────
+     MAIN CONTENT
+     ────────────────────────────────────────────── -->
+<main id="main">
+
+    <!-- PAGE HERO (dark) — breadcrumb + title -->
+    <section class="pt-32 pb-16 bg-[#0a0a0a] relative overflow-hidden">
+        <!-- Background grid decoration -->
+        <div class="absolute inset-0 opacity-5"
+             style="background-image: linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm font-mono mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">
+                    Início
+                </a>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+                <span class="text-green-400">Portfólio</span>
+            </nav>
+
+            <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Nosso Portfólio</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                Trabalhos que falam<br/>por si mesmos.
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                Identidades visuais, logomarcas, materiais gráficos e sistemas digitais desenvolvidos com atenção a cada detalhe.
+            </p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO FULL CONTENT -->
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         PORTFOLIO FULL PAGE CONTENT
+         ══════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- CATEGORY FILTER -->
+    <section class="bg-white py-6 shadow-sm sticky top-0 z-30 border-b border-slate-100">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="flex flex-wrap gap-2 items-center">
+                    <button
+                        data-filter="all"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            bg-green-600 text-white shadow-sm active-filter
+                            ">
+                        Todos
+                    </button>
+                    <button
+                        data-filter="identidade"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Identidade Visual
+                    </button>
+                    <button
+                        data-filter="logomarca"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Logomarca
+                    </button>
+                    <button
+                        data-filter="impresso"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Material Impresso
+                    </button>
+                    <button
+                        data-filter="social"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Social Media
+                    </button>
+                    <button
+                        data-filter="web"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Web &amp; Sistemas
+                    </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="bg-slate-950 py-16 lg:py-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+            <!-- Section header -->
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Projetos</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">
+                        Trabalhos selecionados
+                    </h2>
+                </div>
+                <p class="text-slate-500 text-sm font-mono md:text-right leading-relaxed max-w-sm">
+                    Uma amostra dos projetos entregues em design gráfico, identidade visual e desenvolvimento digital.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5" id="portfolio-grid">
+                    <div data-category="identidade"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                sm:col-span-2 lg:col-span-1
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;imas&#x2F;template-apresentacao.png"
+                                     alt="IMAS — Identidade Visual Completa"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Criação de identidade visual completa incluindo brand guidelines, template de apresentação institucional e pacote de posts para redes sociais.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">IMAS</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Identidade Visual Completa</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Identidade Visual
+                                </span>
+                                    <span class="inline-flex items-center gap-1 text-green-400 text-xs font-mono">
+                                        <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                                        Destaque
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="logomarca"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;acesso&#x2F;logo-4.png"
+                                     alt="Acesso — Desenvolvimento de Logomarca"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Processo completo de criação de logomarca com exploração de variantes, refinamento tipográfico e entrega em múltiplas versões de uso.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">Acesso</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Desenvolvimento de Logomarca</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Logomarca
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="logomarca"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;hellas&#x2F;logo-1.png"
+                                     alt="Hellas — Redesign de Logomarca"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Redesign da identidade visual com desenvolvimento de variantes para aplicação em diferentes contextos e mídias.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">Hellas</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Redesign de Logomarca</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Logomarca
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="impresso"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;eat&#x2F;cartao-1.jpg"
+                                     alt="Eat — Cartão de Visita"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Criação de dois conceitos de cartão de visita no formato 9x5cm com alinhamento à identidade da marca.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">Eat</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Cartão de Visita</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Material Impresso
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="impresso"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;flex&#x2F;img-1.jpg"
+                                     alt="Flex — Material Impresso"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Desenvolvimento de peças gráficas para impressão, com acompanhamento da produção física e verificação de acabamento.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">Flex</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Material Impresso</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Material Impresso
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="social"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;imas&#x2F;posts&#x2F;post-instagram.png"
+                                     alt="IMAS — Posts para Instagram"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Série de posts para Instagram desenvolvida seguindo as diretrizes de identidade visual definidas no brand book da organização.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">IMAS</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Posts para Instagram</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Social Media
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="web"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                sm:col-span-2 lg:col-span-1
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;carestack&#x2F;cover.jpg"
+                                     alt="CareStack — Plataforma SaaS"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Interface e desenvolvimento de plataforma SaaS para gestão de comunidades terapêuticas com módulos de controle, relatórios e comunicação.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">CareStack</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">Plataforma SaaS</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Web &amp; Sistemas
+                                </span>
+                                    <span class="inline-flex items-center gap-1 text-green-400 text-xs font-mono">
+                                        <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                                        Destaque
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-category="web"
+                         class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800
+                                
+                                hover:border-green-700/50 transition-all duration-300 cursor-pointer">
+
+                        <!-- Cover image -->
+                        <a href="portfolio-detail.html" class="block relative overflow-hidden">
+                            <div class="aspect-[4/3] overflow-hidden bg-slate-800">
+                                <img src="assets&#x2F;images&#x2F;portfolio&#x2F;fintech&#x2F;cover.jpg"
+                                     alt="Fintech — API Gateway — Fintech Regional"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     loading="lazy"
+                                     onerror="this.closest('.aspect-\\[4\\/3\\]').classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<i data-lucide=\'image\' class=\'w-12 h-12 text-slate-600\'></i>');" />
+                            </div>
+
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                        flex flex-col justify-end p-5">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+                                    Redesenho completo da camada de APIs com autenticação OAuth2, dashboard de monitoramento e documentação interativa.
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-green-400 text-sm font-semibold font-mono">
+                                    Ver projeto
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card footer -->
+                        <div class="p-4 flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 mb-0.5 truncate">Fintech</p>
+                                <h3 class="text-sm font-semibold text-white leading-snug truncate">API Gateway — Fintech Regional</h3>
+                            </div>
+                            <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Web &amp; Sistemas
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="bg-green-600 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Tem um projeto em mente?
+                </h2>
+                <p class="text-green-50 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                    Vamos conversar sobre como podemos transformar sua ideia em algo visualmente memorável ou tecnicamente robusto.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                       class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                        Falar com a gente
+                    </a>
+                    <a href="services.html"
+                       class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                        Ver serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY FILTER SCRIPT -->
+    <script>
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const cat = btn.dataset.filter;
+
+                // Update button states
+                document.querySelectorAll('[data-filter]').forEach(b => {
+                    b.classList.remove('active-filter', 'bg-green-600', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                btn.classList.add('active-filter', 'bg-green-600', 'text-white', 'shadow-sm');
+                btn.classList.remove('bg-slate-100', 'text-slate-600');
+
+                // Filter cards
+                document.querySelectorAll('[data-category]').forEach(card => {
+                    const show = cat === 'all' || card.dataset.category === cat;
+                    card.style.display = show ? '' : 'none';
+                });
+
+                // Re-init Lucide icons (in case they appear in hidden cards)
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+        });
+    </script>
+
+</main>
+
+<!-- ──────────────────────────────────────────────
+     FOOTER
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   FOOTER — Multi-column footer + bottom bar (dark)
+   Inspired by Presento + charityhope bottom bar
+   Data keys: site.*, footer.description, .quick_links[],
+              .service_links[], .bottom_bar{}
+   ============================================================ -->
+<!-- Footer main -->
+<footer class="bg-[#0a0a0a] border-t border-slate-800/60">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Col 1: Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#hero" class="inline-block mb-4">
+          <img src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png" alt="Newstacktrace" class="h-10 w-auto" loading="lazy" />
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+          Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.
+        </p>
+        <div class="font-mono text-xs text-green-700 opacity-60">
+          <span>new Stacktrace();</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Navegação</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="index.html#products"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Contato
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Serviços</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Cloud &amp; Infraestrutura
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Desenvolvimento de Software
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Arquitetura de Soluções
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              IA Aplicada ao Negócio
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              DevOps &amp; Eficiência
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact summary -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Contato</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="mail" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="mailto:contato@newstacktrace.com" class="hover:text-green-400 transition-colors duration-200 break-all">contato@newstacktrace.com</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="phone" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="tel:+55 (41) 99890-0704" class="hover:text-green-400 transition-colors duration-200">+55 (41) 99890-0704</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <span>Pinhais, PR - Brasil</span>
+          </li>
+        </ul>
+        <!-- Social mini row -->
+        <div class="flex items-center gap-2 mt-5">
+          <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar — inspired by charityhope -->
+  <div class="border-t border-slate-800/60">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
+        <p class="text-slate-600 text-xs">
+          © 2025 Newstacktrace. Todos os direitos reservados.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Política de Privacidade
+          </a>
+          <a href="terms.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Termos de Uso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- ──────────────────────────────────────────────
+     SCRIPTS
+     ────────────────────────────────────────────── -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

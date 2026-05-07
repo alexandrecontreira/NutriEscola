@@ -1,0 +1,458 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github": "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter": "#"
+    }
+  },
+  "config": {
+    "show_clients": false,
+    "show_newsletter": false,
+    "show_products": true,
+    "show_pricing": true,
+    "show_portfolio": true,
+    "show_testimonials": true,
+    "show_contact": true
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",     "url": "index.html",     "active": false },
+      { "label": "Sobre",      "url": "about.html",         "active": false },
+      { "label": "Serviços",   "url": "services.html",      "active": false },
+      { "label": "Portfólio",  "url": "portfolio.html",     "active": false },
+      { "label": "Produtos",   "url": "products.html",      "active": false },
+      { "label": "Contato",    "url": "contact.html",       "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "#contact" }
+  },
+  "hero": {
+    "slides": [
+      {
+        "id": "slide-1",
+        "active": true,
+        "eyebrow": "Consultoria & Arquitetura",
+        "title": "Transforme sua operação com tecnologia que funciona.",
+        "subtitle": "Da estratégia à execução: arquitetamos soluções robustas, desenvolvemos software sob medida e modernizamos sistemas legados para empresas que precisam crescer.",
+        "cta_primary":   { "label": "Ver serviços",          "url": "#services" },
+        "cta_secondary": { "label": "Falar com especialista", "url": "#contact"  }
+      },
+      {
+        "id": "slide-2",
+        "active": false,
+        "eyebrow": "Desenvolvimento de Software",
+        "title": "Do conceito ao produto: software que escala com o seu negócio.",
+        "subtitle": "APIs, sistemas distribuídos, plataformas web e integrações complexas — entregamos código limpo, testável e preparado para o futuro.",
+        "cta_primary":   { "label": "Ver portfólio",       "url": "#portfolio" },
+        "cta_secondary": { "label": "Solicitar orçamento", "url": "#contact"   }
+      },
+      {
+        "id": "slide-3",
+        "active": false,
+        "eyebrow": "IA & Inovação",
+        "title": "Inteligência artificial como diferencial estratégico real.",
+        "subtitle": "Integramos IA generativa, RAG e automação inteligente no core do seu negócio — reduzindo custos, acelerando decisões e criando vantagem competitiva.",
+        "cta_primary":   { "label": "Explorar soluções de IA", "url": "#services" },
+        "cta_secondary": { "label": "Agendar conversa",         "url": "#contact"  }
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Sobre a Newstacktrace",
+    "title": "Tecnologia séria. Entrega real. Parceria de longo prazo.",
+    "body": "Nascemos da combinação entre experiência técnica profunda e visão estratégica de produto. Atendemos desde startups em crescimento até empresas consolidadas que precisam modernizar sua operação.",
+    "body2": "Não somos uma software house genérica. Somos parceiros de tecnologia que entendem o seu negócio antes de escrever a primeira linha de código.",
+    "cta": { "label": "Conheça nossa história", "url": "about.html" },
+    "stats": [
+      { "value": "10+", "label": "Anos de experiência"  },
+      { "value": "50+", "label": "Projetos entregues"   },
+      { "value": "15+", "label": "Clientes ativos"      },
+      { "value": "3",   "label": "Produtos em construção" }
+    ],
+    "founder": {
+      "name": "Anderson Contreira",
+      "role": "Founder & Principal Engineer",
+      "bio": "Arquiteto de Software e Soluções com background em TI desde 2008 e mais de 6 anos de liderança técnica em ambientes ágeis. Especializado em arquiteturas distribuídas, cloud nativa (AWS 8+ anos, GCP 2+ anos) e sistemas baseados em IA — incluindo pipelines RAG, LLMs e automação inteligente.",
+      "photo": "assets/img/team/founder.jpg",
+      "linkedin": "https://linkedin.com/in/andersoncontreira"
+    }
+  },
+  "clients": {
+    "eyebrow": "Empresas que confiam",
+    "title": "Parceiros e clientes que já transformaram seus negócios.",
+    "items": [
+      { "name": "Cliente 1", "logo": "assets/img/clients/client-1.png" },
+      { "name": "Cliente 2", "logo": "assets/img/clients/client-2.png" },
+      { "name": "Cliente 3", "logo": "assets/img/clients/client-3.png" },
+      { "name": "Cliente 4", "logo": "assets/img/clients/client-4.png" },
+      { "name": "Cliente 5", "logo": "assets/img/clients/client-5.png" },
+      { "name": "Cliente 6", "logo": "assets/img/clients/client-6.png" }
+    ]
+  },
+  "services": {
+    "eyebrow": "O que fazemos",
+    "title": "Soluções de tecnologia para cada etapa do seu crescimento.",
+    "subtitle": "Do diagnóstico técnico ao produto em produção — cobrimos todo o ciclo com profundidade e foco em resultado.",
+    "items": [
+      {
+        "icon": "cloud",
+        "title": "Cloud & Infraestrutura",
+        "description": "Arquitetura, migração e otimização de ambientes em AWS e GCP. Custos sob controle, disponibilidade garantida e escalabilidade real.",
+        "tags": ["AWS", "GCP", "Terraform"],
+        "url": "#contact"
+      },
+      {
+        "icon": "code-2",
+        "title": "Desenvolvimento de Software",
+        "description": "Backend, APIs, sistemas distribuídos e integrações. Código robusto, documentado e preparado para escalar sem criar dívida técnica.",
+        "tags": ["Python", "Node.js", "Go"],
+        "url": "#contact"
+      },
+      {
+        "icon": "layers",
+        "title": "Arquitetura de Soluções",
+        "description": "Design de sistemas escaláveis, revisão técnica de arquitetura existente e roadmap tecnológico alinhado ao negócio e ao orçamento.",
+        "tags": ["Microsserviços", "DDD", "Clean Arch"],
+        "url": "#contact"
+      },
+      {
+        "icon": "refresh-cw",
+        "title": "Modernização de Sistemas",
+        "description": "Transformação de sistemas legados em plataformas modernas, sem interromper a operação. Migração incremental, segura e documentada.",
+        "tags": ["Refatoração", "Migração", "APIs"],
+        "url": "#contact"
+      },
+      {
+        "icon": "bot",
+        "title": "IA Aplicada ao Negócio",
+        "description": "Integração de LLMs, RAG, chatbots e automação inteligente para reduzir custos operacionais, melhorar atendimento e acelerar decisões.",
+        "tags": ["LLM", "RAG", "OpenAI"],
+        "url": "#contact"
+      },
+      {
+        "icon": "settings-2",
+        "title": "DevOps & Eficiência",
+        "description": "Pipelines de CI/CD, observabilidade, containerização e cultura DevOps para times que precisam entregar mais, com mais confiança.",
+        "tags": ["Docker", "Kubernetes", "CI/CD"],
+        "url": "#contact"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Por que a Newstacktrace?",
+    "title": "Experiência real em projetos complexos.",
+    "subtitle": "Não oferecemos receitas prontas. Cada projeto começa com entendimento profundo do seu contexto técnico e de negócio.",
+    "differentials": [
+      {
+        "icon": "target",
+        "title": "Foco em resultado, não em horas",
+        "description": "Trabalhamos orientados a entregáveis claros e métricas de impacto real no seu negócio — não em relatórios de horas trabalhadas."
+      },
+      {
+        "icon": "layers",
+        "title": "Visão técnica e estratégica",
+        "description": "Unimos profundidade de engenharia com entendimento de produto e mercado. A solução técnica serve ao negócio, não o contrário."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Qualidade sem atalhos",
+        "description": "Código testado, documentado e revisado. Sem gambiarras que viram dívida técnica e dor de cabeça mais pra frente."
+      },
+      {
+        "icon": "handshake",
+        "title": "Parceria de longo prazo",
+        "description": "Preferimos relações duradouras a projetos pontuais. Queremos entender seu negócio e crescer junto com você."
+      }
+    ],
+    "cta_primary":   { "label": "Solicitar diagnóstico gratuito", "url": "#contact" },
+    "cta_secondary": { "label": "Ver portfólio",                  "url": "#portfolio" }
+  },
+  "portfolio": {
+    "eyebrow": "Portfólio",
+    "title": "Projetos que falam por si.",
+    "subtitle": "Uma seleção de trabalhos que mostram nossa capacidade técnica e amplitude de atuação.",
+    "items": [
+      {
+        "title": "Plataforma SaaS para gestão de comunidades",
+        "category": "Produto Digital",
+        "category_class": "bg-green-900/50 text-green-400",
+        "description": "Arquitetura multi-tenant, módulos configuráveis e painel administrativo completo para gestão de grupos terapêuticos e ONGs.",
+        "tags": ["Python", "React", "AWS"],
+        "image": "assets/img/portfolio/project-1.jpg",
+        "url": "#"
+      },
+      {
+        "title": "API Gateway para fintech regional",
+        "category": "Arquitetura",
+        "category_class": "bg-blue-900/50 text-blue-400",
+        "description": "Redesenho completo da camada de APIs com autenticação OAuth2, rate limiting, cache distribuído e monitoramento em tempo real.",
+        "tags": ["Node.js", "Kong", "PostgreSQL"],
+        "image": "assets/img/portfolio/project-2.jpg",
+        "url": "#"
+      },
+      {
+        "title": "Migração de monolito para microsserviços",
+        "category": "Modernização",
+        "category_class": "bg-yellow-900/50 text-yellow-400",
+        "description": "Decomposição incremental de sistema legado em PHP para arquitetura de microsserviços com Go e mensageria via RabbitMQ.",
+        "tags": ["Go", "RabbitMQ", "Docker"],
+        "image": "assets/img/portfolio/project-3.jpg",
+        "url": "#"
+      },
+      {
+        "title": "Assistente IA para atendimento ao cliente",
+        "category": "IA Aplicada",
+        "category_class": "bg-purple-900/50 text-purple-400",
+        "description": "Chatbot com RAG conectado à base de conhecimento da empresa, integrando WhatsApp, Telegram e portal web com fallback humano.",
+        "tags": ["Python", "LangChain", "OpenAI"],
+        "image": "assets/img/portfolio/project-4.jpg",
+        "url": "#"
+      },
+      {
+        "title": "Site institucional com CMS headless",
+        "category": "Web Development",
+        "category_class": "bg-cyan-900/50 text-cyan-400",
+        "description": "Site performático com Next.js e CMS headless, deploy na Vercel com CDN global e score 99 no Lighthouse.",
+        "tags": ["Next.js", "Contentful", "Vercel"],
+        "image": "assets/img/portfolio/project-5.jpg",
+        "url": "#"
+      },
+      {
+        "title": "Dashboard de observabilidade cloud",
+        "category": "DevOps",
+        "category_class": "bg-orange-900/50 text-orange-400",
+        "description": "Stack completa de observabilidade com Prometheus, Grafana e alertas inteligentes para infraestrutura multi-cloud crítica.",
+        "tags": ["Grafana", "Prometheus", "AWS"],
+        "image": "assets/img/portfolio/project-6.jpg",
+        "url": "#"
+      }
+    ],
+    "cta": { "label": "Ver todos os projetos", "url": "portfolio.html" }
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos",
+    "title": "O que dizem nossos clientes.",
+    "items": [
+      {
+        "name": "Rodrigo Mendes",
+        "role": "CTO",
+        "company": "TechScale",
+        "photo": "assets/img/testimonials/person-1.jpg",
+        "quote": "A Newstacktrace chegou num momento crítico em que nossa plataforma não aguentava mais o crescimento. Em 3 meses, reformulamos a arquitetura inteira sem parar o negócio. Resultado impressionante."
+      },
+      {
+        "name": "Fernanda Castro",
+        "role": "Diretora de Operações",
+        "company": "InovaLogis",
+        "photo": "assets/img/testimonials/person-2.jpg",
+        "quote": "O que mais me surpreendeu foi a capacidade de entender nossa operação antes de propor qualquer solução. Parecia que eram parte do time, não fornecedores externos. Relação completamente diferente."
+      },
+      {
+        "name": "Lucas Alves",
+        "role": "Founder",
+        "company": "Startio",
+        "photo": "assets/img/testimonials/person-3.jpg",
+        "quote": "Contratamos para um projeto de IA e acabamos revisando toda a stack tecnológica. A visão estratégica deles fez diferença real na nossa próxima rodada de investimento."
+      }
+    ]
+  },
+  "products": {
+    "eyebrow": "Produtos",
+    "title": "Soluções que estamos construindo.",
+    "subtitle": "Além dos serviços, desenvolvemos produtos próprios que nascem da nossa experiência com clientes reais.",
+    "items": [
+      {
+        "name": "CareStack",
+        "tagline": "Gestão inteligente para comunidades terapêuticas",
+        "description": "Plataforma SaaS completa para gestão de residências terapêuticas, ONGs e comunidades de suporte. Controle de internos, relatórios, financeiro e comunicação em um único sistema.",
+        "icon": "heart-pulse",
+        "status_label": "Beta privado",
+        "status_class": "bg-green-900/50 text-green-400 border border-green-700/40",
+        "is_available": true,
+        "tags": ["SaaS", "Saúde", "ONGs"],
+        "url": "#contact",
+        "cta": "Quero ser beta tester"
+      },
+      {
+        "name": "Nexus AI",
+        "tagline": "IA conversacional para pequenas empresas",
+        "description": "Assistente inteligente treinado com o conhecimento do seu negócio. Atende clientes, qualifica leads e responde dúvidas no WhatsApp, site ou app — sem código.",
+        "icon": "message-square-code",
+        "status_label": "Em breve",
+        "status_class": "bg-yellow-900/50 text-yellow-400 border border-yellow-700/40",
+        "is_available": false,
+        "tags": ["IA", "SaaS", "Atendimento"],
+        "url": "#contact",
+        "cta": "Entrar na lista de espera"
+      },
+      {
+        "name": "DevLaunch",
+        "tagline": "Boilerplate + infraestrutura para times de produto",
+        "description": "Kit de inicialização para projetos de software com toda a infraestrutura já configurada: CI/CD, observabilidade, autenticação, multi-tenancy e documentação.",
+        "icon": "rocket",
+        "status_label": "Planejado",
+        "status_class": "bg-slate-700/50 text-slate-400 border border-slate-600/40",
+        "is_available": false,
+        "tags": ["Dev Tools", "Templates", "Cloud"],
+        "url": "#contact",
+        "cta": "Acompanhar desenvolvimento"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Planos & Preços",
+    "title": "Transparência em cada proposta.",
+    "subtitle": "Cada negócio é único. Nossos modelos de precificação se adaptam ao que faz mais sentido para você.",
+    "tab_groups": [
+      {
+        "id": "services",
+        "label": "Serviços sob medida",
+        "active": true,
+        "plans": [
+          {
+            "name": "Diagnóstico",
+            "price": "Gratuito",
+            "price_note": "1 sessão de 1h",
+            "is_highlight": false,
+            "description": "Entenda os pontos críticos da sua operação tecnológica sem comprometer nenhum real.",
+            "features": [
+              { "text": "Análise do cenário atual"    },
+              { "text": "Identificação de gargalos"   },
+              { "text": "Recomendações iniciais"      },
+              { "text": "Relatório resumido"          }
+            ],
+            "cta_label": "Agendar agora",
+            "cta_url": "#contact"
+          },
+          {
+            "name": "Projeto",
+            "price": "Sob consulta",
+            "price_note": "por projeto",
+            "is_highlight": true,
+            "description": "Desenvolvimento, arquitetura ou modernização com escopo definido, entrega incremental e acompanhamento próximo.",
+            "features": [
+              { "text": "Escopo detalhado"        },
+              { "text": "Sprints quinzenais"       },
+              { "text": "Code reviews incluídos"  },
+              { "text": "Documentação técnica"    },
+              { "text": "Suporte pós-entrega"     }
+            ],
+            "cta_label": "Solicitar proposta",
+            "cta_url": "#contact"
+          },
+          {
+            "name": "Squad Dedicado",
+            "price": "A partir de R$ 8.000",
+            "price_note": "por mês",
+            "is_highlight": false,
+            "description": "Time técnico alocado no seu produto, com planejamento ágil, entregas contínuas e integração total com seu time.",
+            "features": [
+              { "text": "1 a 3 engenheiros dedicados" },
+              { "text": "Tech Lead incluso"           },
+              { "text": "Rituais ágeis"              },
+              { "text": "Relatórios mensais"         },
+              { "text": "Revisão de arquitetura"     }
+            ],
+            "cta_label": "Montar meu squad",
+            "cta_url": "#contact"
+          }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "label": "Suporte & Manutenção",
+        "active": false,
+        "plans": [
+          {
+            "name": "Essencial",
+            "price": "R$ 1.500",
+            "price_note": "por mês",
+            "is_highlight": false,
+            "description": "Manutenção básica para sistemas em produção sem grandes mudanças previstas.",
+            "features": [
+              { "text": "Monitoramento de erros"          },
+              { "text": "Atualizações de segurança"       },
+              { "text": "Até 8h de intervenção/mês"      },
+              { "text": "Suporte via email"              }
+            ],
+            "cta_label": "Contratar",
+            "cta_url": "#contact"
+          },
+          {
+            "name": "Profissional",
+            "price": "R$ 3.500",
+            "price_note": "por mês",
+            "is_highlight": true,
+            "description": "Suporte ativo, melhorias contínuas e disponibilidade prioritária para emergências.",
+            "features": [
+              { "text": "Tudo do Essencial"          },
+              { "text": "Até 20h de desenvolvimento" },
+              { "text": "Suporte prioritário"        },
+              { "text": "Relatório mensal"           },
+              { "text": "SLA de resposta"            }
+            ],
+            "cta_label": "Contratar",
+            "cta_url": "#contact"
+          },
+          {
+            "name": "Enterprise",
+            "price": "Sob consulta",
+            "price_note": "personalizado",
+            "is_highlight": false,
+            "description": "Para operações críticas que precisam de disponibilidade garantida e SLA customizado.",
+            "features": [
+              { "text": "Horas ilimitadas"    },
+              { "text": "SLA customizado"     },
+              { "text": "Gestor dedicado"     },
+              { "text": "Reuniões semanais"   },
+              { "text": "Evolução contínua"   }
+            ],
+            "cta_label": "Falar com comercial",
+            "cta_url": "#contact"
+          }
+        ]
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Fique por dentro das novidades",
+    "subtitle": "Conteúdo sobre tecnologia, arquitetura e produto — sem spam.",
+    "placeholder": "Seu melhor e-mail",
+    "cta": "Inscrever-se"
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",     "url": "#hero"      },
+      { "label": "Sobre",      "url": "#about"     },
+      { "label": "Serviços",   "url": "#services"  },
+      { "label": "Portfólio",  "url": "#portfolio" },
+      { "label": "Produtos",   "url": "#products"  },
+      { "label": "Contato",    "url": "#contact"   }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",    "url": "#services" },
+      { "label": "Desenvolvimento de Software","url": "#services" },
+      { "label": "Arquitetura de Soluções",   "url": "#services" },
+      { "label": "IA Aplicada ao Negócio",    "url": "#services" },
+      { "label": "DevOps & Eficiência",       "url": "#services" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

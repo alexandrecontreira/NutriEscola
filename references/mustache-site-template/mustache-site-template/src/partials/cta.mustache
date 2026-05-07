@@ -1,0 +1,76 @@
+<!-- ============================================================
+   CTA / WHY CHOOSE US — Differentials + contact incentive
+   Inspired by KnightOne CTA + Startup2 "Why choose us"
+   Data keys: cta.eyebrow, .title, .subtitle, .differentials[],
+              .cta_primary, .cta_secondary
+   ============================================================ -->
+<section id="why-us" class="py-20 lg:py-28 bg-[#0a2010] relative overflow-hidden">
+
+  <!-- Background decoration -->
+  <div class="absolute inset-0 hero-grid-pattern opacity-20 pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-green-600/8 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+    <!-- Grid: Left content + Right differentials -->
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+
+      <!-- Left: Heading + CTAs -->
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+          <span class="text-green-500">>://</span>
+          <span>{{cta.eyebrow}}</span>
+        </div>
+        <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-4">
+          {{cta.title}}
+        </h2>
+        <p class="text-green-200/60 text-base lg:text-lg leading-relaxed mb-10">
+          {{cta.subtitle}}
+        </p>
+
+        <!-- Terminal-style quote -->
+        <div class="bg-black/30 border border-green-900/40 rounded-xl p-5 mb-8 font-mono text-sm">
+          <div class="flex items-start gap-2 text-slate-300">
+            <span class="text-green-500 flex-shrink-0">❯</span>
+            <div>
+              <span class="text-slate-500">const</span> partner
+              <span class="text-slate-500"> = await</span> findTech<span class="text-slate-400">(</span><span class="text-green-300">"trusted"</span><span class="text-slate-400">)</span>
+            </div>
+          </div>
+          <div class="pl-5 mt-2 text-slate-400">
+            partner <span class="text-slate-600">=</span> <span class="text-green-300">Newstacktrace</span>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="{{cta.cta_primary.url}}"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-green-900/50 hover:-translate-y-0.5">
+            {{cta.cta_primary.label}}
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="{{cta.cta_secondary.url}}"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-green-600/30 hover:border-green-500/50 text-green-100 font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5">
+            {{cta.cta_secondary.label}}
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Differentials list -->
+      <div class="space-y-4 reveal">
+        {{#cta.differentials}}
+        <div class="flex gap-4 p-5 bg-black/20 hover:bg-black/30 border border-green-900/30 hover:border-green-700/40 rounded-xl transition-all duration-200 group">
+          <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-green-600/15 border border-green-600/25 rounded-lg group-hover:bg-green-600/25 transition-all duration-200">
+            <i data-lucide="{{icon}}" class="w-5 h-5 text-green-400"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold text-base mb-1">{{title}}</h3>
+            <p class="text-green-200/50 text-sm leading-relaxed">{{description}}</p>
+          </div>
+        </div>
+        {{/cta.differentials}}
+      </div>
+
+    </div>
+  </div>
+</section>

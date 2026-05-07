@@ -1,0 +1,226 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github":   "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter":  "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",     "active": false },
+      { "label": "Sobre",     "url": "about.html",     "active": false },
+      { "label": "Serviços",  "url": "services.html",  "active": false },
+      { "label": "Portfólio", "url": "portfolio.html", "active": false },
+      { "label": "Produtos",  "url": "products.html",  "active": true  },
+      { "label": "Contato",   "url": "contact.html",   "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home":     { "label": "Início",   "url": "index.html"    },
+      "products": { "label": "Produtos", "url": "products.html" },
+      "current":  "CareStack"
+    },
+    "hero": {
+      "eyebrow":  "Produto",
+      "title":    "CareStack",
+      "subtitle": "Plataforma SaaS completa para gestão de ONGs, fundações e comunidades terapêuticas — do financeiro ao relacionamento com doadores e voluntários."
+    }
+  },
+  "product": {
+    "slug":          "carestack",
+    "name":          "CareStack",
+    "tagline":       "Gestão inteligente para ONGs e comunidades terapêuticas",
+    "icon":          "heart-pulse",
+    "category":      "SaaS",
+    "category_id":   "saas",
+    "status_label":  "Beta privado",
+    "status_class":  "bg-green-900/50 text-green-400 border border-green-700/40",
+    "tags":          ["SaaS", "Saúde", "ONGs", "React", "AWS"],
+
+    "summary": "O CareStack é uma plataforma SaaS desenvolvida para simplificar a operação de organizações do terceiro setor. Nasce da experiência real com a IMAS — organização de saúde e bem-estar — e resolve de forma integrada os desafios de gestão financeira, coordenação de voluntários, relacionamento com doadores e controle administrativo.",
+
+    "demo_areas": [
+      {
+        "label":       "Site público",
+        "description": "Portal institucional da organização",
+        "url":         "https://d17tcp7qjhyw03.cloudfront.net/",
+        "icon":        "globe"
+      },
+      {
+        "label":       "Área Admin",
+        "description": "Painel de controle administrativo",
+        "url":         "https://d17tcp7qjhyw03.cloudfront.net/admin",
+        "icon":        "layout-dashboard"
+      },
+      {
+        "label":       "Área do Voluntário",
+        "description": "Portal exclusivo para voluntários",
+        "url":         "https://d17tcp7qjhyw03.cloudfront.net/area-voluntario",
+        "icon":        "users"
+      },
+      {
+        "label":       "Área do Doador",
+        "description": "Espaço personalizado para doadores",
+        "url":         "https://d17tcp7qjhyw03.cloudfront.net/area-doador",
+        "icon":        "heart"
+      }
+    ],
+
+    "modules": [
+      {
+        "title": "Gestão Financeira",
+        "icon":  "wallet",
+        "items": [
+          "Controle de receitas, despesas e fluxo de caixa",
+          "Gestão de orçamentos por projeto ou campanha",
+          "Relatórios financeiros para prestação de contas",
+          "Conciliação com extratos e comprovantes",
+          "Alertas de vencimento e metas financeiras"
+        ]
+      },
+      {
+        "title": "Gestão de Voluntários",
+        "icon":  "users",
+        "items": [
+          "Cadastro e perfil de cada voluntário",
+          "Controle de horas e atividades realizadas",
+          "Escala e agendamento de turnos",
+          "Portal exclusivo para acesso e atualização de dados",
+          "Comunicação direta via plataforma"
+        ]
+      },
+      {
+        "title": "Gestão de Doadores",
+        "icon":  "heart",
+        "items": [
+          "Cadastro e histórico completo de cada doador",
+          "Acompanhamento de doações recorrentes e avulsas",
+          "Portal do doador com transparência de impacto",
+          "Relatórios de captação e recorrência",
+          "Campanhas e comunicados segmentados"
+        ]
+      },
+      {
+        "title": "Orçamentos & Projetos",
+        "icon":  "file-text",
+        "items": [
+          "Criação e gestão de orçamentos por projeto",
+          "Controle de aprovações e revisões",
+          "Vinculação de despesas a projetos específicos",
+          "Acompanhamento de execução versus planejado",
+          "Exportação para prestação de contas"
+        ]
+      },
+      {
+        "title": "Painel Administrativo",
+        "icon":  "layout-dashboard",
+        "items": [
+          "Dashboard com indicadores em tempo real",
+          "Gestão de usuários e permissões por perfil",
+          "Configurações institucionais e de marca",
+          "Logs de auditoria de ações críticas",
+          "Gerenciamento de conteúdo do site público"
+        ]
+      },
+      {
+        "title": "Relatórios & Transparência",
+        "icon":  "bar-chart-2",
+        "items": [
+          "Relatórios customizáveis para órgãos reguladores",
+          "Exportação em PDF e Excel",
+          "Painel público de transparência institucional",
+          "Indicadores de impacto social",
+          "Histórico auditável de todas as operações"
+        ]
+      }
+    ],
+
+    "for_who": [
+      { "label": "ONGs e associações",        "icon": "building-2"  },
+      { "label": "Comunidades terapêuticas",  "icon": "heart-pulse" },
+      { "label": "Fundações",                 "icon": "landmark"    },
+      { "label": "Institutos sociais",        "icon": "users"       }
+    ],
+
+    "tech_stack": [
+      {
+        "layer": "Frontend",
+        "items": ["React", "TypeScript", "Tailwind CSS", "Vite"]
+      },
+      {
+        "layer": "Backend",
+        "items": ["Node.js", "AWS Lambda", "API Gateway", "JWT"]
+      },
+      {
+        "layer": "Infra & Dados",
+        "items": ["AWS S3", "CloudFront", "RDS PostgreSQL", "Terraform"]
+      }
+    ],
+
+    "benefits": [
+      "Redução de até 70% no tempo gasto em processos administrativos manuais",
+      "Prestação de contas simplificada com relatórios automatizados",
+      "Maior engajamento de voluntários com portal dedicado e comunicação integrada",
+      "Transparência para doadores com portal de impacto e histórico de contribuições",
+      "Controle financeiro centralizado eliminando planilhas e processos fragmentados",
+      "Infraestrutura cloud escalável com custo proporcional ao uso real"
+    ],
+
+    "related_products": [
+      {
+        "slug":         "nexus-ai",
+        "name":         "Nexus AI",
+        "tagline":      "IA conversacional para pequenas empresas",
+        "icon":         "message-square-code",
+        "status_label": "Em breve",
+        "url":          "product-detail.html"
+      },
+      {
+        "slug":         "devlaunch",
+        "name":         "DevLaunch",
+        "tagline":      "Boilerplate + infraestrutura para times de produto",
+        "icon":         "rocket",
+        "status_label": "Planejado",
+        "url":          "product-detail.html"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",    "url": "index.html"    },
+      { "label": "Sobre",     "url": "about.html"    },
+      { "label": "Serviços",  "url": "services.html" },
+      { "label": "Portfólio", "url": "portfolio.html" },
+      { "label": "Produtos",  "url": "products.html" },
+      { "label": "Contato",   "url": "contact.html"  }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "services.html" },
+      { "label": "Desenvolvimento de Software", "url": "services.html" },
+      { "label": "Arquitetura de Soluções",     "url": "services.html" },
+      { "label": "IA Aplicada ao Negócio",      "url": "services.html" },
+      { "label": "DevOps & Eficiência",         "url": "services.html" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

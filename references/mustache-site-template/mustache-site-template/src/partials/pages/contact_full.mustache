@@ -1,0 +1,185 @@
+<!-- ============================================================
+   CONTACT FULL (Page) — Info + inline mini-form (dark)
+   Data keys: site.email, .phone, .address, .social.*
+   ============================================================ -->
+<section id="contact" class="py-20 lg:py-28 bg-slate-900">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-5 gap-12 xl:gap-20 items-start">
+
+            <!-- Left col: Contact info (2/5) -->
+            <div class="lg:col-span-2 reveal">
+
+                <!-- Direct contact -->
+                <h2 class="text-xl font-semibold text-white mb-6">Informações de contato</h2>
+                <div class="space-y-4 mb-10">
+                    <a href="mailto:{{site.email}}"
+                       class="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors duration-200 group">
+                        <div class="w-11 h-11 flex items-center justify-center bg-green-600/10 border border-green-600/20 rounded-lg group-hover:bg-green-600/20 transition-all duration-200 flex-shrink-0">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-0.5">E-mail</p>
+                            <span class="text-sm">{{site.email}}</span>
+                        </div>
+                    </a>
+                    <a href="tel:{{site.phone}}"
+                       class="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors duration-200 group">
+                        <div class="w-11 h-11 flex items-center justify-center bg-green-600/10 border border-green-600/20 rounded-lg group-hover:bg-green-600/20 transition-all duration-200 flex-shrink-0">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-0.5">Telefone / WhatsApp</p>
+                            <span class="text-sm">{{site.phone}}</span>
+                        </div>
+                    </a>
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <div class="w-11 h-11 flex items-center justify-center bg-slate-800 border border-slate-700 rounded-lg flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-slate-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-0.5">Localização</p>
+                            <span class="text-sm">{{site.address}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business hours -->
+                <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-5 mb-10">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="clock" class="w-4 h-4 text-green-500"></i>
+                        <h3 class="text-white text-sm font-semibold">Horário de atendimento</h3>
+                    </div>
+                    <ul class="space-y-1.5 text-sm text-slate-400">
+                        <li class="flex justify-between">
+                            <span>Segunda — Sexta</span>
+                            <span class="text-slate-300">9h às 18h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábado</span>
+                            <span class="text-slate-300">9h às 13h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo</span>
+                            <span class="text-slate-500">Fechado</span>
+                        </li>
+                    </ul>
+                    <p class="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-700/50">
+                        Respondemos e-mails em até 24h úteis.
+                    </p>
+                </div>
+
+                <!-- Social links -->
+                <h3 class="text-slate-400 text-sm mb-3">Nos siga nas redes</h3>
+                <div class="flex items-center gap-3">
+                    <a href="{{site.social.linkedin}}" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                       aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="{{site.social.github}}" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                       aria-label="GitHub">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                    <a href="{{site.social.instagram}}" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                       aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="{{site.social.twitter}}" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                       aria-label="Twitter / X">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right col: Full contact form (3/5) -->
+            <div class="lg:col-span-3 reveal">
+                <h2 class="text-xl font-semibold text-white mb-6">Envie sua mensagem</h2>
+                <form class="space-y-5 bg-slate-800/40 border border-slate-700/50 rounded-2xl p-7 lg:p-9" novalidate>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="contact-name" class="block text-slate-300 text-sm font-medium mb-1.5">Nome <span class="text-green-500">*</span></label>
+                            <input id="contact-name" type="text" name="name" placeholder="Seu nome completo"
+                                   class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block text-slate-300 text-sm font-medium mb-1.5">E-mail <span class="text-green-500">*</span></label>
+                            <input id="contact-email" type="email" name="email" placeholder="seu@email.com"
+                                   class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="contact-phone" class="block text-slate-300 text-sm font-medium mb-1.5">Telefone <span class="text-slate-500 font-normal">(opcional)</span></label>
+                            <input id="contact-phone" type="tel" name="phone" placeholder="+55 (11) 9 0000-0000"
+                                   class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                        </div>
+                        <div>
+                            <label for="contact-company" class="block text-slate-300 text-sm font-medium mb-1.5">Empresa <span class="text-slate-500 font-normal">(opcional)</span></label>
+                            <input id="contact-company" type="text" name="company" placeholder="Nome da empresa"
+                                   class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="contact-subject" class="block text-slate-300 text-sm font-medium mb-1.5">Assunto <span class="text-green-500">*</span></label>
+                        <select id="contact-subject" name="subject"
+                                class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-slate-300 rounded-lg outline-none transition-all duration-200 text-sm appearance-none cursor-pointer">
+                            <option value="" disabled selected>Selecione o assunto...</option>
+                            <option value="consultoria">Consultoria técnica</option>
+                            <option value="desenvolvimento">Desenvolvimento de software</option>
+                            <option value="arquitetura">Arquitetura de solução</option>
+                            <option value="ia">IA aplicada ao negócio</option>
+                            <option value="produto">Parceria em produto</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="contact-budget" class="block text-slate-300 text-sm font-medium mb-1.5">Orçamento estimado <span class="text-slate-500 font-normal">(opcional)</span></label>
+                        <select id="contact-budget" name="budget"
+                                class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-slate-300 rounded-lg outline-none transition-all duration-200 text-sm appearance-none cursor-pointer">
+                            <option value="" disabled selected>Selecione uma faixa...</option>
+                            <option value="ate5k">Até R$ 5.000</option>
+                            <option value="5k-15k">R$ 5.000 — R$ 15.000</option>
+                            <option value="15k-50k">R$ 15.000 — R$ 50.000</option>
+                            <option value="50k+">Acima de R$ 50.000</option>
+                            <option value="indefinido">Ainda não sei</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="contact-message" class="block text-slate-300 text-sm font-medium mb-1.5">Mensagem <span class="text-green-500">*</span></label>
+                        <textarea id="contact-message" name="message" rows="5"
+                                  placeholder="Descreva seu desafio, projeto ou dúvida. Quanto mais detalhes, melhor conseguimos te ajudar..."
+                                  class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm resize-none"></textarea>
+                    </div>
+
+                    <!-- Privacy consent -->
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" name="consent" id="contact-consent"
+                               class="mt-0.5 w-4 h-4 accent-green-500 flex-shrink-0 cursor-pointer" />
+                        <span class="text-slate-400 text-xs leading-relaxed">
+                  Concordo com a <a href="#" class="text-green-400 hover:text-green-300 underline underline-offset-2">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno de contato.
+                </span>
+                    </label>
+
+                    <button type="submit"
+                            class="w-full py-3.5 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-green-900/30 flex items-center justify-center gap-2 text-sm">
+                        Enviar mensagem
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+
+                    <p class="text-slate-500 text-xs text-center">
+                        Campos marcados com <span class="text-green-500">*</span> são obrigatórios. Respondemos em até 24h úteis.
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

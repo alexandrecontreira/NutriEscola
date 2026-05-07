@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{site.description}}" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="{{site.company_name}} — {{site.tagline}}" />
+  <meta property="og:description" content="{{site.description}}" />
+  <meta property="og:type"        content="website" />
+
+  <title>{{site.company_name}} — {{site.tagline}}</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Lucide Icons (lightweight SVG icon library) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+  <!-- ──────────────────────────────────────────────
+       TOPBAR  (email · phone · social)
+       ────────────────────────────────────────────── -->
+  {{> partials/public/common/topbar}}
+
+  <!-- ──────────────────────────────────────────────
+       HEADER  (logo · nav · CTA)
+       Sticky, transparent until scroll
+       ────────────────────────────────────────────── -->
+  {{> partials/public/common/header}}
+
+  <!-- ──────────────────────────────────────────────
+       MAIN CONTENT
+       ────────────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- 1. HERO (dark) — slider with 3 slides -->
+    {{> hero}}
+
+    <!-- 2. ABOUT (light) — company + founder -->
+    {{> about}}
+
+    <!-- 3. CLIENTS (gray-50) — conditional: config.show_clients -->
+    {{#config.show_clients}}
+    {{> clients}}
+    {{/config.show_clients}}
+
+    <!-- 4. SERVICES (dark) — service cards grid -->
+    {{> services}}
+
+    <!-- 5. CTA / WHY US (dark green) — differentials -->
+    {{> cta}}
+
+    <!-- 6. PORTFOLIO (light) — conditional: config.show_portfolio -->
+    {{#config.show_portfolio}}
+    {{> portfolio}}
+    {{/config.show_portfolio}}
+
+    <!-- 7. TESTIMONIALS (gray-50) — conditional: config.show_testimonials -->
+    {{#config.show_testimonials}}
+    {{> testimonials}}
+    {{/config.show_testimonials}}
+
+    <!-- 8. PRODUCTS (dark) — conditional: config.show_products -->
+    {{#config.show_products}}
+    {{> products}}
+    {{/config.show_products}}
+
+    <!-- 9. PRICING (light) — conditional: config.show_pricing -->
+    {{#config.show_pricing}}
+    {{> pricing}}
+    {{/config.show_pricing}}
+
+    <!-- 10. NEWSLETTER (green) — conditional: config.show_newsletter -->
+    {{#config.show_newsletter}}
+    {{> newsletter}}
+    {{/config.show_newsletter}}
+
+    <!-- 11. CONTACT  -->
+    {{#config.show_contact}}
+    {{> contact}}
+    {{/config.show_contact}}
+
+  </main>
+
+  <!-- ──────────────────────────────────────────────
+       FOOTER  (contact section + links + bottom bar)
+       ────────────────────────────────────────────── -->
+  {{> partials/public/common/footer}}
+
+  <!-- ──────────────────────────────────────────────
+       SCRIPTS
+       ────────────────────────────────────────────── -->
+  <script src="assets/js/main.js"></script>
+
+  <!--
+    ════════════════════════════════════════════════
+    MIGRATION GUIDE: Mustache → React/Next.js
+    ════════════════════════════════════════════════
+
+    Each [> partial] maps 1:1 to a React component.
+    The data/home.json context maps to:
+    - Next.js: `export async function getStaticProps()`
+    - React:   a top-level Context provider or SWR/TanStack Query
+
+    PARTIAL → COMPONENT MAP:
+    ┌──────────────────────┬──────────────────────────────────────────┐
+    │ [> topbar]           │ <Topbar site={site} />                   │
+    │ [> header]           │ <Header site={site} nav={nav} />         │
+    │ [> hero]             │ <HeroSlider slides={hero.slides} />      │
+    │ [> about]            │ <About about={about} />                  │
+    │ [> clients]          │ <Clients items={clients.items} />        │
+    │ [> services]         │ <Services items={services.items} />      │
+    │ [> cta]              │ <CtaSection cta={cta} />                 │
+    │ [> portfolio]        │ <Portfolio items={portfolio.items} />    │
+    │ [> testimonials]     │ <Testimonials items={testimonials.items}/>│
+    │ [> products]         │ <Products items={products.items} />      │
+    │ [> pricing]          │ <Pricing tabGroups={pricing.tab_groups}/>│
+    │ [> newsletter]       │ <Newsletter data={newsletter} />         │
+    │ [> footer]           │ <Footer site={site} footer={footer} />   │
+    └──────────────────────┴──────────────────────────────────────────┘
+
+    MUSTACHE FLAGS → REACT:
+      [#config.show_clients]…[/config.show_clients]
+      ↓
+      {config.showClients && <Clients items={clients.items} />}
+
+    DATA (home.json) → PROPS:
+      In Next.js: data/home.json → getStaticProps → page props
+      In React SPA: import data from './data/home.json'
+  -->
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github":   "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter":  "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",     "active": false },
+      { "label": "Sobre",     "url": "about.html",     "active": false },
+      { "label": "Serviços",  "url": "services.html",  "active": false },
+      { "label": "Portfólio", "url": "portfolio.html", "active": true  },
+      { "label": "Produtos",  "url": "products.html",       "active": false },
+      { "label": "Contato",   "url": "contact.html",   "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home":      { "label": "Início",    "url": "index.html"     },
+      "parent":    { "label": "Portfólio", "url": "portfolio.html" },
+      "current":   "IMAS — Identidade Visual"
+    },
+    "hero": {
+      "eyebrow": "Identidade Visual",
+      "title":   "IMAS",
+      "subtitle": "Identidade visual completa com brand guidelines, template de apresentação institucional e pacote de posts para Instagram."
+    }
+  },
+  "portfolio_item": {
+    "slug":           "imas-identidade-visual",
+    "client":         "IMAS",
+    "category":       "Identidade Visual",
+    "category_id":    "identidade",
+    "year":           "2024",
+    "featured":       true,
+    "cover":          "assets/images/portfolio/imas/template-apresentacao.png",
+    "tags":           ["Identidade Visual", "Brand Guidelines", "Social Media", "Apresentação", "Figma"],
+
+    "summary": "Desenvolvimento da identidade visual completa para a IMAS — organização de saúde e bem-estar. O projeto envolveu a criação de brand guidelines, template de apresentação institucional e um pacote de posts para Instagram alinhado com a linguagem visual estabelecida.",
+
+    "challenge": "A IMAS precisava de uma comunicação visual coesa e profissional que refletisse seus valores institucionais em diferentes pontos de contato — materiais impressos, apresentações e redes sociais — sem perder a consistência de marca.",
+
+    "solution": "Desenvolvemos um brand book com diretrizes claras de uso de cores, tipografia e elementos gráficos. A partir dessas bases, criamos um template de apresentação institucional e uma série de posts para Instagram, garantindo consistência visual em todos os canais.",
+
+    "deliverables": [
+      "Brand guidelines (IMAS — Diretrizes para Identidade Visual)",
+      "Template de apresentação institucional (PowerPoint / Google Slides)",
+      "Série de posts para Instagram (feed e stories)",
+      "Manual de uso da logomarca"
+    ],
+
+    "cover_gallery": [
+      {
+        "src":     "assets/images/portfolio/imas/template-apresentacao.png",
+        "alt":     "Template de apresentação institucional IMAS",
+        "caption": "Template de apresentação institucional",
+        "wide":    true
+      },
+      {
+        "src":     "assets/images/portfolio/imas/posts/post-1.png",
+        "alt":     "Post Instagram IMAS — exemplo 1",
+        "caption": "Post para Instagram — série de conteúdo",
+        "wide":    false
+      },
+      {
+        "src":     "assets/images/portfolio/imas/posts/post-2.png",
+        "alt":     "Post Instagram IMAS — exemplo 2",
+        "caption": "Post para Instagram — Venha nos conhecer",
+        "wide":    false
+      },
+      {
+        "src":     "assets/images/portfolio/imas/posts/post-instagram.png",
+        "alt":     "Post Instagram IMAS — campanha",
+        "caption": "Post para Instagram — campanha institucional",
+        "wide":    false
+      }
+    ],
+
+    "stats": [
+      { "value": "1",  "label": "Cliente"           },
+      { "value": "4",  "label": "Entregáveis"        },
+      { "value": "3",  "label": "Posts criados"      },
+      { "value": "2024", "label": "Ano"              }
+    ],
+
+    "related_items": [
+      {
+        "slug":   "acesso-logomarca",
+        "client": "Acesso",
+        "title":  "Desenvolvimento de Logomarca",
+        "cover":  "assets/images/portfolio/acesso/logo-4.png",
+        "category_label": "Logomarca",
+        "url":    "portfolio-detail.html"
+      },
+      {
+        "slug":   "imas-social-media",
+        "client": "IMAS",
+        "title":  "Posts para Instagram",
+        "cover":  "assets/images/portfolio/imas/posts/post-instagram.png",
+        "category_label": "Social Media",
+        "url":    "portfolio-detail.html"
+      },
+      {
+        "slug":   "hellas-logomarca",
+        "client": "Hellas",
+        "title":  "Redesign de Logomarca",
+        "cover":  "assets/images/portfolio/hellas/logo-1.png",
+        "category_label": "Logomarca",
+        "url":    "portfolio-detail.html"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",     "url": "index.html"          },
+      { "label": "Sobre",      "url": "about.html"          },
+      { "label": "Serviços",   "url": "services.html"       },
+      { "label": "Portfólio",  "url": "portfolio.html"      },
+      { "label": "Produtos",   "url": "index.html#products" },
+      { "label": "Contato",    "url": "contact.html"        }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "services.html" },
+      { "label": "Desenvolvimento de Software", "url": "services.html" },
+      { "label": "Arquitetura de Soluções",     "url": "services.html" },
+      { "label": "IA Aplicada ao Negócio",      "url": "services.html" },
+      { "label": "DevOps & Eficiência",         "url": "services.html" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ajudamos empresas a migrar, otimizar e modernizar sua infraestrutura em nuvem. Com expertise em AWS e GCP, entregamos estratégias cloud, infraestrutura como código e planos de redução de custos operacionais — sempre alinhados aos objetivos do negócio." />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content="Cloud Computing Consultancy — Newstacktrace" />
+    <meta property="og:description" content="Ajudamos empresas a migrar, otimizar e modernizar sua infraestrutura em nuvem. Com expertise em AWS e GCP, entregamos estratégias cloud, infraestrutura como código e planos de redução de custos operacionais — sempre alinhados aos objetivos do negócio." />
+    <meta property="og:type"        content="website" />
+
+    <title>Cloud Computing Consultancy — Newstacktrace</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Lucide Icons (lightweight SVG icon library) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ──────────────────────────────────────────────
+     TOPBAR  (email · phone · social)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   TOPBAR — inspired by Clinic-1.0.0
+   Data keys: site.email, site.phone, site.social.*
+   ============================================================ -->
+<div id="topbar" class="bg-[#0a0a0a] border-b border-slate-800/60 text-slate-400 text-sm">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-10">
+
+      <!-- Contact info -->
+      <div class="flex items-center gap-6">
+        <a href="mailto:contato@newstacktrace.com"
+           class="flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>contato@newstacktrace.com</span>
+        </a>
+        <a href="tel:+55 (41) 99890-0704"
+           class="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>+55 (41) 99890-0704</span>
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="GitHub">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Instagram">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Twitter / X">
+          <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     HEADER  (logo · nav · CTA)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+   Transparent on hero, dark on scroll (JS: #header.scrolled)
+   Data keys: site.logo_dark, nav.items, nav.cta
+   ============================================================ -->
+<header id="header"
+        class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <nav class="flex items-center justify-between h-20 lg:h-18">
+
+      <!-- Logo -->
+
+      <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+          <!-- class h-9 -->
+        <img id="logo-light"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo"
+             loading="eager" />
+        <img id="logo-dark"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo hidden"
+             loading="eager" />
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        <li>
+          <a href="index.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+          Fale Conosco
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn"
+              class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+        <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu"
+       class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-4">
+      <ul class="space-y-1 mb-4">
+        <li>
+          <a href="index.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    text-green-400">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+      <a href="contact.html"
+         class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+        Fale Conosco
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<!-- ──────────────────────────────────────────────
+     MAIN CONTENT
+     ────────────────────────────────────────────── -->
+<main id="main">
+
+    <!-- PAGE HERO (dark) — breadcrumb + title -->
+    <section class="pt-32 pb-16 bg-[#0a0a0a] relative overflow-hidden">
+        <!-- Background grid decoration -->
+        <div class="absolute inset-0 opacity-5"
+             style="background-image: linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm font-mono mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">
+                    Início
+                </a>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+                <a href="services.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">
+                    Serviços
+                </a>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+                <span class="text-green-400">Cloud Computing Consultancy</span>
+            </nav>
+
+            <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Cloud &amp; Infraestrutura</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                Cloud Computing<br/>Consultancy
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                Migração, otimização e modernização de infraestrutura em nuvem com estratégias multi-cloud, IaC e redução de custos operacionais.
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICE DETAIL CONTENT -->
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         SERVICE DETAIL FULL PAGE CONTENT
+         ══════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- SERVICE HEADER INFO -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Back link -->
+                <a href="services.html"
+                   class="inline-flex items-center gap-2 text-slate-500 hover:text-green-600 text-sm font-mono transition-colors mb-8 group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    Voltar para Serviços
+                </a>
+
+                <!-- Tags + featured badge -->
+                <div class="flex flex-wrap items-center gap-2 mb-6">
+                        <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                            AWS
+                        </span>
+                        <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                            GCP
+                        </span>
+                        <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                            Migration
+                        </span>
+                        <span class="text-xs font-mono text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                            Cost Optimization
+                        </span>
+                        <span class="inline-flex items-center gap-1 bg-slate-900 text-white text-xs font-mono font-semibold px-3 py-1 rounded-full">
+                            <i data-lucide="star" class="w-3 h-3 text-yellow-400"></i>
+                            Serviço em Destaque
+                        </span>
+                </div>
+
+                <!-- Summary -->
+                <p class="text-xl text-slate-700 leading-relaxed max-w-3xl">
+                    Ajudamos empresas a migrar, otimizar e modernizar sua infraestrutura em nuvem. Com expertise em AWS e GCP, entregamos estratégias cloud, infraestrutura como código e planos de redução de custos operacionais — sempre alinhados aos objetivos do negócio.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OFFERED -->
+    <section class="bg-slate-50 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Eyebrow + heading -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>O que está incluído</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                        Escopo do serviço
+                    </h2>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-sm transition-shadow">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                                </span>
+                                Estratégia de Migração
+                            </h3>
+                            <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Assessment do ambiente on-premises atual</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Planejamento de migração lift-and-shift ou re-architect</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Cronograma de migração com rollback plan</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Validação de SLAs e requisitos de disponibilidade</span>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-sm transition-shadow">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                                </span>
+                                Cloud Architecture Design
+                            </h3>
+                            <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Design de arquitetura Well-Architected</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Definição de VPCs, subnets e políticas de rede</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Estratégias de alta disponibilidade e disaster recovery</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Documentação técnica e ADRs</span>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-sm transition-shadow">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                                </span>
+                                Estratégia Multi-Cloud
+                            </h3>
+                            <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Análise de fit de cada provedor para cada workload</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Evitar vendor lock-in com camadas de abstração</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Gestão centralizada de multi-cloud com ferramentas IaC</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Políticas de segurança e compliance unificadas</span>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-sm transition-shadow">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                                </span>
+                                Otimização de Custos
+                            </h3>
+                            <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Análise de billing e identificação de desperdícios</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Right-sizing de instâncias e serviços gerenciados</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Estratégias de Reserved Instances e Savings Plans</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Dashboards de monitoramento de custos em tempo real</span>
+                                    </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Eyebrow + heading -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Stack Tecnológico</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                        Tecnologias utilizadas
+                    </h2>
+                </div>
+
+                <!-- Tech provider cards -->
+                <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 rounded-lg border border-slate-200 p-6">
+                            <h3 class="text-sm font-mono font-semibold text-slate-500 uppercase tracking-widest mb-4">
+                                AWS
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        EC2
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        ECS
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        EKS
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        Lambda
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        RDS
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        S3
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        CloudFront
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg border border-slate-200 p-6">
+                            <h3 class="text-sm font-mono font-semibold text-slate-500 uppercase tracking-widest mb-4">
+                                GCP
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        Compute Engine
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        GKE
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        Cloud Functions
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-700 bg-white border border-slate-300 px-2.5 py-1 rounded">
+                                        BigQuery
+                                    </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="bg-[#0a0a0a] py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Eyebrow + heading -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Como trabalhamos</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">
+                        Nossa metodologia
+                    </h2>
+                    <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+                        Um processo estruturado que garante previsibilidade, qualidade e entregas que realmente fazem sentido para o seu negócio.
+                    </p>
+                </div>
+
+                <!-- Steps -->
+                <div class="grid md:grid-cols-5 gap-4">
+                        <div class="relative flex flex-col items-center text-center md:items-start md:text-left">
+                            <!-- Step number -->
+                            <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center mb-4 flex-shrink-0">
+                                <span class="text-green-400 font-mono font-bold text-sm">01</span>
+                            </div>
+                            <h3 class="text-base font-semibold text-white mb-2">Discovery</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Levantamento completo do ambiente atual, requisitos de negócio, restrições técnicas e objetivos de curto e longo prazo.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center md:items-start md:text-left">
+                            <!-- Step number -->
+                            <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center mb-4 flex-shrink-0">
+                                <span class="text-green-400 font-mono font-bold text-sm">02</span>
+                            </div>
+                            <h3 class="text-base font-semibold text-white mb-2">Assessment</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Análise profunda da infraestrutura existente: custos, performance, segurança, escalabilidade e aderência a boas práticas.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center md:items-start md:text-left">
+                            <!-- Step number -->
+                            <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center mb-4 flex-shrink-0">
+                                <span class="text-green-400 font-mono font-bold text-sm">03</span>
+                            </div>
+                            <h3 class="text-base font-semibold text-white mb-2">Strategy</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Elaboração do plano de ação com arquitetura target, roadmap de implementação, estimativas de custo e métricas de sucesso.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center md:items-start md:text-left">
+                            <!-- Step number -->
+                            <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center mb-4 flex-shrink-0">
+                                <span class="text-green-400 font-mono font-bold text-sm">04</span>
+                            </div>
+                            <h3 class="text-base font-semibold text-white mb-2">Implementation</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Execução do plano com IaC (Terraform&#x2F;CloudFormation), migração incremental, testes e validação contínua dos SLAs.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center md:items-start md:text-left">
+                            <!-- Step number -->
+                            <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center mb-4 flex-shrink-0">
+                                <span class="text-green-400 font-mono font-bold text-sm">05</span>
+                            </div>
+                            <h3 class="text-base font-semibold text-white mb-2">Optimization</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Monitoramento contínuo, ajustes de performance e custo, atualizações de segurança e evolução da arquitetura conforme o negócio cresce.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="bg-slate-50 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Eyebrow + heading -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Por que escolher</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                        O que você ganha
+                    </h2>
+                </div>
+
+                <!-- Benefits grid -->
+                <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Redução de custos operacionais de infraestrutura em até 40%</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Alta disponibilidade com SLAs de 99,9% ou superiores</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Escalabilidade automática para lidar com picos de demanda</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Segurança reforçada com IAM, criptografia e auditoria contínua</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Infraestrutura como código versionada e reproduzível</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-5">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed text-sm">Time-to-market reduzido com ambientes provisionados em minutos</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED SERVICES -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Eyebrow + heading -->
+                <div class="mb-10">
+                    <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Serviços relacionados</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                        Você também pode precisar de
+                    </h2>
+                </div>
+
+                <!-- Related cards -->
+                <div class="grid md:grid-cols-3 gap-6">
+                        <a href="service-detail.html"
+                           class="group flex items-start gap-4 bg-slate-50 rounded-lg border border-slate-200 p-5 hover:shadow-md hover:border-green-200 transition-all duration-200">
+                            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+                                <i data-lucide="settings-2" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1 group-hover:text-green-600 transition-colors">
+                                    Automation &amp; DevOps
+                                </h3>
+                                <span class="text-xs font-mono text-green-600 inline-flex items-center gap-1">
+                                    Saiba mais
+                                    <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="service-detail.html"
+                           class="group flex items-start gap-4 bg-slate-50 rounded-lg border border-slate-200 p-5 hover:shadow-md hover:border-green-200 transition-all duration-200">
+                            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+                                <i data-lucide="layers" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1 group-hover:text-green-600 transition-colors">
+                                    System Architecture Design
+                                </h3>
+                                <span class="text-xs font-mono text-green-600 inline-flex items-center gap-1">
+                                    Saiba mais
+                                    <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="service-detail.html"
+                           class="group flex items-start gap-4 bg-slate-50 rounded-lg border border-slate-200 p-5 hover:shadow-md hover:border-green-200 transition-all duration-200">
+                            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1 group-hover:text-green-600 transition-colors">
+                                    Software Security
+                                </h3>
+                                <span class="text-xs font-mono text-green-600 inline-flex items-center gap-1">
+                                    Saiba mais
+                                    <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </div>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="bg-green-600 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Vamos falar sobre seu projeto?
+                </h2>
+                <p class="text-green-50 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                    Conte-nos o seu desafio e vamos propor a abordagem mais adequada para alcançar seus objetivos com eficiência e qualidade.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                       class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                        Falar com especialista
+                    </a>
+                    <a href="services.html"
+                       class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                        Ver todos os serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ──────────────────────────────────────────────
+     FOOTER  (links + bottom bar)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   FOOTER — Multi-column footer + bottom bar (dark)
+   Inspired by Presento + charityhope bottom bar
+   Data keys: site.*, footer.description, .quick_links[],
+              .service_links[], .bottom_bar{}
+   ============================================================ -->
+<!-- Footer main -->
+<footer class="bg-[#0a0a0a] border-t border-slate-800/60">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Col 1: Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#hero" class="inline-block mb-4">
+          <img src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png" alt="Newstacktrace" class="h-10 w-auto" loading="lazy" />
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+          Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.
+        </p>
+        <div class="font-mono text-xs text-green-700 opacity-60">
+          <span>new Stacktrace();</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Navegação</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="index.html#portfolio"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="index.html#products"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Contato
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Serviços</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Cloud &amp; Infraestrutura
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Desenvolvimento de Software
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Arquitetura de Soluções
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              IA Aplicada ao Negócio
+            </a>
+          </li>
+          <li>
+            <a href="index.html#services"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              DevOps &amp; Eficiência
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact summary -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Contato</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="mail" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="mailto:contato@newstacktrace.com" class="hover:text-green-400 transition-colors duration-200 break-all">contato@newstacktrace.com</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="phone" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="tel:+55 (41) 99890-0704" class="hover:text-green-400 transition-colors duration-200">+55 (41) 99890-0704</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <span>Pinhais, PR - Brasil</span>
+          </li>
+        </ul>
+        <!-- Social mini row -->
+        <div class="flex items-center gap-2 mt-5">
+          <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar — inspired by charityhope -->
+  <div class="border-t border-slate-800/60">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
+        <p class="text-slate-600 text-xs">
+          © 2025 Newstacktrace. Todos os direitos reservados.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Política de Privacidade
+          </a>
+          <a href="terms.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Termos de Uso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- ──────────────────────────────────────────────
+     SCRIPTS
+     ────────────────────────────────────────────── -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

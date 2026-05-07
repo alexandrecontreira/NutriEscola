@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conheça os produtos da Newstacktrace — soluções SaaS desenvolvidas com base em desafios reais do mercado." />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content="Produtos — Newstacktrace" />
+    <meta property="og:description" content="Conheça os produtos da Newstacktrace — soluções SaaS desenvolvidas com base em desafios reais do mercado." />
+    <meta property="og:type"        content="website" />
+
+    <title>Produtos — Newstacktrace</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Lucide Icons (lightweight SVG icon library) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ──────────────────────────────────────────────
+     TOPBAR  (email · phone · social)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   TOPBAR — inspired by Clinic-1.0.0
+   Data keys: site.email, site.phone, site.social.*
+   ============================================================ -->
+<div id="topbar" class="bg-[#0a0a0a] border-b border-slate-800/60 text-slate-400 text-sm">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-10">
+
+      <!-- Contact info -->
+      <div class="flex items-center gap-6">
+        <a href="mailto:contato@newstacktrace.com"
+           class="flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>contato@newstacktrace.com</span>
+        </a>
+        <a href="tel:+55 (41) 99890-0704"
+           class="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+          <span>+55 (41) 99890-0704</span>
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="GitHub">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Instagram">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+           aria-label="Twitter / X">
+          <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     HEADER  (logo · nav · CTA)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+   Transparent on hero, dark on scroll (JS: #header.scrolled)
+   Data keys: site.logo_dark, nav.items, nav.cta
+   ============================================================ -->
+<header id="header"
+        class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <nav class="flex items-center justify-between h-20 lg:h-18">
+
+      <!-- Logo -->
+
+      <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+          <!-- class h-9 -->
+        <img id="logo-light"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo"
+             loading="eager" />
+        <img id="logo-dark"
+             src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+             alt="Newstacktrace"
+             class="w-auto logo hidden"
+             loading="eager" />
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        <li>
+          <a href="index.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+          Fale Conosco
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn"
+              class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+        <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu"
+       class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-4">
+      <ul class="space-y-1 mb-4">
+        <li>
+          <a href="index.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="about.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Sobre
+          </a>
+        </li>
+        <li>
+          <a href="services.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Serviços
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Portfólio
+          </a>
+        </li>
+        <li>
+          <a href="products.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    text-green-400">
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    ">
+            Contato
+          </a>
+        </li>
+      </ul>
+      <a href="contact.html"
+         class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+        Fale Conosco
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<!-- ──────────────────────────────────────────────
+     MAIN CONTENT
+     ────────────────────────────────────────────── -->
+<main id="main">
+
+    <!-- PAGE HERO (dark) — breadcrumb + title -->
+    <section class="pt-32 pb-16 bg-[#0a0a0a] relative overflow-hidden">
+        <!-- Background grid decoration -->
+        <div class="absolute inset-0 opacity-5"
+             style="background-image: linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm font-mono mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">
+                    Início
+                </a>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+                <span class="text-green-400">Produtos</span>
+            </nav>
+
+            <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                <span class="text-green-500">>://</span>
+                <span>Nossos Produtos</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                Soluções que estamos<br/>construindo.
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                Além dos serviços, desenvolvemos produtos próprios que nascem da nossa experiência com clientes reais.
+            </p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS FULL CONTENT -->
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         PRODUCTS FULL PAGE CONTENT
+         ══════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- CATEGORY FILTER -->
+    <section class="bg-white py-6 shadow-sm sticky top-0 z-30 border-b border-slate-100">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="flex flex-wrap gap-2 items-center">
+                    <button
+                        data-filter="all"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            bg-green-600 text-white shadow-sm active-filter
+                            ">
+                        Todos
+                    </button>
+                    <button
+                        data-filter="saas"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        SaaS
+                    </button>
+                    <button
+                        data-filter="ia"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        IA
+                    </button>
+                    <button
+                        data-filter="dev-tools"
+                        class="px-4 py-2 rounded-full text-sm font-medium font-mono transition-all duration-200
+                            
+                            bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Dev Tools
+                    </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="bg-slate-950 py-16 lg:py-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+            <!-- Section header -->
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-3 tracking-wider">
+                        <span class="text-green-500">>://</span>
+                        <span>Produtos</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">
+                        O que estamos construindo
+                    </h2>
+                </div>
+                <p class="text-slate-500 text-sm font-mono md:text-right leading-relaxed max-w-sm">
+                    Plataformas e ferramentas desenvolvidas para resolver problemas reais que encontramos nas empresas com que trabalhamos.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="products-grid">
+                    <div data-category="saas"
+                         class="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden
+                                hover:border-green-700/50 transition-all duration-300">
+
+                        <!-- Card header -->
+                        <div class="p-6 pb-4">
+                            <!-- Icon + status -->
+                            <div class="flex items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-green-900/30 border border-green-700/30
+                                            flex items-center justify-center flex-shrink-0
+                                            group-hover:bg-green-900/50 transition-colors duration-300">
+                                    <i data-lucide="heart-pulse" class="w-6 h-6 text-green-400"></i>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded-full border bg-green-900&#x2F;50 text-green-400 border border-green-700&#x2F;40">
+                                    Beta privado
+                                </span>
+                            </div>
+
+                            <!-- Name + tagline -->
+                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-green-300 transition-colors duration-200">
+                                CareStack
+                            </h3>
+                            <p class="text-sm font-mono text-green-400/80 mb-4">
+                                Gestão inteligente para comunidades terapêuticas
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Plataforma SaaS completa para gestão de residências terapêuticas, ONGs e comunidades de suporte. Controle de internos, relatórios, financeiro e comunicação em um único sistema.
+                            </p>
+                        </div>
+
+                        <!-- Feature list -->
+                        <div class="px-6 pb-4 flex-1">
+                            <ul class="space-y-2 mt-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Controle de internos e prontuários</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Relatórios gerenciais e regulatórios</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Módulo financeiro integrado</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Comunicação interna e com familiares</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Dashboard de indicadores em tempo real</span>
+                                    </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="px-6 py-4 border-t border-slate-800/60 flex flex-wrap gap-1.5">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">SaaS</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">Saúde</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">ONGs</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="px-6 pb-6">
+                                <a href="product-detail.html"
+                                   class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg
+                                          bg-green-600 text-white text-sm font-semibold
+                                          hover:bg-green-500 transition-colors duration-200">
+                                    Quero ser beta tester
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                        </div>
+
+                    </div>
+                    <div data-category="ia"
+                         class="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden
+                                hover:border-green-700/50 transition-all duration-300">
+
+                        <!-- Card header -->
+                        <div class="p-6 pb-4">
+                            <!-- Icon + status -->
+                            <div class="flex items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-green-900/30 border border-green-700/30
+                                            flex items-center justify-center flex-shrink-0
+                                            group-hover:bg-green-900/50 transition-colors duration-300">
+                                    <i data-lucide="message-square-code" class="w-6 h-6 text-green-400"></i>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded-full border bg-yellow-900&#x2F;50 text-yellow-400 border border-yellow-700&#x2F;40">
+                                    Em breve
+                                </span>
+                            </div>
+
+                            <!-- Name + tagline -->
+                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-green-300 transition-colors duration-200">
+                                Nexus AI
+                            </h3>
+                            <p class="text-sm font-mono text-green-400/80 mb-4">
+                                IA conversacional para pequenas empresas
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Assistente inteligente treinado com o conhecimento do seu negócio. Atende clientes, qualifica leads e responde dúvidas no WhatsApp, site ou app — sem código.
+                            </p>
+                        </div>
+
+                        <!-- Feature list -->
+                        <div class="px-6 pb-4 flex-1">
+                            <ul class="space-y-2 mt-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Treinamento com seu conteúdo e FAQs</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Integração com WhatsApp Business</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Widget para site e aplicativos</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Qualificação automática de leads</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Histórico e analytics de conversas</span>
+                                    </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="px-6 py-4 border-t border-slate-800/60 flex flex-wrap gap-1.5">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">IA</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">SaaS</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">Atendimento</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="px-6 pb-6">
+                                <a href="contact.html"
+                                   class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg
+                                          bg-slate-800 text-slate-300 text-sm font-semibold
+                                          hover:bg-slate-700 transition-colors duration-200 border border-slate-700">
+                                    Entrar na lista de espera
+                                    <i data-lucide="bell" class="w-4 h-4"></i>
+                                </a>
+                        </div>
+
+                    </div>
+                    <div data-category="dev-tools"
+                         class="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden
+                                hover:border-green-700/50 transition-all duration-300">
+
+                        <!-- Card header -->
+                        <div class="p-6 pb-4">
+                            <!-- Icon + status -->
+                            <div class="flex items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-green-900/30 border border-green-700/30
+                                            flex items-center justify-center flex-shrink-0
+                                            group-hover:bg-green-900/50 transition-colors duration-300">
+                                    <i data-lucide="rocket" class="w-6 h-6 text-green-400"></i>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded-full border bg-slate-700&#x2F;50 text-slate-400 border border-slate-600&#x2F;40">
+                                    Planejado
+                                </span>
+                            </div>
+
+                            <!-- Name + tagline -->
+                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-green-300 transition-colors duration-200">
+                                DevLaunch
+                            </h3>
+                            <p class="text-sm font-mono text-green-400/80 mb-4">
+                                Boilerplate + infraestrutura para times de produto
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Kit de inicialização para projetos de software com toda a infraestrutura já configurada: CI&#x2F;CD, observabilidade, autenticação, multi-tenancy e documentação.
+                            </p>
+                        </div>
+
+                        <!-- Feature list -->
+                        <div class="px-6 pb-4 flex-1">
+                            <ul class="space-y-2 mt-2">
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Autenticação e multi-tenancy prontos</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>CI&#x2F;CD configurado (GitHub Actions)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Observabilidade com OpenTelemetry</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Infraestrutura IaC com Terraform</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                                        <span>Documentação técnica e ADRs base</span>
+                                    </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="px-6 py-4 border-t border-slate-800/60 flex flex-wrap gap-1.5">
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">Dev Tools</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">Templates</span>
+                                <span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-0.5 rounded">Cloud</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="px-6 pb-6">
+                                <a href="contact.html"
+                                   class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg
+                                          bg-slate-800 text-slate-300 text-sm font-semibold
+                                          hover:bg-slate-700 transition-colors duration-200 border border-slate-700">
+                                    Acompanhar desenvolvimento
+                                    <i data-lucide="bell" class="w-4 h-4"></i>
+                                </a>
+                        </div>
+
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT BUILDING IN PUBLIC -->
+    <section class="bg-[#0a0a0a] py-16 border-t border-slate-800">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+                    <span class="text-green-500">>://</span>
+                    <span>Como trabalhamos</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Construindo com base em problemas reais
+                </h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Nossos produtos não surgem de especulação — eles nascem da experiência acumulada em dezenas de projetos com clientes reais.
+                    Cada funcionalidade resolve uma dor concreta que já observamos no campo.
+                </p>
+                <div class="grid sm:grid-cols-3 gap-6 text-left">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <div class="w-9 h-9 bg-green-900/30 rounded-lg flex items-center justify-center mb-3">
+                            <i data-lucide="users" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-white mb-1">Co-criação</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Desenvolvemos junto com os primeiros usuários, incorporando feedback desde o dia um.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <div class="w-9 h-9 bg-green-900/30 rounded-lg flex items-center justify-center mb-3">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-white mb-1">Qualidade técnica</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Mesma arquitetura robusta que entregamos para clientes enterprise — sem atalhos.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <div class="w-9 h-9 bg-green-900/30 rounded-lg flex items-center justify-center mb-3">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-white mb-1">Evolução contínua</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Roadmap público e lançamentos frequentes. Você acompanha cada etapa do desenvolvimento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="bg-green-600 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Quer usar um dos nossos produtos?
+                </h2>
+                <p class="text-green-50 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                    Entre em contato para saber mais sobre disponibilidade, planos e como podemos adaptar as soluções ao seu contexto.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                       class="inline-block bg-white text-green-600 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+                        Falar com a gente
+                    </a>
+                    <a href="services.html"
+                       class="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
+                        Ver serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY FILTER SCRIPT -->
+    <script>
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const cat = btn.dataset.filter;
+
+                // Update button states
+                document.querySelectorAll('[data-filter]').forEach(b => {
+                    b.classList.remove('active-filter', 'bg-green-600', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                btn.classList.add('active-filter', 'bg-green-600', 'text-white', 'shadow-sm');
+                btn.classList.remove('bg-slate-100', 'text-slate-600');
+
+                // Filter cards
+                document.querySelectorAll('[data-category]').forEach(card => {
+                    const show = cat === 'all' || card.dataset.category === cat;
+                    card.style.display = show ? '' : 'none';
+                });
+
+                // Re-init Lucide icons
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+        });
+    </script>
+
+</main>
+
+<!-- ──────────────────────────────────────────────
+     FOOTER  (links + bottom bar)
+     ────────────────────────────────────────────── -->
+<!-- ============================================================
+   FOOTER — Multi-column footer + bottom bar (dark)
+   Inspired by Presento + charityhope bottom bar
+   Data keys: site.*, footer.description, .quick_links[],
+              .service_links[], .bottom_bar{}
+   ============================================================ -->
+<!-- Footer main -->
+<footer class="bg-[#0a0a0a] border-t border-slate-800/60">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Col 1: Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#hero" class="inline-block mb-4">
+          <img src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png" alt="Newstacktrace" class="h-10 w-auto" loading="lazy" />
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+          Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.
+        </p>
+        <div class="font-mono text-xs text-green-700 opacity-60">
+          <span>new Stacktrace();</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Navegação</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="products.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Contato
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Serviços</h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Cloud &amp; Infraestrutura
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Desenvolvimento de Software
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              Arquitetura de Soluções
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              IA Aplicada ao Negócio
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+              <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+              DevOps &amp; Eficiência
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact summary -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Contato</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="mail" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="mailto:contato@newstacktrace.com" class="hover:text-green-400 transition-colors duration-200 break-all">contato@newstacktrace.com</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="phone" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <a href="tel:+55 (41) 99890-0704" class="hover:text-green-400 transition-colors duration-200">+55 (41) 99890-0704</a>
+          </li>
+          <li class="flex items-start gap-2 text-slate-500 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+            <span>Pinhais, PR - Brasil</span>
+          </li>
+        </ul>
+        <!-- Social mini row -->
+        <div class="flex items-center gap-2 mt-5">
+          <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar — inspired by charityhope -->
+  <div class="border-t border-slate-800/60">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
+        <p class="text-slate-600 text-xs">
+          © 2025 Newstacktrace. Todos os direitos reservados.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Política de Privacidade
+          </a>
+          <a href="terms.html"
+             class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+            Termos de Uso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- ──────────────────────────────────────────────
+     SCRIPTS
+     ────────────────────────────────────────────── -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

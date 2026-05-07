@@ -1,0 +1,62 @@
+<!-- ============================================================
+   RELATORIO FULL
+   Data keys: relatorio.*
+   ============================================================ -->
+<section class="layout_padding">
+  <div class="container">
+    <div class="report-card p-4 p-lg-5">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+        <div>
+          <span class="section-eyebrow">{{relatorio.eyebrow}}</span>
+          <h2 class="brand-script h1 mt-2 mb-1">{{relatorio.title}}</h2>
+          <p class="text-muted mb-0">{{relatorio.subtitle}}</p>
+        </div>
+        <div class="print-actions align-self-lg-center">
+          <button type="button" class="btn-nutri" data-print>Imprimir relatorio</button>
+          <a href="cardapio.html" class="btn-outline-nutri text-dark border">Editar cardapio</a>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        {{#relatorio.summary}}
+        <div class="col-sm-6 col-lg-3">
+          <div class="summary-card">
+            <div class="summary-value">{{value}}</div>
+            <div class="summary-label">{{label}}</div>
+          </div>
+        </div>
+        {{/relatorio.summary}}
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped align-middle">
+          <thead>
+            <tr>
+              <th>Ingrediente</th>
+              <th>Categoria</th>
+              <th>Porcao</th>
+              <th>Total produzido</th>
+              <th>Total calorico</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#relatorio.items}}
+            <tr>
+              <td><strong>{{name}}</strong></td>
+              <td>{{category}}</td>
+              <td>{{portion}}</td>
+              <td>{{total}}</td>
+              <td>{{total_calories}}</td>
+            </tr>
+            {{/relatorio.items}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-4 p-3 rounded bg-light">
+        <strong>Observacoes:</strong>
+        <span>{{relatorio.notes}}</span>
+      </div>
+    </div>
+  </div>
+</section>

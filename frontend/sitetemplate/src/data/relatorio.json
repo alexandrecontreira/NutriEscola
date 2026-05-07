@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "items": [
+      { "label": "Inicio", "url": "index.html", "active": false },
+      { "label": "Cardapio", "url": "cardapio.html", "active": false },
+      { "label": "Producao", "url": "producao.html", "active": false },
+      { "label": "Relatorio", "url": "relatorio.html", "active": true }
+    ],
+    "cta": { "label": "Imprimir", "url": "#main" }
+  },
+  "page": {
+    "title": "Relatorio de Producao",
+    "description": "Relatorio de producao com totais por ingrediente e dados do cardapio.",
+    "breadcrumb": {
+      "home": { "label": "Inicio", "url": "index.html" },
+      "current": "Relatorio"
+    },
+    "hero": {
+      "eyebrow": "Relatorio",
+      "title": "Lista pronta para impressao.",
+      "subtitle": "Confira totais por ingrediente, quantidade de pratos e resumo nutricional antes de enviar para a cozinha."
+    }
+  },
+  "relatorio": {
+    "eyebrow": "Cardapio ativo",
+    "title": "Producao de hoje",
+    "subtitle": "Referencia gerada para 180 pratos base com 20% de acrescimo de seguranca.",
+    "summary": [
+      { "value": "216", "label": "Pratos totais" },
+      { "value": "20%", "label": "Acrescimo aplicado" },
+      { "value": "540", "label": "kcal por refeicao" },
+      { "value": "Valido", "label": "Status do cardapio" }
+    ],
+    "items": [
+      { "name": "Arroz integral", "category": "Carboidrato", "portion": "120g", "total": "25,92 kg", "total_calories": "31.882 kcal" },
+      { "name": "Batata cozida", "category": "Carboidrato", "portion": "100g", "total": "21,60 kg", "total_calories": "18.576 kcal" },
+      { "name": "Salada colorida", "category": "Salada", "portion": "80g", "total": "17,28 kg", "total_calories": "6.912 kcal" },
+      { "name": "Cenoura ralada", "category": "Salada", "portion": "60g", "total": "12,96 kg", "total_calories": "5.314 kcal" },
+      { "name": "Frango grelhado", "category": "Proteina", "portion": "110g", "total": "23,76 kg", "total_calories": "39.204 kcal" },
+      { "name": "Feijao carioca", "category": "Proteina", "portion": "90g", "total": "19,44 kg", "total_calories": "14.774 kcal" }
+    ],
+    "notes": "Cardapio dentro do limite calorico e com os tres grupos alimentares obrigatorios selecionados."
+  }
+}

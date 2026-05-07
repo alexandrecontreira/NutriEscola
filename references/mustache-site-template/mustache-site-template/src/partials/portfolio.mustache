@@ -1,0 +1,83 @@
+<!-- ============================================================
+   PORTFOLIO — Project cards grid (light section)
+   Inspired by Presento portfolio layout
+   Data keys: portfolio.eyebrow, .title, .subtitle, .items[], .cta
+              item: .title, .category, .category_class, .description,
+                    .tags[], .image, .url
+   ============================================================ -->
+<section id="portfolio" class="py-20 lg:py-28 bg-white">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Section header -->
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 reveal">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+          <span>>://</span>
+          <span>{{portfolio.eyebrow}}</span>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-3">
+          {{portfolio.title}}
+        </h2>
+        <p class="text-slate-500 text-base leading-relaxed">
+          {{portfolio.subtitle}}
+        </p>
+      </div>
+      <a href="{{portfolio.cta.url}}"
+         class="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-200 hover:border-green-400 hover:bg-green-50 text-slate-600 hover:text-green-700 font-medium text-sm rounded-lg transition-all duration-200 flex-shrink-0 group">
+        {{portfolio.cta.label}}
+        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"></i>
+      </a>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{#portfolio.items}}
+      <article class="reveal group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+
+        <!-- Project image -->
+        <div class="relative aspect-[16/9] bg-slate-900 overflow-hidden">
+          <img src="{{image}}"
+               alt="{{title}}"
+               class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+               loading="lazy"
+               onerror="this.closest('.relative').innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-slate-900\' aria-hidden=\'true\'><div class=\'text-center\'><div class=\'font-mono text-green-600 text-2xl font-bold mb-1\'>&gt;_</div><div class=\'text-slate-600 text-xs font-mono\'>' + encodeURIComponent('{{title}}') + '</div></div></div>'" />
+
+          <!-- Category badge overlay -->
+          <div class="absolute top-3 left-3">
+            <span class="inline-flex px-2.5 py-1 text-xs font-semibold rounded-full backdrop-blur-sm {{category_class}}">
+              {{category}}
+            </span>
+          </div>
+
+          <!-- Hover overlay with link -->
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="{{url}}"
+               class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+              Ver projeto
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card content -->
+        <div class="p-5">
+          <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-green-700 transition-colors duration-200">
+            {{title}}
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">
+            {{description}}
+          </p>
+          <!-- Tech tags -->
+          <div class="flex flex-wrap gap-1.5">
+            {{#tags}}
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-mono rounded">{{.}}</span>
+            {{/tags}}
+          </div>
+        </div>
+
+      </article>
+      {{/portfolio.items}}
+    </div>
+
+  </div>
+</section>

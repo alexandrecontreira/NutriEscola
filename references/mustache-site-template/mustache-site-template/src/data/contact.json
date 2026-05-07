@@ -1,0 +1,55 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Entre em contato com a Newstacktrace. Estamos prontos para entender seu desafio e construir a solução certa para o seu negócio.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github": "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter": "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",     "url": "index.html",     "active": false },
+      { "label": "Sobre",      "url": "about.html",     "active": false },
+      { "label": "Serviços",   "url": "services.html",  "active": false },
+      { "label": "Portfólio",  "url": "portfolio.html", "active": false },
+      { "label": "Produtos",   "url": "products.html",  "active": false },
+      { "label": "Contato",    "url": "contact.html",   "active": true  }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",     "url": "index.html"      },
+      { "label": "Sobre",      "url": "about.html"      },
+      { "label": "Serviços",   "url": "index.html#services"  },
+      { "label": "Portfólio",  "url": "index.html#portfolio" },
+      { "label": "Produtos",   "url": "index.html#products"  },
+      { "label": "Contato",    "url": "contact.html"    }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",     "url": "index.html#services" },
+      { "label": "Desenvolvimento de Software","url": "index.html#services" },
+      { "label": "Arquitetura de Soluções",    "url": "index.html#services" },
+      { "label": "IA Aplicada ao Negócio",     "url": "index.html#services" },
+      { "label": "DevOps & Eficiência",        "url": "index.html#services" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<!-- ============================================================
+   HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+   Transparent on hero, dark on scroll (JS: #header.scrolled)
+   Data keys: site.logo_dark, nav.items, nav.cta
+   ============================================================ -->
+<header id="header"
+        class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+    <nav class="flex items-center justify-between h-20 lg:h-18">
+
+      <!-- Logo -->
+
+      <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+          <!-- class h-9 -->
+        <img id="logo-light"
+             src="{{site.logo_dark}}"
+             alt="{{site.company_name}}"
+             class="w-auto logo"
+             loading="eager" />
+        <img id="logo-dark"
+             src="{{site.logo_dark}}"
+             alt="{{site.company_name}}"
+             class="w-auto logo hidden"
+             loading="eager" />
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        {{#nav.items}}
+        <li>
+          <a href="{{url}}"
+             class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                    {{#active}}text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500{{/active}}">
+            {{label}}
+          </a>
+        </li>
+        {{/nav.items}}
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="{{nav.cta.url}}"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+          {{nav.cta.label}}
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn"
+              class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+        <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu"
+       class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-4">
+      <ul class="space-y-1 mb-4">
+        {{#nav.items}}
+        <li>
+          <a href="{{url}}"
+             class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                    {{#active}}text-green-400{{/active}}">
+            {{label}}
+          </a>
+        </li>
+        {{/nav.items}}
+      </ul>
+      <a href="{{nav.cta.url}}"
+         class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+        {{nav.cta.label}}
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+</header>

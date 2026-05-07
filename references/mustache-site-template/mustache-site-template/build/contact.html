@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entre em contato com a Newstacktrace. Estamos prontos para entender seu desafio e construir a solução certa para o seu negócio." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Contato — Newstacktrace" />
+  <meta property="og:description" content="Entre em contato com a Newstacktrace. Estamos prontos para entender seu desafio e construir a solução certa para o seu negócio." />
+  <meta property="og:type"        content="website" />
+
+  <title>Contato — Newstacktrace</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN — replace with compiled bundle in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Lucide Icons (lightweight SVG icon library) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+  <!-- ──────────────────────────────────────────────
+       TOPBAR  (email · phone · social)
+       ────────────────────────────────────────────── -->
+  <!-- ============================================================
+     TOPBAR — inspired by Clinic-1.0.0
+     Data keys: site.email, site.phone, site.social.*
+     ============================================================ -->
+  <div id="topbar" class="bg-[#0a0a0a] border-b border-slate-800/60 text-slate-400 text-sm">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-10">
+
+        <!-- Contact info -->
+        <div class="flex items-center gap-6">
+          <a href="mailto:contato@newstacktrace.com"
+             class="flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+            <span>contato@newstacktrace.com</span>
+          </a>
+          <a href="tel:+55 (41) 99890-0704"
+             class="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors duration-200 group">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-green-600 group-hover:text-green-400"></i>
+            <span>+55 (41) 99890-0704</span>
+          </a>
+        </div>
+
+        <!-- Social links -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+             aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+             class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+             aria-label="GitHub">
+            <i data-lucide="github" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+             aria-label="Instagram">
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             class="w-7 h-7 flex items-center justify-center rounded hover:bg-green-600/10 hover:text-green-400 transition-all duration-200"
+             aria-label="Twitter / X">
+            <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────────────────────────────────
+       HEADER  (logo · nav · CTA)
+       ────────────────────────────────────────────── -->
+  <!-- ============================================================
+     HEADER — inspired by Presento-1.0.0 + KnightOne-1.0.0
+     Transparent on hero, dark on scroll (JS: #header.scrolled)
+     Data keys: site.logo_dark, nav.items, nav.cta
+     ============================================================ -->
+  <header id="header"
+          class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <nav class="flex items-center justify-between h-20 lg:h-18">
+
+        <!-- Logo -->
+
+        <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
+            <!-- class h-9 -->
+          <img id="logo-light"
+               src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+               alt="Newstacktrace"
+               class="w-auto logo"
+               loading="eager" />
+          <img id="logo-dark"
+               src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png"
+               alt="Newstacktrace"
+               class="w-auto logo hidden"
+               loading="eager" />
+        </a>
+
+        <!-- Desktop navigation -->
+        <ul class="hidden lg:flex items-center gap-1">
+          <li>
+            <a href="index.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      ">
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      ">
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      ">
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      ">
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="products.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      ">
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative
+                      text-white after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:bg-green-500">
+              Contato
+            </a>
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="contact.html"
+             class="inline-flex items-center gap-2 px-5 py-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-lg shadow-green-900/30">
+            Fale Conosco
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn"
+                class="lg:hidden flex items-center justify-center w-9 h-9 text-black-50 hover:text-black-50 hover:bg-white/10 rounded-md transition-colors duration-200"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+          <i data-lucide="menu" class="w-5 h-5" id="icon-menu"></i>
+          <i data-lucide="x"    class="w-5 h-5 hidden" id="icon-close"></i>
+        </button>
+
+      </nav>
+    </div>
+
+    <!-- Mobile menu drawer -->
+    <div id="mobile-menu"
+         class="hidden lg:hidden bg-[#0a0a0a] border-t border-slate-800/60">
+      <div class="container mx-auto px-4 py-4">
+        <ul class="space-y-1 mb-4">
+          <li>
+            <a href="index.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      ">
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="about.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      ">
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="services.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      ">
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      ">
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a href="products.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      ">
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="contact.html"
+               class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200
+                      text-green-400">
+              Contato
+            </a>
+          </li>
+        </ul>
+        <a href="contact.html"
+           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200">
+          Fale Conosco
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ──────────────────────────────────────────────
+       MAIN CONTENT
+       ────────────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- PAGE HERO (dark) — breadcrumb + title -->
+    <section class="pt-32 pb-16 bg-[#0a0a0a] relative overflow-hidden">
+      <!-- Background grid decoration -->
+      <div class="absolute inset-0 opacity-5"
+           style="background-image: linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px); background-size: 40px 40px;">
+      </div>
+      <div class="container mx-auto px-4 md:px-8 lg:px-12 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm font-mono mb-6" aria-label="Breadcrumb">
+          <a href="index.html" class="text-slate-500 hover:text-green-400 transition-colors duration-200">Início</a>
+          <i data-lucide="chevron-right" class="w-3 h-3 text-slate-600"></i>
+          <span class="text-green-400">Contato</span>
+        </nav>
+
+        <div class="inline-flex items-center gap-2 text-green-400 text-sm font-mono font-medium mb-4 tracking-wider">
+          <span class="text-green-500">>://</span>
+          <span>Fale conosco</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+          Vamos construir algo<br class="hidden sm:block" /> juntos?
+        </h1>
+        <p class="text-slate-400 text-lg max-w-xl leading-relaxed">
+          Conta pra gente seu desafio. A primeira conversa é gratuita e sem compromisso — a ideia é entender se faz sentido trabalharmos juntos.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CONTACT FULL (Page) — Info + inline mini-form (dark)
+       Data keys: site.email, .phone, .address, .social.*
+       ============================================================ -->
+    <section id="contact" class="py-20 lg:py-28 bg-slate-900">
+        <div class="container mx-auto px-4 md:px-8 lg:px-12">
+            <div class="grid lg:grid-cols-5 gap-12 xl:gap-20 items-start">
+
+                <!-- Left col: Contact info (2/5) -->
+                <div class="lg:col-span-2 reveal">
+
+                    <!-- Direct contact -->
+                    <h2 class="text-xl font-semibold text-white mb-6">Informações de contato</h2>
+                    <div class="space-y-4 mb-10">
+                        <a href="mailto:contato@newstacktrace.com"
+                           class="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors duration-200 group">
+                            <div class="w-11 h-11 flex items-center justify-center bg-green-600/10 border border-green-600/20 rounded-lg group-hover:bg-green-600/20 transition-all duration-200 flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 mb-0.5">E-mail</p>
+                                <span class="text-sm">contato@newstacktrace.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+55 (41) 99890-0704"
+                           class="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors duration-200 group">
+                            <div class="w-11 h-11 flex items-center justify-center bg-green-600/10 border border-green-600/20 rounded-lg group-hover:bg-green-600/20 transition-all duration-200 flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 mb-0.5">Telefone / WhatsApp</p>
+                                <span class="text-sm">+55 (41) 99890-0704</span>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400">
+                            <div class="w-11 h-11 flex items-center justify-center bg-slate-800 border border-slate-700 rounded-lg flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-slate-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 mb-0.5">Localização</p>
+                                <span class="text-sm">Pinhais, PR - Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business hours -->
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-5 mb-10">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="clock" class="w-4 h-4 text-green-500"></i>
+                            <h3 class="text-white text-sm font-semibold">Horário de atendimento</h3>
+                        </div>
+                        <ul class="space-y-1.5 text-sm text-slate-400">
+                            <li class="flex justify-between">
+                                <span>Segunda — Sexta</span>
+                                <span class="text-slate-300">9h às 18h</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sábado</span>
+                                <span class="text-slate-300">9h às 13h</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Domingo</span>
+                                <span class="text-slate-500">Fechado</span>
+                            </li>
+                        </ul>
+                        <p class="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-700/50">
+                            Respondemos e-mails em até 24h úteis.
+                        </p>
+                    </div>
+
+                    <!-- Social links -->
+                    <h3 class="text-slate-400 text-sm mb-3">Nos siga nas redes</h3>
+                    <div class="flex items-center gap-3">
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                           aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                           aria-label="GitHub">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                           aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 flex items-center justify-center bg-slate-800 border border-slate-700 hover:border-green-600/50 hover:bg-green-600/10 text-slate-400 hover:text-green-400 rounded-lg transition-all duration-200"
+                           aria-label="Twitter / X">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right col: Full contact form (3/5) -->
+                <div class="lg:col-span-3 reveal">
+                    <h2 class="text-xl font-semibold text-white mb-6">Envie sua mensagem</h2>
+                    <form class="space-y-5 bg-slate-800/40 border border-slate-700/50 rounded-2xl p-7 lg:p-9" novalidate>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="contact-name" class="block text-slate-300 text-sm font-medium mb-1.5">Nome <span class="text-green-500">*</span></label>
+                                <input id="contact-name" type="text" name="name" placeholder="Seu nome completo"
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-slate-300 text-sm font-medium mb-1.5">E-mail <span class="text-green-500">*</span></label>
+                                <input id="contact-email" type="email" name="email" placeholder="seu@email.com"
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="contact-phone" class="block text-slate-300 text-sm font-medium mb-1.5">Telefone <span class="text-slate-500 font-normal">(opcional)</span></label>
+                                <input id="contact-phone" type="tel" name="phone" placeholder="+55 (11) 9 0000-0000"
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                            </div>
+                            <div>
+                                <label for="contact-company" class="block text-slate-300 text-sm font-medium mb-1.5">Empresa <span class="text-slate-500 font-normal">(opcional)</span></label>
+                                <input id="contact-company" type="text" name="company" placeholder="Nome da empresa"
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-subject" class="block text-slate-300 text-sm font-medium mb-1.5">Assunto <span class="text-green-500">*</span></label>
+                            <select id="contact-subject" name="subject"
+                                    class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-slate-300 rounded-lg outline-none transition-all duration-200 text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected>Selecione o assunto...</option>
+                                <option value="consultoria">Consultoria técnica</option>
+                                <option value="desenvolvimento">Desenvolvimento de software</option>
+                                <option value="arquitetura">Arquitetura de solução</option>
+                                <option value="ia">IA aplicada ao negócio</option>
+                                <option value="produto">Parceria em produto</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="contact-budget" class="block text-slate-300 text-sm font-medium mb-1.5">Orçamento estimado <span class="text-slate-500 font-normal">(opcional)</span></label>
+                            <select id="contact-budget" name="budget"
+                                    class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-slate-300 rounded-lg outline-none transition-all duration-200 text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected>Selecione uma faixa...</option>
+                                <option value="ate5k">Até R$ 5.000</option>
+                                <option value="5k-15k">R$ 5.000 — R$ 15.000</option>
+                                <option value="15k-50k">R$ 15.000 — R$ 50.000</option>
+                                <option value="50k+">Acima de R$ 50.000</option>
+                                <option value="indefinido">Ainda não sei</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-slate-300 text-sm font-medium mb-1.5">Mensagem <span class="text-green-500">*</span></label>
+                            <textarea id="contact-message" name="message" rows="5"
+                                      placeholder="Descreva seu desafio, projeto ou dúvida. Quanto mais detalhes, melhor conseguimos te ajudar..."
+                                      class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 focus:border-green-600/60 text-white placeholder:text-slate-500 rounded-lg outline-none transition-all duration-200 text-sm resize-none"></textarea>
+                        </div>
+
+                        <!-- Privacy consent -->
+                        <label class="flex items-start gap-3 cursor-pointer group">
+                            <input type="checkbox" name="consent" id="contact-consent"
+                                   class="mt-0.5 w-4 h-4 accent-green-500 flex-shrink-0 cursor-pointer" />
+                            <span class="text-slate-400 text-xs leading-relaxed">
+                      Concordo com a <a href="#" class="text-green-400 hover:text-green-300 underline underline-offset-2">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno de contato.
+                    </span>
+                        </label>
+
+                        <button type="submit"
+                                class="w-full py-3.5 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-green-900/30 flex items-center justify-center gap-2 text-sm">
+                            Enviar mensagem
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+
+                        <p class="text-slate-500 text-xs text-center">
+                            Campos marcados com <span class="text-green-500">*</span> são obrigatórios. Respondemos em até 24h úteis.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+  </main>
+
+  <!-- ──────────────────────────────────────────────
+       FOOTER  (links + bottom bar — sem seção de contato)
+       ────────────────────────────────────────────── -->
+  <!-- ============================================================
+     FOOTER — Multi-column footer + bottom bar (dark)
+     Inspired by Presento + charityhope bottom bar
+     Data keys: site.*, footer.description, .quick_links[],
+                .service_links[], .bottom_bar{}
+     ============================================================ -->
+  <!-- Footer main -->
+  <footer class="bg-[#0a0a0a] border-t border-slate-800/60">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 py-14">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Col 1: Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="#hero" class="inline-block mb-4">
+            <img src=".&#x2F;assets&#x2F;images&#x2F;logo-dark-transp.png" alt="Newstacktrace" class="h-10 w-auto" loading="lazy" />
+          </a>
+          <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+            Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.
+          </p>
+          <div class="font-mono text-xs text-green-700 opacity-60">
+            <span>new Stacktrace();</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick links -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Navegação</h4>
+          <ul class="space-y-2.5">
+            <li>
+              <a href="index.html"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="about.html"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Serviços
+              </a>
+            </li>
+            <li>
+              <a href="index.html#portfolio"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Portfólio
+              </a>
+            </li>
+            <li>
+              <a href="index.html#products"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Produtos
+              </a>
+            </li>
+            <li>
+              <a href="contact.html"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Contato
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Serviços</h4>
+          <ul class="space-y-2.5">
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Cloud &amp; Infraestrutura
+              </a>
+            </li>
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Desenvolvimento de Software
+              </a>
+            </li>
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                Arquitetura de Soluções
+              </a>
+            </li>
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                IA Aplicada ao Negócio
+              </a>
+            </li>
+            <li>
+              <a href="index.html#services"
+                 class="text-slate-500 hover:text-green-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></i>
+                DevOps &amp; Eficiência
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact summary -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Contato</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-slate-500 text-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+              <a href="mailto:contato@newstacktrace.com" class="hover:text-green-400 transition-colors duration-200 break-all">contato@newstacktrace.com</a>
+            </li>
+            <li class="flex items-start gap-2 text-slate-500 text-sm">
+              <i data-lucide="phone" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+              <a href="tel:+55 (41) 99890-0704" class="hover:text-green-400 transition-colors duration-200">+55 (41) 99890-0704</a>
+            </li>
+            <li class="flex items-start gap-2 text-slate-500 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 text-green-700 flex-shrink-0 mt-0.5"></i>
+              <span>Pinhais, PR - Brasil</span>
+            </li>
+          </ul>
+          <!-- Social mini row -->
+          <div class="flex items-center gap-2 mt-5">
+            <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+               class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;newstacktrace" target="_blank" rel="noopener noreferrer"
+               class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               class="text-slate-600 hover:text-green-400 transition-colors duration-200" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar — inspired by charityhope -->
+    <div class="border-t border-slate-800/60">
+      <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
+          <p class="text-slate-600 text-xs">
+            © 2025 Newstacktrace. Todos os direitos reservados.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="privacy.html"
+               class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+              Política de Privacidade
+            </a>
+            <a href="terms.html"
+               class="text-slate-600 hover:text-slate-400 text-xs transition-colors duration-200">
+              Termos de Uso
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ──────────────────────────────────────────────
+       SCRIPTS
+       ────────────────────────────────────────────── -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

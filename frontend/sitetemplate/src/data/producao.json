@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "items": [
+      { "label": "Inicio", "url": "index.html", "active": false },
+      { "label": "Cardapio", "url": "cardapio.html", "active": false },
+      { "label": "Producao", "url": "producao.html", "active": true },
+      { "label": "Relatorio", "url": "relatorio.html", "active": false }
+    ],
+    "cta": { "label": "Gerar relatorio", "url": "relatorio.html" }
+  },
+  "page": {
+    "title": "Configuracao de Producao",
+    "description": "Configure pratos e acrescimo de seguranca para calcular ingredientes.",
+    "breadcrumb": {
+      "home": { "label": "Inicio", "url": "index.html" },
+      "current": "Producao"
+    },
+    "hero": {
+      "eyebrow": "Producao diaria",
+      "title": "Calcule ingredientes para a cozinha.",
+      "subtitle": "Informe o numero base de pratos, ajuste o acrescimo de seguranca e visualize os totais por ingrediente."
+    }
+  },
+  "producao": {
+    "form": {
+      "eyebrow": "Parametros",
+      "title": "Pratos a produzir",
+      "subtitle": "O acrescimo maximo permitido e de 40% para cobrir variacoes de demanda.",
+      "plates_to_produce": 180,
+      "surplus_percent": 20,
+      "total_plates": 216
+    },
+    "table": {
+      "eyebrow": "Lista de producao",
+      "title": "Ingredientes calculados"
+    },
+    "ingredients": [
+      { "name": "Arroz integral", "category": "Carboidrato", "portion": "120g", "total": "25,92 kg", "total_calories": "31.882 kcal" },
+      { "name": "Batata cozida", "category": "Carboidrato", "portion": "100g", "total": "21,60 kg", "total_calories": "18.576 kcal" },
+      { "name": "Salada colorida", "category": "Salada", "portion": "80g", "total": "17,28 kg", "total_calories": "6.912 kcal" },
+      { "name": "Cenoura ralada", "category": "Salada", "portion": "60g", "total": "12,96 kg", "total_calories": "5.314 kcal" },
+      { "name": "Frango grelhado", "category": "Proteina", "portion": "110g", "total": "23,76 kg", "total_calories": "39.204 kcal" },
+      { "name": "Feijao carioca", "category": "Proteina", "portion": "90g", "total": "19,44 kg", "total_calories": "14.774 kcal" }
+    ]
+  }
+}

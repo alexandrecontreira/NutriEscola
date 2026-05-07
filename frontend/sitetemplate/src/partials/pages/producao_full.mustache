@@ -1,0 +1,73 @@
+<!-- ============================================================
+   PRODUCAO FULL
+   Data keys: producao.*
+   ============================================================ -->
+<section class="layout_padding">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="panel-card">
+          <span class="section-eyebrow">{{producao.form.eyebrow}}</span>
+          <h2 class="brand-script h1 mt-2">{{producao.form.title}}</h2>
+          <p class="text-muted">{{producao.form.subtitle}}</p>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold" for="plates">Numero base de pratos</label>
+            <input id="plates" class="number-input" type="number" min="1" value="{{producao.form.plates_to_produce}}" data-plates-input>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex justify-content-between">
+              <label class="form-label fw-bold" for="surplus">Acrescimo de seguranca</label>
+              <strong data-surplus-output>{{producao.form.surplus_percent}}%</strong>
+            </div>
+            <input id="surplus" class="range-line" type="range" min="0" max="40" value="{{producao.form.surplus_percent}}" data-surplus-input>
+            <small class="text-muted">Limite permitido: 0% a 40%.</small>
+          </div>
+
+          <div class="summary-card border-0 bg-light">
+            <div class="summary-label">Total calculado</div>
+            <div class="summary-value"><span data-total-plates>{{producao.form.total_plates}}</span> pratos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="panel-card">
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+            <div>
+              <span class="section-eyebrow">{{producao.table.eyebrow}}</span>
+              <h2 class="brand-script h1 mt-2 mb-0">{{producao.table.title}}</h2>
+            </div>
+            <a href="relatorio.html" class="btn-nutri align-self-md-center">Ver relatorio</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Alimento</th>
+                  <th>Categoria</th>
+                  <th>Porcao/prato</th>
+                  <th>Total</th>
+                  <th>Total kcal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#producao.ingredients}}
+                <tr>
+                  <td><strong>{{name}}</strong></td>
+                  <td>{{category}}</td>
+                  <td>{{portion}}</td>
+                  <td>{{total}}</td>
+                  <td>{{total_calories}}</td>
+                </tr>
+                {{/producao.ingredients}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

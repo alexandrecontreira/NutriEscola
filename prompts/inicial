@@ -1,0 +1,239 @@
+# Prompt Detalhado para Sistema de Gestão de Cardápio Escolar
+
+Aqui está o prompt estruturado por fases e contextos:
+
+---
+
+## 🧠 PROMPT PRINCIPAL
+
+---
+
+### CONTEXTO GERAL
+
+Você é um engenheiro de software sênior especialista em sistemas web modernos. Sua tarefa é construir um **Sistema de Gestão de Cardápio Escolar** chamado **NutriEscola**, seguindo boas práticas de mercado (clean code, separação de responsabilidades, componentização, escalabilidade).
+
+---
+
+### FASE 1 — ARQUITETURA E PLANEJAMENTO
+
+**Instrução:**
+Crie a estrutura de pastas e arquitetura do projeto seguindo o padrão abaixo. O sistema será uma **Single Page Application (SPA)** em React + Vite com backend simulado em JSON (mock). Use TypeScript.
+
+```
+nutriescola/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── layout/         # Header, Sidebar, Footer
+│   │   ├── ui/             # Button, Input, Select, Card, Badge
+│   │   ├── cardapio/       # FoodSelector, PortionSummary, CalorieBar
+│   │   └── relatorio/      # ReportTable, PrintView
+│   ├── pages/
+│   │   ├── Dashboard/
+│   │   ├── Cardapio/
+│   │   ├── Producao/
+│   │   └── Relatorio/
+│   ├── hooks/              # useCardapio, useProducao, useCalculo
+│   ├── services/           # cardapioService, producaoService
+│   ├── store/              # Zustand ou Context API
+│   ├── types/              # interfaces TypeScript
+│   ├── utils/              # calculo de calorias, validações
+│   ├── constants/          # CALORIE_LIMIT, MAX_SURPLUS
+│   └── data/               # mock JSON dos alimentos
+```
+
+**Regras de arquitetura:**
+- Separação estrita entre lógica de negócio (hooks/services) e UI (components/pages)
+- Tipagem completa com TypeScript
+- Constantes centralizadas: `CALORIE_LIMIT = 2000` e `MAX_SURPLUS_PERCENT = 0.40`
+- Tema com CSS Variables para suporte desktop/mobile posterior
+
+---
+
+### FASE 2 — MODELAGEM DE DADOS
+
+**Instrução:**
+Crie os tipos TypeScript e os dados mock dos alimentos nas três categorias obrigatórias. Cada item deve conter:
+
+```ts
+// src/types/index.ts
+
+type FoodCategory = 'carboidrato' | 'salada' | 'proteina';
+
+interface FoodItem {
+  id: string;
+  name: string;
+  category: FoodCategory;
+  caloriesPer100g: number;
+  defaultPortionGrams: number;
+  unit: 'g' | 'ml' | 'unidade';
+}
+
+interface SelectedPortion {
+  food: FoodItem;
+  portionGrams: number;
+  totalCalories: number;
+}
+
+interface Cardapio {
+  id: string;
+  date: string;
+  portions: SelectedPortion[];
+  totalCalories: number;       // máx 2000 kcal
+  isValid: boolean;
+}
+
+interface ProducaoConfig {
+  platesToProduce: number;       // qtd base de pratos
+  surplusPercent: number;        // 0 a 0.40 (máx 40%)
+  totalPlates: number;           // calculado: base * (1 + surplus)
+  ingredientsList: IngredientRequirement[];
+}
+
+interface IngredientRequirement {
+  food: FoodItem;
+  totalGrams: number;
+  totalCalories: number;
+}
+```
+
+**Dados mock obrigatórios — mínimo 5 itens por categoria:**
+
+- **Carboidratos:** arroz branco, arroz integral, macarrão, batata cozida, mandioca
+- **Saladas:** alface, tomate, cenoura ralada, beterraba, repolho
+- **Proteínas:** frango grelhado, carne bovina, ovo cozido, feijão, lentilha
+
+---
+
+### FASE 3 — REGRAS DE NEGÓCIO (CORE)
+
+**Instrução:**
+Implemente as seguintes regras em `src/utils/cardapioUtils.ts` e `src/hooks/useCardapio.ts`:
+
+**Regra 1 — Limite calórico:**
+```
+totalCalories = soma de todas as porções selecionadas
+totalCalories <= 2000 kcal  → válido
+totalCalories > 2000 kcal   → bloquear adição + mostrar alerta
+```
+
+**Regra 2 — Produção com acréscimo:**
+```
+totalPlates = platesToProduce * (1 + surplusPercent)
+surplusPercent deve estar entre 0% e 40%
+Se surplusPercent > 0.40 → erro de validação
+totalGramsPerIngredient = portionGrams * totalPlates
+```
+
+**Regra 3 — Obrigatoriedade de categorias:**
+```
+Um cardápio válido deve conter ao menos:
+- 1 carboidrato
+- 1 salada  
+- 1 proteína
+```
+
+**Regra 4 — Barra de progresso calórica:**
+```
+0–60%    → verde  (saudável)
+61–85%   → amarelo (atenção)
+86–100%  → laranja (limite)
+>100%    → vermelho (bloqueado)
+```
+
+---
+
+### FASE 4 — INTERFACE DESKTOP (PRIORIDADE)
+
+**Instrução:**
+Construa as páginas na ordem abaixo. Use **Tailwind CSS** para estilização. Layout desktop-first com breakpoints preparados para mobile (fase posterior).
+
+#### 4.1 — Página: Montagem do Cardápio (`/cardapio`)
+
+- Layout em 3 colunas (Carboidratos | Saladas | Proteínas)
+- Cada coluna tem cards clicáveis com nome, kcal/100g e campo de porção (gramas)
+- Painel lateral direito: resumo do cardápio com barra calórica em tempo real
+- Botão "Salvar Cardápio" — só ativo se regras 1, 2 e 3 forem válidas
+
+#### 4.2 — Página: Configuração de Produção (`/producao`)
+
+- Input: "Número base de pratos"
+- Slider: "Acréscimo de segurança" (0% a 40%) com label dinâmico
+- Tabela resultado: alimento | porção/prato | total de gramas | total kcal
+- Destaque visual para o total de pratos produzidos
+
+#### 4.3 — Página: Dashboard (`/`)
+
+- Cards de resumo: Total de pratos, Calorias do cardápio, % de acréscimo
+- Histórico dos últimos cardápios (lista)
+- Alerta se nenhum cardápio válido foi configurado
+
+#### 4.4 — Página: Relatório (`/relatorio`)
+
+- Tabela completa do cardápio selecionado
+- Botão de impressão / exportação PDF (usando `window.print()` + CSS @media print)
+- Totais consolidados por categoria
+
+---
+
+### FASE 5 — ESTADO GLOBAL
+
+**Instrução:**
+Use **Zustand** para gerenciar o estado global com os seguintes stores:
+
+```ts
+// cardapioStore → selectedPortions[], currentCalories, isValid
+// producaoStore → platesToProduce, surplusPercent, totalPlates
+// uiStore      → activeTab, notifications[], theme
+```
+
+---
+
+### FASE 6 — MOBILE (FASE POSTERIOR)
+
+**Instrução (executar após validação do desktop):**
+
+- Converter layout de 3 colunas em abas (Tabs) para mobile
+- Implementar bottom navigation bar substituindo sidebar
+- Tornar a tabela de produção responsiva (scroll horizontal ou cards empilhados)
+- Adicionar PWA manifest + service worker para uso offline em dispositivos escolares
+- Testar em viewport 375px (iPhone SE) e 390px (iPhone 14)
+
+---
+
+### FASE 7 — QUALIDADE E ENTREGA
+
+**Instrução:**
+Antes de finalizar cada fase, aplique o checklist:
+
+```
+[ ] Tipos TypeScript sem 'any'
+[ ] Componentes com menos de 150 linhas
+[ ] Lógica de negócio fora dos componentes de UI
+[ ] Constantes sem magic numbers no código
+[ ] Validações com mensagens amigáveis em português
+[ ] Responsividade preparada (classes md: e lg: no Tailwind)
+[ ] Nenhum console.log em produção
+```
+
+---
+
+### STACK RECOMENDADA
+
+| Camada | Tecnologia |
+|---|---|
+| Framework | React 18 + Vite |
+| Linguagem | TypeScript |
+| Estilo | Tailwind CSS |
+| Estado | Zustand |
+| Roteamento | React Router v6 |
+| PDF/Print | CSS @media print |
+| Icons | Lucide React |
+| Mock data | JSON local |
+
+---
+
+> **Como usar este prompt:** Cole cada fase individualmente em uma nova conversa com Claude, executando-as em sequência. Comece sempre pela Fase 1 e valide cada entrega antes de avançar.
+
+Quer que eu já execute a **Fase 1** agora e gere o projeto completo?

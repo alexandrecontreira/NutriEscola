@@ -1,0 +1,59 @@
+<!-- ============================================================
+   TESTIMONIALS — Client quotes (no stars)
+   Inspired by Presento testimonials layout
+   Data keys: testimonials.eyebrow, .title, .items[]
+              item: .name, .role, .company, .photo, .quote
+   ============================================================ -->
+<section id="testimonials" class="py-20 lg:py-28 bg-slate-50">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Section header -->
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+        <span>>://</span>
+        <span>{{testimonials.eyebrow}}</span>
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+        {{testimonials.title}}
+      </h2>
+      <div class="w-12 h-1 bg-green-600 rounded-full mx-auto mt-5"></div>
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{#testimonials.items}}
+      <div class="reveal bg-white border border-slate-100 rounded-2xl p-7 hover:border-green-200 hover:shadow-lg hover:shadow-green-50 transition-all duration-300 relative group">
+
+        <!-- Opening quote mark -->
+        <div class="text-green-100 text-7xl font-serif leading-none absolute top-4 right-6 select-none group-hover:text-green-200 transition-colors duration-300">"</div>
+
+        <!-- Quote text -->
+        <blockquote class="text-slate-600 text-sm lg:text-base leading-relaxed mb-7 relative z-10">
+          "{{quote}}"
+        </blockquote>
+
+        <!-- Author info -->
+        <div class="flex items-center gap-4 pt-5 border-t border-slate-100">
+          <!-- Photo -->
+          <div class="w-11 h-11 rounded-full overflow-hidden bg-slate-200 flex-shrink-0 border-2 border-white shadow-sm">
+            <img src="{{photo}}"
+                 alt="{{name}}"
+                 class="w-full h-full object-cover"
+                 loading="lazy"
+                 onerror="this.closest('div').innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-green-100\' aria-hidden=\'true\'><span class=\'text-green-600 font-bold text-base\'>' + '{{name}}'.charAt(0) + '</span></div>'" />
+          </div>
+          <!-- Name + role + company -->
+          <div>
+            <div class="font-semibold text-slate-900 text-sm">{{name}}</div>
+            <div class="text-slate-500 text-xs mt-0.5">
+              {{role}}{{#company}}<span class="text-slate-300 mx-1">·</span>{{company}}{{/company}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {{/testimonials.items}}
+    </div>
+
+  </div>
+</section>

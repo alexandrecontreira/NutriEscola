@@ -1,0 +1,146 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Conheça os produtos da Newstacktrace — soluções SaaS desenvolvidas com base em desafios reais do mercado.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github":   "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter":  "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",     "active": false },
+      { "label": "Sobre",     "url": "about.html",     "active": false },
+      { "label": "Serviços",  "url": "services.html",  "active": false },
+      { "label": "Portfólio", "url": "portfolio.html", "active": false },
+      { "label": "Produtos",  "url": "products.html",  "active": true  },
+      { "label": "Contato",   "url": "contact.html",   "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home":    { "label": "Início", "url": "index.html" },
+      "current": "Produtos"
+    },
+    "hero": {
+      "eyebrow":  "Nossos Produtos",
+      "title":    "Soluções que estamos<br/>construindo.",
+      "subtitle": "Além dos serviços, desenvolvemos produtos próprios que nascem da nossa experiência com clientes reais."
+    }
+  },
+  "products_page": {
+    "eyebrow":  "Produtos",
+    "title":    "O que estamos construindo",
+    "subtitle": "Plataformas e ferramentas desenvolvidas para resolver problemas reais que encontramos nas empresas com que trabalhamos.",
+    "filters": [
+      { "id": "all",       "label": "Todos",       "active": true  },
+      { "id": "saas",      "label": "SaaS",        "active": false },
+      { "id": "ia",        "label": "IA",          "active": false },
+      { "id": "dev-tools", "label": "Dev Tools",   "active": false }
+    ],
+    "items": [
+      {
+        "slug":          "carestack",
+        "name":          "CareStack",
+        "tagline":       "Gestão inteligente para comunidades terapêuticas",
+        "description":   "Plataforma SaaS completa para gestão de residências terapêuticas, ONGs e comunidades de suporte. Controle de internos, relatórios, financeiro e comunicação em um único sistema.",
+        "icon":          "heart-pulse",
+        "category_id":   "saas",
+        "status_label":  "Beta privado",
+        "status_class":  "bg-green-900/50 text-green-400 border border-green-700/40",
+        "is_available":  true,
+        "tags":          ["SaaS", "Saúde", "ONGs"],
+        "url":           "product-detail.html",
+        "cta":           "Quero ser beta tester",
+        "features": [
+          "Controle de internos e prontuários",
+          "Relatórios gerenciais e regulatórios",
+          "Módulo financeiro integrado",
+          "Comunicação interna e com familiares",
+          "Dashboard de indicadores em tempo real"
+        ]
+      },
+      {
+        "slug":          "nexus-ai",
+        "name":          "Nexus AI",
+        "tagline":       "IA conversacional para pequenas empresas",
+        "description":   "Assistente inteligente treinado com o conhecimento do seu negócio. Atende clientes, qualifica leads e responde dúvidas no WhatsApp, site ou app — sem código.",
+        "icon":          "message-square-code",
+        "category_id":   "ia",
+        "status_label":  "Em breve",
+        "status_class":  "bg-yellow-900/50 text-yellow-400 border border-yellow-700/40",
+        "is_available":  false,
+        "tags":          ["IA", "SaaS", "Atendimento"],
+        "url":           "contact.html",
+        "cta":           "Entrar na lista de espera",
+        "features": [
+          "Treinamento com seu conteúdo e FAQs",
+          "Integração com WhatsApp Business",
+          "Widget para site e aplicativos",
+          "Qualificação automática de leads",
+          "Histórico e analytics de conversas"
+        ]
+      },
+      {
+        "slug":          "devlaunch",
+        "name":          "DevLaunch",
+        "tagline":       "Boilerplate + infraestrutura para times de produto",
+        "description":   "Kit de inicialização para projetos de software com toda a infraestrutura já configurada: CI/CD, observabilidade, autenticação, multi-tenancy e documentação.",
+        "icon":          "rocket",
+        "category_id":   "dev-tools",
+        "status_label":  "Planejado",
+        "status_class":  "bg-slate-700/50 text-slate-400 border border-slate-600/40",
+        "is_available":  false,
+        "tags":          ["Dev Tools", "Templates", "Cloud"],
+        "url":           "contact.html",
+        "cta":           "Acompanhar desenvolvimento",
+        "features": [
+          "Autenticação e multi-tenancy prontos",
+          "CI/CD configurado (GitHub Actions)",
+          "Observabilidade com OpenTelemetry",
+          "Infraestrutura IaC com Terraform",
+          "Documentação técnica e ADRs base"
+        ]
+      }
+    ],
+    "cta_section": {
+      "title":    "Quer usar um dos nossos produtos?",
+      "subtitle": "Entre em contato para saber mais sobre disponibilidade, planos e como podemos adaptar as soluções ao seu contexto."
+    }
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",    "url": "index.html"    },
+      { "label": "Sobre",     "url": "about.html"    },
+      { "label": "Serviços",  "url": "services.html" },
+      { "label": "Portfólio", "url": "portfolio.html" },
+      { "label": "Produtos",  "url": "products.html" },
+      { "label": "Contato",   "url": "contact.html"  }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "services.html" },
+      { "label": "Desenvolvimento de Software", "url": "services.html" },
+      { "label": "Arquitetura de Soluções",     "url": "services.html" },
+      { "label": "IA Aplicada ao Negócio",      "url": "services.html" },
+      { "label": "DevOps & Eficiência",         "url": "services.html" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

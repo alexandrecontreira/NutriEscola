@@ -1,0 +1,247 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github": "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter": "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",    "active": false },
+      { "label": "Sobre",     "url": "about.html",    "active": false },
+      { "label": "Serviços",  "url": "services.html", "active": true  },
+      { "label": "Portfólio", "url": "portfolio.html", "active": false },
+      { "label": "Produtos",  "url": "products.html",  "active": false },
+      { "label": "Contato",   "url": "contact.html",  "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home": { "label": "Início", "url": "index.html" },
+      "current": "Serviços"
+    },
+    "hero": {
+      "eyebrow": "Nossos Serviços",
+      "title": "Soluções tecnológicas<br/>para cada etapa<br/>do seu negócio.",
+      "subtitle": "Do planejamento à entrega, oferecemos consultoria e desenvolvimento especializados para transformar seus desafios em resultados concretos."
+    }
+  },
+  "services_page": {
+    "eyebrow": "Catálogo de Serviços",
+    "title": "O que fazemos",
+    "subtitle": "Expertise técnica em todas as frentes que uma empresa de tecnologia precisa dominar.",
+    "cta_section": {
+      "title": "Pronto para transformar sua operação?",
+      "subtitle": "Vamos entender seu desafio e propor a solução mais adequada para o seu momento e seus objetivos."
+    },
+    "categories": [
+      { "id": "all",          "label": "Todos",                   "active": true  },
+      { "id": "cloud",        "label": "Cloud & Infra",           "active": false },
+      { "id": "arquitetura",  "label": "Arquitetura & Sistemas",  "active": false },
+      { "id": "ia",           "label": "Inteligência Artificial", "active": false },
+      { "id": "api-dados",    "label": "API & Dados",             "active": false },
+      { "id": "seguranca",    "label": "Segurança",               "active": false },
+      { "id": "desenvolvimento", "label": "Desenvolvimento",      "active": false },
+      { "id": "capacitacao",  "label": "Capacitação",             "active": false }
+    ],
+    "items": [
+      {
+        "slug": "cloud-computing-consultancy",
+        "category_id": "cloud",
+        "icon": "cloud",
+        "title": "Cloud Computing Consultancy",
+        "tags": ["AWS", "GCP", "Migration"],
+        "description": "Migração e otimização de infraestrutura em nuvem. Estratégias multi-cloud, IaC e redução de custos operacionais.",
+        "featured": true,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "automation-devops",
+        "category_id": "cloud",
+        "icon": "settings-2",
+        "title": "Automation & DevOps",
+        "tags": ["CI/CD", "Terraform", "Docker", "Kubernetes"],
+        "description": "Pipelines de CI/CD, IaC, containerização e observabilidade para entregas mais rápidas e confiáveis.",
+        "featured": true,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "system-architecture-design",
+        "category_id": "arquitetura",
+        "icon": "layers",
+        "title": "System Architecture Design",
+        "tags": ["Microserviços", "DDD", "Clean Arch"],
+        "description": "Design de arquiteturas escaláveis com documentação técnica completa, ADRs e roadmap de implementação.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "microservices-development",
+        "category_id": "arquitetura",
+        "icon": "boxes",
+        "title": "Microservices Development",
+        "tags": ["Docker", "Kubernetes", "Service Mesh"],
+        "description": "Design, desenvolvimento e deploy de arquiteturas de microserviços com containerização e orquestração modernas.",
+        "featured": true,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "architecture-evaluation",
+        "category_id": "arquitetura",
+        "icon": "search-code",
+        "title": "Architecture Evaluation & Improvement",
+        "tags": ["Performance", "Cost Optimization", "Security"],
+        "description": "Assessment profundo da arquitetura existente para identificar gargalos, dívida técnica e oportunidades de melhoria.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "system-integration",
+        "category_id": "arquitetura",
+        "icon": "plug",
+        "title": "System Integration",
+        "tags": ["API", "Middleware", "Legacy", "Event-driven"],
+        "description": "Integração entre sistemas distintos e plataformas, garantindo fluxo de dados contínuo e comunicação confiável.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "ai-rag-solutions",
+        "category_id": "ia",
+        "icon": "brain",
+        "title": "AI & RAG Solutions",
+        "tags": ["LLM", "RAG", "AWS Bedrock", "OpenAI"],
+        "description": "Sistemas de AI com LLMs e RAG para extrair insights do conhecimento interno com precisão e controle.",
+        "featured": true,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "ai-chatbot-assistant",
+        "category_id": "ia",
+        "icon": "message-square-code",
+        "title": "AI Chatbot & Knowledge Assistant",
+        "tags": ["Chatbot", "LLM", "Automation"],
+        "description": "Chatbots inteligentes e assistentes de conhecimento que combinam LLMs com RAG para respostas confiáveis.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "api-management",
+        "category_id": "api-dados",
+        "icon": "code-2",
+        "title": "API Management",
+        "tags": ["REST", "GraphQL", "API Gateway", "OpenAPI"],
+        "description": "Design, desenvolvimento e gestão do ciclo de vida completo de APIs robustas, seguras e bem documentadas.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "data-architecture",
+        "category_id": "api-dados",
+        "icon": "database",
+        "title": "Data Architecture",
+        "tags": ["Data Lake", "Data Warehouse", "Big Data", "Analytics"],
+        "description": "Soluções escaláveis de armazenamento e processamento de dados para decisões baseadas em dados reais.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "software-security",
+        "category_id": "seguranca",
+        "icon": "shield-check",
+        "title": "Software Security",
+        "tags": ["Pentest", "OWASP", "SDLC", "Vulnerability"],
+        "description": "Assessment de segurança, desenvolvimento seguro e conformidade para proteger aplicações e infraestrutura.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "governance-compliance",
+        "category_id": "seguranca",
+        "icon": "file-check",
+        "title": "Governance & Compliance",
+        "tags": ["LGPD", "GDPR", "SOC2", "ISO 27001"],
+        "description": "Frameworks de governança e conformidade regulatória para atender requisitos legais e construir confiança.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "web-development",
+        "category_id": "desenvolvimento",
+        "icon": "monitor",
+        "title": "Web Development",
+        "tags": ["React", "Node.js", "Python", "Full Stack"],
+        "description": "Aplicações web modernas e performáticas do backend ao frontend, com boas práticas e foco em escalabilidade.",
+        "featured": true,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "prototyping-poc",
+        "category_id": "desenvolvimento",
+        "icon": "flask-conical",
+        "title": "Prototyping & PoC",
+        "tags": ["PoC", "Prototipagem", "Validação"],
+        "description": "Validação de ideias e escolhas tecnológicas antes do comprometimento com desenvolvimento em escala completa.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "technology-consultancy",
+        "category_id": "capacitacao",
+        "icon": "lightbulb",
+        "title": "Technology Consultancy",
+        "tags": ["Strategy", "Advisory", "Fractional CTO"],
+        "description": "Consultoria estratégica de tecnologia para decisões embasadas, transformação digital e resolução de problemas complexos.",
+        "featured": false,
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "training-capacity-building",
+        "category_id": "capacitacao",
+        "icon": "graduation-cap",
+        "title": "Training & Capacity Building",
+        "tags": ["Workshops", "Mentoria", "Treinamento"],
+        "description": "Capacitação de times com programas de treinamento, workshops e mentoria em tecnologias modernas.",
+        "featured": false,
+        "url": "service-detail.html"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",    "url": "index.html" },
+      { "label": "Sobre",     "url": "about.html" },
+      { "label": "Serviços",  "url": "index.html#services" },
+      { "label": "Portfólio", "url": "index.html#portfolio" },
+      { "label": "Produtos",  "url": "index.html#products" },
+      { "label": "Contato",   "url": "contact.html" }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "index.html#services" },
+      { "label": "Desenvolvimento de Software", "url": "index.html#services" },
+      { "label": "Arquitetura de Soluções",     "url": "index.html#services" },
+      { "label": "IA Aplicada ao Negócio",      "url": "index.html#services" },
+      { "label": "DevOps & Eficiência",         "url": "index.html#services" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html" }
+      ]
+    }
+  }
+}

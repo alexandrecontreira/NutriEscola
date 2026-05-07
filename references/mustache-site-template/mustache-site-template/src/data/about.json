@@ -1,0 +1,223 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github": "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter": "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",     "url": "index.html",     "active": false },
+      { "label": "Sobre",      "url": "about.html",     "active": true },
+      { "label": "Serviços",   "url": "services.html",  "active": false },
+      { "label": "Portfólio",  "url": "portfolio.html", "active": false },
+      { "label": "Produtos",   "url": "products.html",  "active": false },
+      { "label": "Contato",    "url": "contact.html",   "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home": { "label": "Início", "url": "index.html" },
+      "current": "Sobre"
+    },
+    "hero": {
+      "eyebrow": "Sobre a Newstacktrace",
+      "title": "Tecnologia séria.<br/>Entrega real.<br/>Parceria de longo prazo.",
+      "subtitle": "Nascemos da combinação entre experiência técnica profunda e visão estratégica de produto."
+    }
+  },
+  "about": {
+    "founded": "2022-07-19",
+    "yearsActive": "2",
+    "servicesCount": "9",
+    "story": {
+      "title": "Nossa História",
+      "content": "<p class='mb-4'>A Newstacktrace nasceu da convicção de que tecnologia deve ser acessível, escalável e transformadora. Fundada em julho de 2022, a empresa foi criada a partir da experiência acumulada de seu fundador, que possui mais de 20 anos de atuação em engenharia de software, unindo conhecimento técnico profundo com uma visão clara de negócio.</p><p class='mb-4'>Desde o início, a Newstacktrace surgiu com o propósito de oferecer ao mercado uma consultoria tecnológica que vai além do código. Entendemos que tecnologia é meio, não fim, e que toda solução técnica precisa servir a um objetivo de negócio claro.</p><p class='mb-4'>Nossa missão é ser parceiros de longo prazo das empresas com as quais trabalhamos. Não buscamos apenas entregar projetos, mas compreender profundamente cada negócio, seus desafios e suas ambições, para propor soluções que realmente façam diferença.</p><p class='mb-4'>Atuamos apoiando empresas em diferentes níveis de maturidade tecnológica. Desenvolvemos projetos sob medida conforme as necessidades de cada cliente, realizamos consultorias especializadas e oferecemos treinamentos para capacitação de equipes.</p><p class='mb-4'>Além disso, apoiamos organizações que precisam de times técnicos, mas não possuem estrutura ou know-how para formar e gerenciar essas equipes internamente. Nesse contexto, podemos montar e operar times dedicados, que atuam em parceria com o cliente ou diretamente em seus projetos, permitindo que a empresa foque no seu negócio enquanto garantimos a excelência técnica da entrega.</p><p class='mb-4'>Com uma equipe formada por engenheiros experientes e especializados em diferentes áreas da tecnologia, atuamos em projetos de alta complexidade, sempre com foco em qualidade, escalabilidade e geração de resultados mensuráveis.</p>"
+    },
+    "mission": {
+      "title": "Missão",
+      "content": "Transformar desafios de negócio em soluções tecnológicas robustas, escaláveis e sustentáveis, desenvolvendo software com qualidade, agilidade e visão estratégica, impactando positivamente a operação e o crescimento de nossos clientes como parceiros estratégicos."
+    },
+    "vision": {
+      "title": "Visão",
+      "content": "Ser referência em consultoria e engenharia de software, reconhecida pela excelência técnica e pela capacidade de transformar negócios através da tecnologia."
+    },
+    "stats": [
+      {
+        "icon": "calendar",
+        "value": "3+",
+        "label": "Anos de Experiência",
+        "description": "Desde julho de 2022"
+      },
+      {
+        "icon": "briefcase",
+        "value": "9+",
+        "label": "Áreas de Atuação",
+        "description": "Serviços especializados"
+      },
+      {
+        "icon": "users",
+        "value": "15+",
+        "label": "Clientes Atendidos",
+        "description": "Empresas de diversos portes"
+      },
+      {
+        "icon": "award",
+        "value": "10+",
+        "label": "Projetos Entregues",
+        "description": "Soluções em produção"
+      }
+    ],
+    "services": [
+      {
+        "icon": "cloud",
+        "tags": "AWS · GCP",
+        "title": "Cloud & Infraestrutura",
+        "description": "Migração, arquitetura e otimização de ambientes em nuvem. Estratégias multi-cloud, IaC com Terraform e redução de custos operacionais."
+      },
+      {
+        "icon": "settings-2",
+        "tags": "CI/CD · Docker · Kubernetes",
+        "title": "DevOps & Automação",
+        "description": "Pipelines de CI/CD, containerização, observabilidade e cultura DevOps para times que precisam entregar mais com mais confiança."
+      },
+      {
+        "icon": "layers",
+        "tags": "Microserviços · DDD · Clean Arch",
+        "title": "Arquitetura de Software",
+        "description": "Design de sistemas escaláveis, revisão de arquitetura existente e modernização de sistemas legados com foco em manutenibilidade."
+      },
+      {
+        "icon": "bot",
+        "tags": "LLM · RAG · OpenAI · Bedrock",
+        "title": "Inteligência Artificial",
+        "description": "Integração de LLMs, sistemas RAG, chatbots e automação inteligente para extrair valor real do conhecimento do negócio."
+      },
+      {
+        "icon": "refresh-cw",
+        "tags": "Refatoração · Migração · Legacy",
+        "title": "Modernização de Sistemas",
+        "description": "Transformação de sistemas legados em plataformas modernas, sem interromper a operação. Migração incremental, segura e documentada."
+      },
+      {
+        "icon": "plug",
+        "tags": "REST · GraphQL · gRPC",
+        "title": "APIs & Integração de Sistemas",
+        "description": "Design, desenvolvimento e gestão do ciclo de vida de APIs. Integração entre sistemas distintos, legados e plataformas de terceiros."
+      },
+      {
+        "icon": "code-2",
+        "tags": "Python · Node.js · Go · React",
+        "title": "Desenvolvimento Web",
+        "description": "Aplicações web de alta performance, do backend ao frontend. SPAs, APIs, sistemas full-stack e provas de conceito."
+      },
+      {
+        "icon": "shield-check",
+        "tags": "OWASP · LGPD · Pentest",
+        "title": "Segurança & Conformidade",
+        "description": "Security assessment, práticas de desenvolvimento seguro e adequação a normas como LGPD, SOC 2 e PCI DSS."
+      },
+      {
+        "icon": "graduation-cap",
+        "tags": "Workshops · Mentoria · Advisory",
+        "title": "Capacitação & Consultoria",
+        "description": "Treinamentos técnicos, workshops e consultoria estratégica para elevar o nível do time e embasar decisões de tecnologia."
+      }
+    ],
+    "values": [
+      {
+        "icon": "target",
+        "title": "Foco em Resultado",
+        "description": "Trabalhamos orientados a entregáveis claros e métricas de impacto real no seu negócio, não em horas trabalhadas."
+      },
+      {
+        "icon": "layers",
+        "title": "Visão Estratégica",
+        "description": "Unimos profundidade de engenharia com entendimento de produto e mercado para soluções que servem ao negócio."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Qualidade sem Atalhos",
+        "description": "Código testado, documentado e revisado. Sem gambiarras que viram dívida técnica."
+      },
+      {
+        "icon": "handshake",
+        "title": "Parceria Duradoura",
+        "description": "Preferimos relações de longo prazo a projetos pontuais. Crescemos junto com você."
+      },
+      {
+        "icon": "zap",
+        "title": "Agilidade & Adaptação",
+        "description": "Metodologias ágeis aplicadas com inteligência para entregar valor continuamente."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "Inovação Constante",
+        "description": "Buscamos constantemente novas tecnologias e metodologias para oferecer as melhores soluções."
+      }
+    ],
+    "founder": {
+      "name": "Anderson Contreira",
+      "role": "Founder & CTO",
+      "bio": "Arquiteto de Software e Soluções com background em TI desde 2008 e mais de 6 anos de liderança técnica em ambientes ágeis. Especializado em arquiteturas distribuídas, cloud nativa (AWS 8+ anos, GCP 2+ anos) e sistemas baseados em IA, incluindo pipelines RAG, sistemas baseados em LLMs e workflows de automação inteligente. Liderou desenvolvimento de soluções end-to-end com times de produto, modernizou plataformas legadas para microsserviços e implementou práticas DevOps para melhorar confiabilidade e velocidade de entrega.",
+      "photo": "assets/images/profile.jpg",
+      "linkedin": "https://linkedin.com/in/andersoncontreira",
+      "github": "https://github.com/andersoncontreira",
+      "tags": [
+        "Cloud Architecture",
+        "Microservices",
+        "AI / RAG",
+        "AWS · GCP"
+      ]
+    },
+    "cta": {
+      "title": "Vamos construir algo juntos?",
+      "description": "Se você busca um parceiro tecnológico que entende de negócio tanto quanto de código, vamos conversar.",
+      "primary": {
+        "label": "Agendar conversa",
+        "url": "contact.html"
+      },
+      "secondary": {
+        "label": "Ver nossos projetos",
+        "url": "index.html#portfolio"
+      }
+    }
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",     "url": "index.html" },
+      { "label": "Sobre",      "url": "about.html" },
+      { "label": "Serviços",   "url": "index.html#services" },
+      { "label": "Portfólio",  "url": "index.html#portfolio" },
+      { "label": "Produtos",   "url": "index.html#products" },
+      { "label": "Contato",    "url": "contact.html" }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",     "url": "index.html#services" },
+      { "label": "Desenvolvimento de Software", "url": "index.html#services" },
+      { "label": "Arquitetura de Soluções",    "url": "index.html#services" },
+      { "label": "IA Aplicada ao Negócio",     "url": "index.html#services" },
+      { "label": "DevOps & Eficiência",        "url": "index.html#services" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html" }
+      ]
+    }
+  }
+}

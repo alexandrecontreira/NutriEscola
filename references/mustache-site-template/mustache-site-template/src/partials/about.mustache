@@ -1,0 +1,106 @@
+<!-- ============================================================
+   ABOUT — Company intro + stats + founder card
+   Inspired by KnightOne + Clinic layouts
+   Data keys: about.eyebrow, .title, .body, .body2, .cta,
+              .stats[], .founder{}
+   ============================================================ -->
+<section id="about" class="py-20 lg:py-28 bg-white">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Section header -->
+    <div class="max-w-2xl mb-14 reveal">
+      <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-4 tracking-wider">
+        <span class="text-green-600">>://</span>
+        <span>{{about.eyebrow}}</span>
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-4">
+        {{about.title}}
+      </h2>
+      <div class="w-12 h-1 bg-green-600 rounded-full"></div>
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+
+      <!-- Left: Company description + stats + CTA -->
+      <div class="reveal">
+        <p class="text-slate-600 leading-relaxed text-base lg:text-lg mb-4">
+          {{about.body}}
+        </p>
+        <p class="text-slate-600 leading-relaxed text-base lg:text-lg mb-8">
+          {{about.body2}}
+        </p>
+
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          {{#about.stats}}
+          <div class="p-5 bg-slate-50 border border-slate-100 rounded-xl group hover:border-green-200 hover:bg-green-50/50 transition-all duration-200">
+            <div class="text-2xl lg:text-3xl font-bold text-green-600 font-mono mb-1">{{value}}</div>
+            <div class="text-sm text-slate-500 font-medium">{{label}}</div>
+          </div>
+          {{/about.stats}}
+        </div>
+
+        <!-- CTA -->
+        <a href="{{about.cta.url}}"
+           class="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 group transition-colors duration-200">
+          {{about.cta.label}}
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+      <!-- Right: Founder card -->
+      <div class="reveal">
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800">
+
+          <!-- Card header with photo -->
+          <div class="relative bg-gradient-to-br from-slate-800 to-[#0a0a0a] p-8 pb-6">
+            <div class="flex items-start gap-5">
+              <!-- Photo placeholder -->
+              <div class="relative flex-shrink-0">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden bg-slate-700 border-2 border-green-600/30">
+                  <img src="{{about.founder.photo}}"
+                       alt="{{about.founder.name}}"
+                       class="w-full h-full object-cover"
+                       onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-green-900/30\'><svg xmlns=\'http://www.w3.org/2000/svg\' class=\'w-8 h-8 text-green-500\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\'/></svg></div>'" />
+                </div>
+                <!-- Online indicator -->
+                <span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-500 border-2 border-slate-900 rounded-full"></span>
+              </div>
+
+              <!-- Name + role -->
+              <div class="min-w-0">
+                <h3 class="text-white font-bold text-lg leading-tight">{{about.founder.name}}</h3>
+                <p class="text-green-400 text-sm font-mono mt-0.5">{{about.founder.role}}</p>
+                <a href="{{about.founder.linkedin}}" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 mt-2 text-slate-400 text-xs hover:text-white transition-colors duration-200">
+                  <i data-lucide="linkedin" class="w-3 h-3"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="px-8 pb-8">
+            <div class="pt-5 border-t border-slate-800">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                {{about.founder.bio}}
+              </p>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">Cloud Architecture</span>
+              <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">Microservices</span>
+              <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">AI / RAG</span>
+              <span class="px-2.5 py-1 bg-slate-800/80 border border-slate-700/50 text-slate-400 text-xs font-mono rounded">AWS · GCP</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

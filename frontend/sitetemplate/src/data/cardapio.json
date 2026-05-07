@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "items": [
+      { "label": "Inicio", "url": "index.html", "active": false },
+      { "label": "Cardapio", "url": "cardapio.html", "active": true },
+      { "label": "Producao", "url": "producao.html", "active": false },
+      { "label": "Relatorio", "url": "relatorio.html", "active": false }
+    ],
+    "cta": { "label": "Ir para producao", "url": "producao.html" }
+  },
+  "page": {
+    "title": "Montagem do Cardapio",
+    "description": "Monte um cardapio escolar validado com carboidrato, salada e proteina.",
+    "breadcrumb": {
+      "home": { "label": "Inicio", "url": "index.html" },
+      "current": "Cardapio"
+    },
+    "hero": {
+      "eyebrow": "Montagem do cardapio",
+      "title": "Escolha porcoes por grupo alimentar.",
+      "subtitle": "Selecione alimentos, ajuste as porcoes em gramas e acompanhe o total calorico em tempo real."
+    }
+  },
+  "cardapio": {
+    "rules": [
+      "O cardapio deve conter ao menos 1 carboidrato.",
+      "O cardapio deve conter ao menos 1 salada.",
+      "O cardapio deve conter ao menos 1 proteina.",
+      "A porcao minima por item e de 10g.",
+      "O total calorico nao pode ultrapassar 2.000 kcal."
+    ],
+    "categories": [
+      {
+        "label": "Grupo 1",
+        "title": "Carboidratos",
+        "items": [
+          {
+            "id": "arroz-integral",
+            "name": "Arroz integral",
+            "category_label": "Carboidrato",
+            "calories_per_100g": 123,
+            "portion_grams": 120,
+            "image": "assets/images/food-carboidrato.png"
+          },
+          {
+            "id": "batata-cozida",
+            "name": "Batata cozida",
+            "category_label": "Carboidrato",
+            "calories_per_100g": 86,
+            "portion_grams": 100,
+            "image": "assets/images/food-carboidrato.png"
+          }
+        ]
+      },
+      {
+        "label": "Grupo 2",
+        "title": "Saladas",
+        "items": [
+          {
+            "id": "salada-colorida",
+            "name": "Salada colorida",
+            "category_label": "Salada",
+            "calories_per_100g": 40,
+            "portion_grams": 80,
+            "image": "assets/images/food-salada.png"
+          },
+          {
+            "id": "cenoura-ralada",
+            "name": "Cenoura ralada",
+            "category_label": "Salada",
+            "calories_per_100g": 41,
+            "portion_grams": 60,
+            "image": "assets/images/food-salada.png"
+          }
+        ]
+      },
+      {
+        "label": "Grupo 3",
+        "title": "Proteinas",
+        "items": [
+          {
+            "id": "frango-grelhado",
+            "name": "Frango grelhado",
+            "category_label": "Proteina",
+            "calories_per_100g": 165,
+            "portion_grams": 110,
+            "image": "assets/images/food-proteina.png"
+          },
+          {
+            "id": "feijao-carioca",
+            "name": "Feijao carioca",
+            "category_label": "Proteina",
+            "calories_per_100g": 76,
+            "portion_grams": 90,
+            "image": "assets/images/food-proteina.png"
+          }
+        ]
+      }
+    ]
+  },
+  "calorie_summary": {
+    "eyebrow": "Semaforo calorico",
+    "title": "Total da refeicao",
+    "description": "O total e calculado por porcao: kcal/100g dividido por 100 e multiplicado pela quantidade em gramas.",
+    "total_calories": 540,
+    "status": "Saudavel",
+    "limit": 2000,
+    "progress_percent": 27,
+    "progress_class": "kcal-green"
+  }
+}

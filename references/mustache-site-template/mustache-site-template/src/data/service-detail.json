@@ -1,0 +1,180 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github": "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter": "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",    "active": false },
+      { "label": "Sobre",     "url": "about.html",    "active": false },
+      { "label": "Serviços",  "url": "services.html", "active": true  },
+      { "label": "Portfólio", "url": "portfolio.html", "active": false },
+      { "label": "Produtos",  "url": "products.html",  "active": false },
+      { "label": "Contato",   "url": "contact.html",  "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home": { "label": "Início", "url": "index.html" },
+      "services": { "label": "Serviços", "url": "services.html" },
+      "current": "Cloud Computing Consultancy"
+    },
+    "hero": {
+      "eyebrow": "Cloud & Infraestrutura",
+      "title": "Cloud Computing<br/>Consultancy",
+      "subtitle": "Migração, otimização e modernização de infraestrutura em nuvem com estratégias multi-cloud, IaC e redução de custos operacionais."
+    }
+  },
+  "service": {
+    "slug": "cloud-computing-consultancy",
+    "category": "Cloud & Infra",
+    "category_id": "cloud",
+    "icon": "cloud",
+    "featured": true,
+    "tags": ["AWS", "GCP", "Migration", "Cost Optimization"],
+    "title": "Cloud Computing Consultancy",
+    "summary": "Ajudamos empresas a migrar, otimizar e modernizar sua infraestrutura em nuvem. Com expertise em AWS e GCP, entregamos estratégias cloud, infraestrutura como código e planos de redução de custos operacionais — sempre alinhados aos objetivos do negócio.",
+    "services_offered": [
+      {
+        "title": "Estratégia de Migração",
+        "items": [
+          "Assessment do ambiente on-premises atual",
+          "Planejamento de migração lift-and-shift ou re-architect",
+          "Cronograma de migração com rollback plan",
+          "Validação de SLAs e requisitos de disponibilidade"
+        ]
+      },
+      {
+        "title": "Cloud Architecture Design",
+        "items": [
+          "Design de arquitetura Well-Architected",
+          "Definição de VPCs, subnets e políticas de rede",
+          "Estratégias de alta disponibilidade e disaster recovery",
+          "Documentação técnica e ADRs"
+        ]
+      },
+      {
+        "title": "Estratégia Multi-Cloud",
+        "items": [
+          "Análise de fit de cada provedor para cada workload",
+          "Evitar vendor lock-in com camadas de abstração",
+          "Gestão centralizada de multi-cloud com ferramentas IaC",
+          "Políticas de segurança e compliance unificadas"
+        ]
+      },
+      {
+        "title": "Otimização de Custos",
+        "items": [
+          "Análise de billing e identificação de desperdícios",
+          "Right-sizing de instâncias e serviços gerenciados",
+          "Estratégias de Reserved Instances e Savings Plans",
+          "Dashboards de monitoramento de custos em tempo real"
+        ]
+      }
+    ],
+    "technologies": [
+      {
+        "provider": "AWS",
+        "items": ["EC2", "ECS", "EKS", "Lambda", "RDS", "S3", "CloudFront"]
+      },
+      {
+        "provider": "GCP",
+        "items": ["Compute Engine", "GKE", "Cloud Functions", "BigQuery"]
+      }
+    ],
+    "methodology": [
+      {
+        "step": "01",
+        "title": "Discovery",
+        "description": "Levantamento completo do ambiente atual, requisitos de negócio, restrições técnicas e objetivos de curto e longo prazo."
+      },
+      {
+        "step": "02",
+        "title": "Assessment",
+        "description": "Análise profunda da infraestrutura existente: custos, performance, segurança, escalabilidade e aderência a boas práticas."
+      },
+      {
+        "step": "03",
+        "title": "Strategy",
+        "description": "Elaboração do plano de ação com arquitetura target, roadmap de implementação, estimativas de custo e métricas de sucesso."
+      },
+      {
+        "step": "04",
+        "title": "Implementation",
+        "description": "Execução do plano com IaC (Terraform/CloudFormation), migração incremental, testes e validação contínua dos SLAs."
+      },
+      {
+        "step": "05",
+        "title": "Optimization",
+        "description": "Monitoramento contínuo, ajustes de performance e custo, atualizações de segurança e evolução da arquitetura conforme o negócio cresce."
+      }
+    ],
+    "benefits": [
+      "Redução de custos operacionais de infraestrutura em até 40%",
+      "Alta disponibilidade com SLAs de 99,9% ou superiores",
+      "Escalabilidade automática para lidar com picos de demanda",
+      "Segurança reforçada com IAM, criptografia e auditoria contínua",
+      "Infraestrutura como código versionada e reproduzível",
+      "Time-to-market reduzido com ambientes provisionados em minutos"
+    ],
+    "related_services": [
+      {
+        "slug": "automation-devops",
+        "title": "Automation & DevOps",
+        "icon": "settings-2",
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "system-architecture-design",
+        "title": "System Architecture Design",
+        "icon": "layers",
+        "url": "service-detail.html"
+      },
+      {
+        "slug": "software-security",
+        "title": "Software Security",
+        "icon": "shield-check",
+        "url": "service-detail.html"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",    "url": "index.html" },
+      { "label": "Sobre",     "url": "about.html" },
+      { "label": "Serviços",  "url": "index.html#services" },
+      { "label": "Portfólio", "url": "index.html#portfolio" },
+      { "label": "Produtos",  "url": "index.html#products" },
+      { "label": "Contato",   "url": "contact.html" }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "index.html#services" },
+      { "label": "Desenvolvimento de Software", "url": "index.html#services" },
+      { "label": "Arquitetura de Soluções",     "url": "index.html#services" },
+      { "label": "IA Aplicada ao Negócio",      "url": "index.html#services" },
+      { "label": "DevOps & Eficiência",         "url": "index.html#services" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html" }
+      ]
+    }
+  }
+}

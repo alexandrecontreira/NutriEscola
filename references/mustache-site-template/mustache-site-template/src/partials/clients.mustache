@@ -1,0 +1,42 @@
+<!-- ============================================================
+   CLIENTS — Client logos carousel
+   CONDITIONALLY RENDERED: only when config.show_clients = true
+   Data keys: clients.eyebrow, .title, .items[].name, .logo
+   ============================================================ -->
+<section id="clients" class="py-14 bg-slate-50 border-y border-slate-100">
+  <div class="container mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Section header -->
+    <div class="text-center mb-10 reveal">
+      <div class="inline-flex items-center gap-2 text-green-600 text-sm font-mono font-medium mb-2 tracking-wider">
+        <span>>://</span>
+        <span>{{clients.eyebrow}}</span>
+      </div>
+      <h2 class="text-xl lg:text-2xl font-bold text-slate-700">{{clients.title}}</h2>
+    </div>
+
+    <!-- Logos grid / carousel -->
+    <div class="clients-track overflow-hidden">
+      <div class="clients-inner flex items-center gap-8 lg:gap-12 animate-scroll-x">
+        {{#clients.items}}
+        <div class="flex-shrink-0 flex items-center justify-center px-4 py-3">
+          <img src="{{logo}}"
+               alt="{{name}}"
+               class="h-10 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+               loading="lazy" />
+        </div>
+        {{/clients.items}}
+        <!-- Duplicate for infinite scroll effect -->
+        {{#clients.items}}
+        <div class="flex-shrink-0 flex items-center justify-center px-4 py-3" aria-hidden="true">
+          <img src="{{logo}}"
+               alt=""
+               class="h-10 w-auto object-contain grayscale opacity-50"
+               loading="lazy" />
+        </div>
+        {{/clients.items}}
+      </div>
+    </div>
+
+  </div>
+</section>

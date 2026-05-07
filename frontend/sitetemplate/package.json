@@ -1,0 +1,27 @@
+{
+  "name": "newstacktrace-site-template",
+  "version": "1.0.0",
+  "description": "Admin panel for the site",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "dev": "gulp default",
+    "watch": "gulp default",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "browser-sync": "^3.0.3",
+    "gulp": "^4.0.2",
+    "gulp-mustache": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.68.0",
+    "shards-ui": "^3.0.0"
+  }
+}

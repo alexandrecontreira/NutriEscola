@@ -1,0 +1,189 @@
+{
+  "site": {
+    "name": "new Stacktrace();",
+    "company_name": "Newstacktrace",
+    "tagline": "Tecnologia que transforma.",
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "email": "contato@newstacktrace.com",
+    "phone": "+55 (41) 99890-0704",
+    "address": "Pinhais, PR - Brasil",
+    "logo_dark": "./assets/images/logo-dark-transp.png",
+    "logo_light": "./assets/images/logo-light-transp.png",
+    "social": {
+      "linkedin": "https://linkedin.com/company/newstacktrace",
+      "github":   "https://github.com/newstacktrace",
+      "instagram": "#",
+      "twitter":  "#"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Início",    "url": "index.html",       "active": false },
+      { "label": "Sobre",     "url": "about.html",       "active": false },
+      { "label": "Serviços",  "url": "services.html",    "active": false },
+      { "label": "Portfólio", "url": "portfolio.html",   "active": true  },
+      { "label": "Produtos",  "url": "products.html",       "active": false },
+      { "label": "Contato",   "url": "contact.html",     "active": false }
+    ],
+    "cta": { "label": "Fale Conosco", "url": "contact.html" }
+  },
+  "page": {
+    "breadcrumb": {
+      "home": { "label": "Início", "url": "index.html" },
+      "current": "Portfólio"
+    },
+    "hero": {
+      "eyebrow": "Nosso Portfólio",
+      "title": "Trabalhos que falam<br/>por si mesmos.",
+      "subtitle": "Identidades visuais, logomarcas, materiais gráficos e sistemas digitais desenvolvidos com atenção a cada detalhe."
+    }
+  },
+  "portfolio_page": {
+    "eyebrow": "Projetos",
+    "title": "Trabalhos selecionados",
+    "subtitle": "Uma amostra dos projetos entregues em design gráfico, identidade visual e desenvolvimento digital.",
+    "categories": [
+      { "id": "all",        "label": "Todos",             "active": true  },
+      { "id": "identidade", "label": "Identidade Visual", "active": false },
+      { "id": "logomarca",  "label": "Logomarca",         "active": false },
+      { "id": "impresso",   "label": "Material Impresso", "active": false },
+      { "id": "social",     "label": "Social Media",      "active": false },
+      { "id": "web",        "label": "Web & Sistemas",    "active": false }
+    ],
+    "items": [
+      {
+        "slug": "imas-identidade-visual",
+        "category_id": "identidade",
+        "category_label": "Identidade Visual",
+        "client": "IMAS",
+        "title": "Identidade Visual Completa",
+        "description": "Criação de identidade visual completa incluindo brand guidelines, template de apresentação institucional e pacote de posts para redes sociais.",
+        "cover": "assets/images/portfolio/imas/template-apresentacao.png",
+        "tags": ["Identidade Visual", "Brand Guidelines", "Social Media", "Apresentação"],
+        "year": "2024",
+        "featured": true,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "acesso-logomarca",
+        "category_id": "logomarca",
+        "category_label": "Logomarca",
+        "client": "Acesso",
+        "title": "Desenvolvimento de Logomarca",
+        "description": "Processo completo de criação de logomarca com exploração de variantes, refinamento tipográfico e entrega em múltiplas versões de uso.",
+        "cover": "assets/images/portfolio/acesso/logo-4.png",
+        "tags": ["Logomarca", "Identidade", "Tipografia"],
+        "year": "2023",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "hellas-logomarca",
+        "category_id": "logomarca",
+        "category_label": "Logomarca",
+        "client": "Hellas",
+        "title": "Redesign de Logomarca",
+        "description": "Redesign da identidade visual com desenvolvimento de variantes para aplicação em diferentes contextos e mídias.",
+        "cover": "assets/images/portfolio/hellas/logo-1.png",
+        "tags": ["Logomarca", "Redesign", "Branding"],
+        "year": "2023",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "eat-cartao-visita",
+        "category_id": "impresso",
+        "category_label": "Material Impresso",
+        "client": "Eat",
+        "title": "Cartão de Visita",
+        "description": "Criação de dois conceitos de cartão de visita no formato 9x5cm com alinhamento à identidade da marca.",
+        "cover": "assets/images/portfolio/eat/cartao-1.jpg",
+        "tags": ["Cartão de Visita", "Design Gráfico", "Impresso"],
+        "year": "2022",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "flex-material-impresso",
+        "category_id": "impresso",
+        "category_label": "Material Impresso",
+        "client": "Flex",
+        "title": "Material Impresso",
+        "description": "Desenvolvimento de peças gráficas para impressão, com acompanhamento da produção física e verificação de acabamento.",
+        "cover": "assets/images/portfolio/flex/img-1.jpg",
+        "tags": ["Material Impresso", "Design Gráfico", "Produção"],
+        "year": "2016",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "imas-social-media",
+        "category_id": "social",
+        "category_label": "Social Media",
+        "client": "IMAS",
+        "title": "Posts para Instagram",
+        "description": "Série de posts para Instagram desenvolvida seguindo as diretrizes de identidade visual definidas no brand book da organização.",
+        "cover": "assets/images/portfolio/imas/posts/post-instagram.png",
+        "tags": ["Social Media", "Instagram", "Conteúdo Visual"],
+        "year": "2024",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "plataforma-saas-carestack",
+        "category_id": "web",
+        "category_label": "Web & Sistemas",
+        "client": "CareStack",
+        "title": "Plataforma SaaS",
+        "description": "Interface e desenvolvimento de plataforma SaaS para gestão de comunidades terapêuticas com módulos de controle, relatórios e comunicação.",
+        "cover": "assets/images/portfolio/carestack/cover.jpg",
+        "tags": ["Web App", "SaaS", "UX/UI", "React"],
+        "year": "2024",
+        "featured": true,
+        "url": "portfolio-detail.html"
+      },
+      {
+        "slug": "api-gateway-fintech",
+        "category_id": "web",
+        "category_label": "Web & Sistemas",
+        "client": "Fintech",
+        "title": "API Gateway — Fintech Regional",
+        "description": "Redesenho completo da camada de APIs com autenticação OAuth2, dashboard de monitoramento e documentação interativa.",
+        "cover": "assets/images/portfolio/fintech/cover.jpg",
+        "tags": ["API", "Backend", "Dashboard", "Node.js"],
+        "year": "2023",
+        "featured": false,
+        "url": "portfolio-detail.html"
+      }
+    ],
+    "cta_section": {
+      "title": "Tem um projeto em mente?",
+      "subtitle": "Vamos conversar sobre como podemos transformar sua ideia em algo visualmente memorável ou tecnicamente robusto."
+    }
+  },
+  "footer": {
+    "description": "Consultoria e desenvolvimento de software para empresas que querem crescer com inteligência e tecnologia séria.",
+    "quick_links": [
+      { "label": "Início",     "url": "index.html"          },
+      { "label": "Sobre",      "url": "about.html"          },
+      { "label": "Serviços",   "url": "services.html"       },
+      { "label": "Portfólio",  "url": "portfolio.html"      },
+      { "label": "Produtos",   "url": "index.html#products" },
+      { "label": "Contato",    "url": "contact.html"        }
+    ],
+    "service_links": [
+      { "label": "Cloud & Infraestrutura",      "url": "services.html" },
+      { "label": "Desenvolvimento de Software", "url": "services.html" },
+      { "label": "Arquitetura de Soluções",     "url": "services.html" },
+      { "label": "IA Aplicada ao Negócio",      "url": "services.html" },
+      { "label": "DevOps & Eficiência",         "url": "services.html" }
+    ],
+    "bottom_bar": {
+      "copyright": "© 2025 Newstacktrace. Todos os direitos reservados.",
+      "links": [
+        { "label": "Política de Privacidade", "url": "privacy.html" },
+        { "label": "Termos de Uso",           "url": "terms.html"   }
+      ]
+    }
+  }
+}

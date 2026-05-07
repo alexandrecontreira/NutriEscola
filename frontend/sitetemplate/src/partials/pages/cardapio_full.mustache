@@ -1,0 +1,74 @@
+<!-- ============================================================
+   CARDAPIO FULL
+   Data keys: cardapio.*, calorie_summary.*
+   ============================================================ -->
+<section class="layout_padding menu_section">
+  <div class="container">
+    <div class="row g-4">
+      {{#cardapio.categories}}
+      <div class="col-lg-4">
+        <div class="section-title mb-3">
+          <span class="section-eyebrow">{{label}}</span>
+          <h2 class="h1">{{title}}</h2>
+        </div>
+
+        <div class="d-grid gap-3">
+          {{#items}}
+          <article class="food-card">
+            <div class="food-detail-box">
+              <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+                <div>
+                  <span class="food-category">{{category_label}}</span>
+                  <h3 class="h5 mt-3 mb-1">{{name}}</h3>
+                  <p class="text-muted mb-0">{{calories_per_100g}} kcal/100g</p>
+                </div>
+                <img src="{{image}}" alt="{{name}}" width="72" height="72" loading="lazy">
+              </div>
+              <label class="form-label fw-bold" for="{{id}}">Porcao em gramas</label>
+              <input id="{{id}}" class="number-input" type="number" min="10" value="{{portion_grams}}"
+                     data-portion data-calories-per100g="{{calories_per_100g}}">
+            </div>
+          </article>
+          {{/items}}
+        </div>
+      </div>
+      {{/cardapio.categories}}
+    </div>
+  </div>
+</section>
+
+<section class="layout_padding2">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-7 order-1 order-lg-1">
+        <div class="panel-card">
+          <span class="section-eyebrow">{{calorie_summary.eyebrow}}</span>
+          <h2 class="brand-script h1 mt-2">{{calorie_summary.title}}</h2>
+          <p class="text-muted">{{calorie_summary.description}}</p>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <strong><span data-total-calories>{{calorie_summary.total_calories}}</span> kcal</strong>
+            <span class="status-pill status-valid" data-calorie-status>{{calorie_summary.status}}</span>
+          </div>
+          <div class="kcal-bar" aria-label="Uso do limite calorico">
+            <span class="{{calorie_summary.progress_class}}" style="width: {{calorie_summary.progress_percent}}%;" data-calorie-bar></span>
+          </div>
+          <div class="d-flex justify-content-between small text-muted mt-2">
+            <span>0 kcal</span>
+            <span>Limite: {{calorie_summary.limit}} kcal</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 order-2 order-lg-2">
+        <div class="panel-card">
+          <h3 class="h5">Regras aplicadas</h3>
+          <ul class="mb-4">
+            {{#cardapio.rules}}
+            <li>{{.}}</li>
+            {{/cardapio.rules}}
+          </ul>
+          <a href="producao.html" class="btn-nutri w-100">Configurar producao</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
